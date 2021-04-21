@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-rest-api-example",
+  "version": "1.0.0",
+  "description": "Example of Node.js REST API on Docker",
+  "author": "Petteri Kivimäki <dinky_jackson@hotmail.com.com>",
+  "main": "server.js",
+  "license": "MIT",
+  "repository": "https://github.com/petkivim/nodejs-rest-api-example.git",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start-oa": "nodemon oa.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "btoa": "^1.2.1",
+    "encryptor-node": "^1.0.0",
+    "express": "^4.13.3",
+    "faker": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1"
+  }
+}

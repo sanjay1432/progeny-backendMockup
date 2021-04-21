@@ -1,0 +1,2728 @@
+[
+  {
+    "id": "c7a13e40-1473-4b74-8c15-3398d4ea0ac5",
+    "name": "Admin",
+    "path": "/Admin",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "b712b5b6-b41f-49fb-8e19-9871c58874e7",
+        "name": "LOSTCOOK",
+        "path": "/Admin/LOSTCOOK",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "ab2cf7c9-0d85-4a53-9f4a-49ea4dc55a00",
+            "name": "KRC",
+            "path": "/Admin/LOSTCOOK/KRC",
+            "attributes": {},
+            "realmRoles": [
+              "acerole"
+            ],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "cfce0b07-e549-4685-9a07-5b9d059a6456",
+        "name": "PULP",
+        "path": "/Admin/PULP",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "66fc64cf-68de-4dfc-a40f-9f49f4582cfd",
+            "name": "TPL",
+            "path": "/Admin/PULP/TPL",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "766dc263-9b7f-402c-9b89-b4171ac1ed57",
+            "name": "RZH",
+            "path": "/Admin/PULP/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "9172b5bb-659c-4962-a7c1-c1886afc9c10",
+            "name": "KRC",
+            "path": "/Admin/PULP/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "16f9389a-66d7-4413-86f3-b0bec0cd99f7",
+            "name": "BSC",
+            "path": "/Admin/PULP/BSC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "81b21b73-b795-4be5-ba45-d90b56e24d79",
+        "name": "POWER",
+        "path": "/Admin/POWER",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "6ccb395a-112b-4a20-bf31-fe393c7c603f",
+            "name": "KRC",
+            "path": "/Admin/POWER/KRC",
+            "attributes": {
+              "Car": [
+                "BMW"
+              ]
+            },
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "28ff65af-05dc-4265-85f8-ff6a7da89bce",
+            "name": "RZH",
+            "path": "/Admin/POWER/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b42db081-e0cb-4776-b740-581d4713a804",
+    "name": "BCID",
+    "path": "/BCID",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "06489dbc-0518-4d10-a4a0-de716bacb062",
+        "name": "PULP",
+        "path": "/BCID/PULP",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "d71d0984-bbba-4cc1-9127-50abe520684b",
+            "name": "RZH",
+            "path": "/BCID/PULP/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "baa243dc-88bd-4134-99d6-44360d2ade24",
+            "name": "KRC",
+            "path": "/BCID/PULP/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "7a87fa6b-2d6e-4825-8a1e-f030a30a2b89",
+            "name": "BSC",
+            "path": "/BCID/PULP/BSC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "b72f0c55-64df-463f-bea2-d7df5f139b07",
+            "name": "TPL",
+            "path": "/BCID/PULP/TPL",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "cd39851b-8fe4-4451-9562-480b9dd4f674",
+        "name": "POWER",
+        "path": "/BCID/POWER",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "b208b327-5429-4617-8393-c0682af14696",
+            "name": "RZH",
+            "path": "/BCID/POWER/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "9f2f3bf0-d310-4aa7-82ad-2725e63fe82e",
+            "name": "KRC",
+            "path": "/BCID/POWER/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4273fb70-8f3c-4034-967c-4a2486fddcc4",
+    "name": "C01-Directors",
+    "path": "/C01-Directors",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "be7a9511-71ad-4aef-a629-ded2cb542965",
+        "name": "TPL",
+        "path": "/C01-Directors/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "e446db9c-ece1-49f5-b1e7-498b411a727c",
+            "name": "POWER",
+            "path": "/C01-Directors/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "d5c5f8ae-0e52-4da4-a2d0-c9d717088d02",
+            "name": "PULP",
+            "path": "/C01-Directors/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "3115c334-6152-43e5-bae1-48c7c3830eaa",
+        "name": "RZH",
+        "path": "/C01-Directors/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "043121fa-8237-4eac-9e5f-572e5e38d94a",
+            "name": "POWER",
+            "path": "/C01-Directors/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "0322ccc1-c43d-4887-bd4c-0b13ebd4518e",
+            "name": "PULP",
+            "path": "/C01-Directors/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "a8e9993b-4b2f-4407-9a3b-eb41eb4ea79f",
+        "name": "BRC",
+        "path": "/C01-Directors/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "ba4a584c-047a-4114-9b6e-c45af5ab7411",
+            "name": "POWER",
+            "path": "/C01-Directors/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "3639ba36-4f4d-4af4-8e8a-8a882e8278c7",
+            "name": "PULP",
+            "path": "/C01-Directors/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "51749e2f-c031-4d21-8c55-32e86162dc27",
+        "name": "KRC",
+        "path": "/C01-Directors/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "af92c5e9-1265-41d4-a978-a09cd099d4ea",
+            "name": "PULP",
+            "path": "/C01-Directors/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "266449d1-a08c-4396-8778-2ff01f41babd",
+            "name": "POWER",
+            "path": "/C01-Directors/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0e1709da-cc2f-47a3-b6da-98b02a36cfd5",
+    "name": "C02-President",
+    "path": "/C02-President",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "70d8d05c-567e-4ada-a27c-1ddf57a804d8",
+        "name": "TPL",
+        "path": "/C02-President/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "4730572f-4a94-4ffb-8d76-10107ccca649",
+            "name": "POWER",
+            "path": "/C02-President/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "267c9ed6-2f13-4520-8a21-7ba1202d0a11",
+            "name": "PULP",
+            "path": "/C02-President/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "1ba8fe47-8ef7-4154-9d8c-dff96b490bd5",
+        "name": "KRC",
+        "path": "/C02-President/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "40723e6f-9a91-486d-bd9b-fa653ab49ea7",
+            "name": "PULP",
+            "path": "/C02-President/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "29dd359f-6520-41bc-9ca6-6d8ae8c8195d",
+            "name": "POWER",
+            "path": "/C02-President/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "a9b0e602-7273-45c5-8f81-d69aca61cf85",
+        "name": "RZH",
+        "path": "/C02-President/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "46d257d7-1aaf-4573-bfa5-896741802465",
+            "name": "POWER",
+            "path": "/C02-President/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "815f1f98-3257-4d5d-b82c-518f93397722",
+            "name": "PULP",
+            "path": "/C02-President/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "91d2f304-7f3f-4f6d-9c43-ffb8d1ef2bf7",
+        "name": "BRC",
+        "path": "/C02-President/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "c2cfc707-f7fb-4352-ab40-a2ef41a98ee0",
+            "name": "PULP",
+            "path": "/C02-President/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "ac3036f9-6072-4544-b053-1daf6f5a3bed",
+            "name": "POWER",
+            "path": "/C02-President/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "573fb670-d7ff-4c04-83b2-c6a40253c33b",
+    "name": "C03-COO",
+    "path": "/C03-COO",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "a74e3f43-5666-4109-aca9-323a9033b58f",
+        "name": "BRC",
+        "path": "/C03-COO/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "7010f145-9b81-4176-9a6f-197e68e8cd3b",
+            "name": "POWER",
+            "path": "/C03-COO/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "e9d55d6e-9150-44d0-963d-d2399f9516df",
+            "name": "PULP",
+            "path": "/C03-COO/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "4cacffb7-0e85-4b6d-885a-342c5a093ade",
+        "name": "RZH",
+        "path": "/C03-COO/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "b099cabb-53b4-4876-b7cf-ba3bb5634c6a",
+            "name": "PULP",
+            "path": "/C03-COO/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "23aa1b7d-c511-4a36-ad2a-e2a0f3c32c7e",
+            "name": "POWER",
+            "path": "/C03-COO/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "86f1de4a-1dba-4440-973b-cc8c581a0be7",
+        "name": "TPL",
+        "path": "/C03-COO/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "2773a285-6406-487b-93d6-8420e525aac8",
+            "name": "PULP",
+            "path": "/C03-COO/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "582dbd14-01be-4380-b3a1-e8d5a04d623e",
+            "name": "POWER",
+            "path": "/C03-COO/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "4193d509-deaa-4498-8e59-b334d189bcd1",
+        "name": "KRC",
+        "path": "/C03-COO/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "16964153-ce98-49f9-adb2-9c7adbd86931",
+            "name": "PULP",
+            "path": "/C03-COO/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "37e0b88e-0a5f-4c21-8bc5-9445397d1264",
+            "name": "POWER",
+            "path": "/C03-COO/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5ae66816-67d4-468f-9938-0b7cf4b4f788",
+    "name": "C04-Senior Management",
+    "path": "/C04-Senior Management",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "f0b6441e-35b1-455b-b7c5-f5718dcd294d",
+        "name": "RZH",
+        "path": "/C04-Senior Management/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "253ff3a2-906d-49f8-a208-d1ad05060386",
+            "name": "PULP",
+            "path": "/C04-Senior Management/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "b3b100e2-0a6b-43af-9975-3a8849b657bd",
+            "name": "POWER",
+            "path": "/C04-Senior Management/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "031a5eb9-ded7-4ed4-9775-b6f0d979b264",
+        "name": "KRC",
+        "path": "/C04-Senior Management/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f1a0f3a4-98ab-4d7f-9077-628eb243dc3b",
+            "name": "POWER",
+            "path": "/C04-Senior Management/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "36be59ec-5c24-4e36-b974-8f42169b9877",
+            "name": "PULP",
+            "path": "/C04-Senior Management/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "ca4eb798-9c9a-4067-a6d0-a5cc79c57b76",
+        "name": "TPL",
+        "path": "/C04-Senior Management/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "fe448242-0525-47c0-9169-ce4f13bdfe8f",
+            "name": "PULP",
+            "path": "/C04-Senior Management/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "fec2ac03-3a4b-46a9-a454-5d70bfd1f775",
+            "name": "POWER",
+            "path": "/C04-Senior Management/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "a5282f12-2297-40a7-bb46-1c4265985abc",
+        "name": "BRC",
+        "path": "/C04-Senior Management/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "75c44017-38aa-40ee-bb5b-cfe4c8c88e4b",
+            "name": "POWER",
+            "path": "/C04-Senior Management/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "99a1a9eb-7612-453e-8303-916cf7fbd441",
+            "name": "PULP",
+            "path": "/C04-Senior Management/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "143b0ac1-692a-4395-9c94-b5673e5e6b0d",
+    "name": "C05-Finance Controller",
+    "path": "/C05-Finance Controller",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "d32a1674-3e4c-4761-ad7b-b80fa69beaf5",
+        "name": "KRC",
+        "path": "/C05-Finance Controller/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "760f97ca-a1ee-4939-bc9f-843a007bd803",
+            "name": "POWER",
+            "path": "/C05-Finance Controller/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "5fe875f4-23fa-4ebb-a343-2a2c1a2701c0",
+            "name": "PULP",
+            "path": "/C05-Finance Controller/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "9ce78836-c9fe-442f-87a9-2733c09ef013",
+        "name": "TPL",
+        "path": "/C05-Finance Controller/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "dedb054f-496c-4f22-af04-7120451dccdf",
+            "name": "POWER",
+            "path": "/C05-Finance Controller/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "4e69a326-6868-4465-941a-851c27b4f1c9",
+            "name": "PULP",
+            "path": "/C05-Finance Controller/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "39b61215-5c1a-4a8e-9a9e-2caf19e12d85",
+        "name": "BRC",
+        "path": "/C05-Finance Controller/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "1078226e-0241-4184-a7d9-860946dd086b",
+            "name": "POWER",
+            "path": "/C05-Finance Controller/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "e1803113-4893-4985-9233-82e412aef798",
+            "name": "PULP",
+            "path": "/C05-Finance Controller/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "32d3c6fc-f4bd-4885-9e0d-75329fd314e9",
+        "name": "RZH",
+        "path": "/C05-Finance Controller/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f92f8d32-fb4b-40c3-9309-5770cf0ff20c",
+            "name": "PULP",
+            "path": "/C05-Finance Controller/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "e72bb641-8940-43b3-bced-01f875d7fc11",
+            "name": "POWER",
+            "path": "/C05-Finance Controller/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7cfc8240-2698-4446-a825-3962ebaf4eec",
+    "name": "C06-MOS Managerz",
+    "path": "/C06-MOS Manager",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "c62ebf8a-0977-49aa-876a-041281a4db79",
+        "name": "RZH",
+        "path": "/C06-MOS Manager/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "0163f005-9cea-44b3-bb33-45399016356f",
+            "name": "POWER",
+            "path": "/C06-MOS Manager/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "de007ea1-d2d4-4e9a-89c1-3cc420a486ef",
+            "name": "PULP",
+            "path": "/C06-MOS Manager/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "dad5ac9f-5e68-4bc7-9960-aae9c43497df",
+        "name": "TPL",
+        "path": "/C06-MOS Manager/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "de469f70-5444-49ce-b397-4ba11eb7f87e",
+            "name": "POWER",
+            "path": "/C06-MOS Manager/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "ddd0eb42-3969-4f65-a3a1-7b1df0515580",
+            "name": "PULP",
+            "path": "/C06-MOS Manager/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "f67284e4-8395-4b94-af03-8e7a7c99221a",
+        "name": "BRC",
+        "path": "/C06-MOS Manager/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "48447641-dbc6-457b-8c4e-d23e5e850d69",
+            "name": "POWER",
+            "path": "/C06-MOS Manager/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "00de0ce4-a75a-4536-8e60-2e7556b1e46f",
+            "name": "PULP",
+            "path": "/C06-MOS Manager/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "fbc415d3-ebe9-4e8b-97ac-ff94c7311659",
+        "name": "KRC",
+        "path": "/C06-MOS Manager/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "537a84b8-635d-480d-a7d9-921548c4f600",
+            "name": "PULP",
+            "path": "/C06-MOS Manager/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "d8649360-6f57-4496-8c5d-c1cdf0788ab7",
+            "name": "POWER",
+            "path": "/C06-MOS Manager/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7625b776-830c-46e6-b21b-21410007287b",
+    "name": "C07-BCID Manager",
+    "path": "/C07-BCID Manager",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "9eb4546d-adfb-49bc-a420-8635da4e7128",
+        "name": "BRC",
+        "path": "/C07-BCID Manager/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "1534c9c8-c7be-4ab7-9d6b-2f7b2709f542",
+            "name": "PULP",
+            "path": "/C07-BCID Manager/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "7e17382b-4a70-42a3-9008-1fd4a3ee4fa5",
+            "name": "POWER",
+            "path": "/C07-BCID Manager/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "812fd97d-5c3f-47e1-86a3-425383a617ab",
+        "name": "TPL",
+        "path": "/C07-BCID Manager/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "1df04987-630e-4ecd-bedc-2ac780ef072d",
+            "name": "PULP",
+            "path": "/C07-BCID Manager/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "f34262eb-7eff-4b68-85ec-f447ed5d645e",
+            "name": "POWER",
+            "path": "/C07-BCID Manager/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "587e4f50-ce6a-4c6c-815c-97e2c87a035b",
+        "name": "KRC",
+        "path": "/C07-BCID Manager/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f6e5d3b0-7693-485b-8118-a4a929d30f46",
+            "name": "PULP",
+            "path": "/C07-BCID Manager/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "47f13703-ee8b-4ad5-8588-27fb069ba6bc",
+            "name": "POWER",
+            "path": "/C07-BCID Manager/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "a407d2d7-f805-478b-9696-75648e55e0f2",
+        "name": "RZH",
+        "path": "/C07-BCID Manager/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "6533decf-55ae-4363-a05b-b3264910b363",
+            "name": "PULP",
+            "path": "/C07-BCID Manager/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "4fb0514c-f8a1-417e-9649-109fc9963d6d",
+            "name": "POWER",
+            "path": "/C07-BCID Manager/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "29ec17f5-cbb5-4ccb-8444-e4ca5c0be6af",
+    "name": "C08-System Admin",
+    "path": "/C08-System Admin",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "a1b5c8f2-3f57-4471-890d-7f88a6c50faf",
+        "name": "RZH",
+        "path": "/C08-System Admin/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f4a348c0-1bdb-4375-adf8-b7f0257acb28",
+            "name": "PULP",
+            "path": "/C08-System Admin/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "e0a77bba-1444-475e-8594-68eba554946e",
+            "name": "POWER",
+            "path": "/C08-System Admin/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "5f4e66bc-b711-46be-adf6-74c5892a2f44",
+        "name": "BRC",
+        "path": "/C08-System Admin/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "75703e3c-e495-472a-9db4-fac123b5eabc",
+            "name": "POWER",
+            "path": "/C08-System Admin/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "f7ead8ee-202c-4ff0-a3ad-ba9fb48a6908",
+            "name": "PULP",
+            "path": "/C08-System Admin/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "5f16be37-af35-4b0d-93a6-f59c98f01d37",
+        "name": "KRC",
+        "path": "/C08-System Admin/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "e32c2d4c-eccc-43dc-a413-f33d1c29af4d",
+            "name": "PULP",
+            "path": "/C08-System Admin/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "f4db7b8e-1510-4497-97ad-2112a4f03fd9",
+            "name": "POWER",
+            "path": "/C08-System Admin/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "b5bc8800-9f5a-45a9-9cf3-2e6fbed6b6ef",
+        "name": "TPL",
+        "path": "/C08-System Admin/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "183fac58-493e-4702-9893-b3752558c83b",
+            "name": "PULP",
+            "path": "/C08-System Admin/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "ccf3abc0-d917-4b89-8813-53bf81167a09",
+            "name": "POWER",
+            "path": "/C08-System Admin/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9e127e6c-d865-4f7c-a219-e21c5985fa50",
+    "name": "LC01-LC Super user",
+    "path": "/LC01-LC Super user",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "6249fa19-36ba-4773-abd9-71b1716bfe1b",
+        "name": "KRC",
+        "path": "/LC01-LC Super user/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "3d18ab05-25e7-48dc-9480-dc312705b3a3",
+            "name": "PULP",
+            "path": "/LC01-LC Super user/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eae2a0e8-097c-43d3-82e3-73c432fae143",
+    "name": "LC02-LC Admin",
+    "path": "/LC02-LC Admin",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "b2a56ed5-bd4f-4f15-ad6b-72df05d4dac2",
+        "name": "KRC",
+        "path": "/LC02-LC Admin/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "7332e502-9681-4dbd-8895-eaca2e55527d",
+            "name": "PULP",
+            "path": "/LC02-LC Admin/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8ec13368-6d30-4623-bcba-d8ee1b82a47f",
+    "name": "LC03-LC user",
+    "path": "/LC03-LC user",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "3f65f166-1433-4154-a93d-e515ad597660",
+        "name": "KRC",
+        "path": "/LC03-LC user/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "3428c438-b875-44cc-8a08-2f18310493f0",
+            "name": "PULP",
+            "path": "/LC03-LC user/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "58a604a0-ea6c-4959-8061-180f47328f89",
+    "name": "MODULES",
+    "path": "/MODULES",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "88c865c1-994e-4f34-937a-71acc5678c26",
+        "name": "Quality",
+        "path": "/MODULES/Quality",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": []
+      },
+      {
+        "id": "a218584d-21a0-40f8-977d-a0fd1cb90b55",
+        "name": "Production",
+        "path": "/MODULES/Production",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": []
+      },
+      {
+        "id": "18ba29e6-ae1c-4b46-bb33-dafea098051b",
+        "name": "Summary",
+        "path": "/MODULES/Summary",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": []
+      },
+      {
+        "id": "84805d99-f8ff-4094-942a-8e2650cf17cf",
+        "name": "Utility",
+        "path": "/MODULES/Utility",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": []
+      },
+      {
+        "id": "88fa0a5e-315b-4dc7-8902-aa098fe30ffc",
+        "name": "Wood",
+        "path": "/MODULES/Wood",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": []
+      },
+      {
+        "id": "3c261f3e-726d-406e-a56f-fbc696815bf8",
+        "name": "Chemical",
+        "path": "/MODULES/Chemical",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": []
+      },
+      {
+        "id": "c804425c-1eae-4612-8207-c4deb3278491",
+        "name": "Lostcook",
+        "path": "/MODULES/Lostcook",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": []
+      }
+    ]
+  },
+  {
+    "id": "434fb4f5-ca2d-4b7b-8017-414f239ffc14",
+    "name": "Manager",
+    "path": "/Manager",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "84ba759c-03e9-4315-bb42-8e1db481dba9",
+        "name": "POWER",
+        "path": "/Manager/POWER",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "ee6fab69-497e-41f3-8ab3-e93b0e5d74af",
+            "name": "KRC",
+            "path": "/Manager/POWER/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "a13b3d79-4143-4e91-8548-5be47582e0aa",
+            "name": "RZH",
+            "path": "/Manager/POWER/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "26968436-662f-4825-99c5-a5fa8a0a66d7",
+        "name": "PULP",
+        "path": "/Manager/PULP",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "90efc00a-9426-42aa-a077-f9a6fec65ff8",
+            "name": "RZH",
+            "path": "/Manager/PULP/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "f12132cf-a38f-4476-83ce-b05c572e9979",
+            "name": "TPL",
+            "path": "/Manager/PULP/TPL",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "b925fa58-66e1-4c10-95dc-85be3c57ec8e",
+            "name": "KRC",
+            "path": "/Manager/PULP/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "9224276f-b223-4ea1-bbc7-5348d7522203",
+            "name": "BSC",
+            "path": "/Manager/PULP/BSC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8594918c-3070-4020-a6c1-e4b6e8d9c26f",
+    "name": "Origin_Mill",
+    "path": "/Origin_Mill",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "63cad155-c532-494e-864d-fcc79d43689d",
+        "name": "POWER",
+        "path": "/Origin_Mill/POWER",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "b14b941e-e52f-4fab-a5b9-7fac45350247",
+            "name": "RZH",
+            "path": "/Origin_Mill/POWER/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "fc278003-fd87-40a3-8012-92418b3d99f6",
+            "name": "KRC",
+            "path": "/Origin_Mill/POWER/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "dd2234cf-2b2b-413d-896a-b1f382c1ff68",
+        "name": "PULP",
+        "path": "/Origin_Mill/PULP",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "61c29177-ec0c-4104-857e-33732a7666c2",
+            "name": "TPL",
+            "path": "/Origin_Mill/PULP/TPL",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "2830838d-b64e-46d7-b0e6-1dfb88bfb722",
+            "name": "BSC",
+            "path": "/Origin_Mill/PULP/BSC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "2b3f2cfa-1aaa-43c4-90fb-013ad6ad4d9e",
+            "name": "RZH",
+            "path": "/Origin_Mill/PULP/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "896d3aa6-bcb3-45de-aba9-2c512a16a331",
+            "name": "KRC",
+            "path": "/Origin_Mill/PULP/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2cc30367-8feb-495e-8bf9-2ac0067fba8c",
+    "name": "Overview",
+    "path": "/Overview",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "a4ad976b-a90e-4a13-96fb-93fdc230a2bb",
+        "name": "POWER",
+        "path": "/Overview/POWER",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": []
+      },
+      {
+        "id": "9e0254e6-6542-4cea-b698-98c5f3232d46",
+        "name": "PULP",
+        "path": "/Overview/PULP",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "268b19b1-9a9b-4cba-be33-7be968af0e08",
+            "name": "RZH",
+            "path": "/Overview/PULP/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "eb9f7485-36b4-4c92-b050-53a7c2db2793",
+            "name": "KRC",
+            "path": "/Overview/PULP/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "65180077-dff6-4ced-a1f1-1b90beea7f6d",
+    "name": "PU01-BU Head",
+    "path": "/PU01-BU Head",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "26c0a1d2-93c2-4f52-93dd-befd02db6f94",
+        "name": "KRC",
+        "path": "/PU01-BU Head/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "4bc74418-0dc0-4775-bad6-f7c6c28e05d0",
+            "name": "POWER",
+            "path": "/PU01-BU Head/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "fb527e86-e57f-4343-a8c4-bd3d0edbed89",
+            "name": "PULP",
+            "path": "/PU01-BU Head/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "ece31ce2-058f-4c39-9653-eb5abda02418",
+        "name": "BRC",
+        "path": "/PU01-BU Head/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "e7bcefa8-6794-4de8-aa58-a7e136c5f983",
+            "name": "PULP",
+            "path": "/PU01-BU Head/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "0e5db05c-991b-4762-9fcc-5387f6dbdf3c",
+            "name": "POWER",
+            "path": "/PU01-BU Head/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "3d357fc0-d757-4fc2-8fea-958f012ca8bf",
+        "name": "RZH",
+        "path": "/PU01-BU Head/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "af157ce4-ce86-4565-8c03-9e74c8b289c9",
+            "name": "PULP",
+            "path": "/PU01-BU Head/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "6ce12ceb-e481-49de-9133-5d09ea65f830",
+            "name": "POWER",
+            "path": "/PU01-BU Head/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "5d187602-f751-4716-b06a-d0302db96354",
+        "name": "TPL",
+        "path": "/PU01-BU Head/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "2fb1fbdf-ced8-479d-9334-66cab03df6f9",
+            "name": "PULP",
+            "path": "/PU01-BU Head/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "08c3c582-c2ba-4366-8877-b5dcf18edca4",
+            "name": "POWER",
+            "path": "/PU01-BU Head/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "6a038afe-6a78-4a26-bf2c-21764bde4698",
+    "name": "PU02-Technical Support",
+    "path": "/PU02-Technical Support",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "f940a50a-d492-4b37-829c-4caa6df95805",
+        "name": "TPL",
+        "path": "/PU02-Technical Support/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "b7ff1805-c5b0-4965-97ba-7924832728b1",
+            "name": "POWER",
+            "path": "/PU02-Technical Support/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "cc5e50e1-4b9d-4cc6-a318-7e66e4ae0cda",
+            "name": "PULP",
+            "path": "/PU02-Technical Support/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "7fb98673-5351-4b93-b7bd-f83c0da69ad8",
+        "name": "BRC",
+        "path": "/PU02-Technical Support/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "d9aa1cdb-f63e-4969-8c8b-b448b6169b87",
+            "name": "POWER",
+            "path": "/PU02-Technical Support/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "99af2eed-bd53-4ac5-b154-225032dc683d",
+            "name": "PULP",
+            "path": "/PU02-Technical Support/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "54b1ce61-23f1-4ac5-b901-7140bdcc2d86",
+        "name": "RZH",
+        "path": "/PU02-Technical Support/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "5abf2837-bd40-4caf-a86b-9b369d74adeb",
+            "name": "PULP",
+            "path": "/PU02-Technical Support/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "54b44192-4312-4cf9-a7cf-6bbf41bfa299",
+            "name": "POWER",
+            "path": "/PU02-Technical Support/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "3b89632e-5571-4113-8511-f7ac29975e32",
+        "name": "KRC",
+        "path": "/PU02-Technical Support/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "85b89892-778b-484b-acd8-71beecb7289d",
+            "name": "POWER",
+            "path": "/PU02-Technical Support/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "fe4ecb5c-5288-478e-92f6-a9d4d3327803",
+            "name": "PULP",
+            "path": "/PU02-Technical Support/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "54fd9585-f73b-4651-a044-4a44c36e96d9",
+    "name": "PU03-Production Manager",
+    "path": "/PU03-Production Manager",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "79a7bbe0-0134-4ae7-93b5-4610d40281a7",
+        "name": "KRC",
+        "path": "/PU03-Production Manager/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "d89495a0-2dc2-40e0-b612-519bdb4112f5",
+            "name": "PULP",
+            "path": "/PU03-Production Manager/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "c52b4c2a-6ee3-4c16-8474-ae25a11c74c7",
+            "name": "POWER",
+            "path": "/PU03-Production Manager/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "59643d82-fbf2-45c1-b605-8872a0a82ae5",
+        "name": "BRC",
+        "path": "/PU03-Production Manager/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "5b397e2e-534a-4a57-afc2-30060b3ed384",
+            "name": "PULP",
+            "path": "/PU03-Production Manager/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "9469e84d-53a1-4b61-9816-73dbf57e2a12",
+            "name": "POWER",
+            "path": "/PU03-Production Manager/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "db790f8f-ee4a-48b2-bbfc-9f197f80ad96",
+        "name": "TPL",
+        "path": "/PU03-Production Manager/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "5a50baef-bfba-4713-8fd8-47a27ccf309f",
+            "name": "PULP",
+            "path": "/PU03-Production Manager/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "0a60fd32-b1cd-4bd7-8150-88aee79dcbc5",
+            "name": "POWER",
+            "path": "/PU03-Production Manager/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "62908108-6bbe-47ef-b815-92bf30278e57",
+        "name": "RZH",
+        "path": "/PU03-Production Manager/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "8f0e8ac3-edfb-4782-93c1-230c7cbc86fc",
+            "name": "POWER",
+            "path": "/PU03-Production Manager/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "6c3288a2-f39c-4cf5-a1ad-eeec8592243d",
+            "name": "PULP",
+            "path": "/PU03-Production Manager/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "78454427-f6c4-4ba0-859a-c7fd8d103e4e",
+    "name": "PU04-Technical Manager",
+    "path": "/PU04-Technical Manager",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "62e19652-bf8b-4068-9025-10d3b98065cd",
+        "name": "TPL",
+        "path": "/PU04-Technical Manager/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f63ca9c8-db38-402a-b89d-a5454cbc2af7",
+            "name": "POWER",
+            "path": "/PU04-Technical Manager/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "65809508-85ff-437f-b790-92cbeefbe0eb",
+            "name": "PULP",
+            "path": "/PU04-Technical Manager/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "c454d71e-fb9a-452c-a98e-1c28ffe1b3d5",
+        "name": "KRC",
+        "path": "/PU04-Technical Manager/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "9ed44ce0-910f-47de-83cf-c4e7cad82a7a",
+            "name": "PULP",
+            "path": "/PU04-Technical Manager/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "6d53dbab-91b7-498f-aee2-4a4f2e1964aa",
+            "name": "POWER",
+            "path": "/PU04-Technical Manager/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "ee2dff07-7d1c-4c0b-9624-d8cb8882d85a",
+        "name": "RZH",
+        "path": "/PU04-Technical Manager/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "ab5bc654-b87e-49e2-9cf3-3c021b14baaf",
+            "name": "POWER",
+            "path": "/PU04-Technical Manager/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "f68c7eae-5168-4990-a361-4bcc09535c81",
+            "name": "PULP",
+            "path": "/PU04-Technical Manager/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "ee37231e-7eeb-4fa6-9e85-e9a8c583aebd",
+        "name": "BRC",
+        "path": "/PU04-Technical Manager/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "e4f2cf05-65cd-4cc8-8068-79ca414e3c38",
+            "name": "POWER",
+            "path": "/PU04-Technical Manager/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "0c34d35d-e4d3-4977-92da-75f05d83e3df",
+            "name": "PULP",
+            "path": "/PU04-Technical Manager/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "85eaa4e0-eea4-4a83-9659-988f09d7eee1",
+    "name": "PU05-Process Engineer",
+    "path": "/PU05-Process Engineer",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "157e8a87-1391-4749-9708-0ffa5e070fba",
+        "name": "TPL",
+        "path": "/PU05-Process Engineer/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "58c5b28c-754c-4046-ad5a-116cddc67369",
+            "name": "POWER",
+            "path": "/PU05-Process Engineer/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "8eb92b78-95ee-491e-b49b-04eecc907355",
+            "name": "PULP",
+            "path": "/PU05-Process Engineer/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "9a3f1d64-739e-4bb5-91a7-ce839774117d",
+        "name": "RZH",
+        "path": "/PU05-Process Engineer/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "07cf3fd8-4317-490f-a3d3-f399748d7314",
+            "name": "POWER",
+            "path": "/PU05-Process Engineer/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "7c705a38-d0b3-4fe0-9868-f4c186bbaa26",
+            "name": "PULP",
+            "path": "/PU05-Process Engineer/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "10079244-0dd8-4669-95fb-0333b4a57e16",
+        "name": "KRC",
+        "path": "/PU05-Process Engineer/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "4829287e-2f42-402d-b9c1-db8e8ebcbe50",
+            "name": "POWER",
+            "path": "/PU05-Process Engineer/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "76b63247-4c9c-4d36-a4fd-48c3febbdcfd",
+            "name": "PULP",
+            "path": "/PU05-Process Engineer/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "f7e1c93b-3bfa-4469-ae89-001e0a534d4e",
+        "name": "BRC",
+        "path": "/PU05-Process Engineer/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "04bdf32d-0966-450a-8d83-0d320c1ca266",
+            "name": "PULP",
+            "path": "/PU05-Process Engineer/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "7bc42260-9d88-4dcc-83aa-bd78a2792442",
+            "name": "POWER",
+            "path": "/PU05-Process Engineer/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "46fb3cee-7f44-4313-aa3b-4ab2fa95878e",
+    "name": "PU06-Supervisor",
+    "path": "/PU06-Supervisor",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "2430c868-c701-4cea-8d39-5ba7e385559c",
+        "name": "BRC",
+        "path": "/PU06-Supervisor/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "da133e94-7843-45ee-a4c8-89b9cc374cc9",
+            "name": "PULP",
+            "path": "/PU06-Supervisor/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "047757d6-1101-4fb4-beca-38ea36aa2ebf",
+            "name": "POWER",
+            "path": "/PU06-Supervisor/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "cbffb603-c547-4007-b451-14feaf0da01c",
+        "name": "TPL",
+        "path": "/PU06-Supervisor/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f4237730-17bf-4c28-b9a9-b66d900dd364",
+            "name": "PULP",
+            "path": "/PU06-Supervisor/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "1d5f31b5-188d-4b46-93db-6257a765061f",
+            "name": "POWER",
+            "path": "/PU06-Supervisor/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "ef63c592-110d-4ea6-9301-90f78d38857a",
+        "name": "KRC",
+        "path": "/PU06-Supervisor/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "0b56f641-5981-4d45-b2b8-6957f6f6e182",
+            "name": "POWER",
+            "path": "/PU06-Supervisor/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "fa75f2c9-5b86-401d-819e-4e179747255a",
+            "name": "PULP",
+            "path": "/PU06-Supervisor/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "3f6e5bfe-3b3c-4997-a54d-721ce97c3df2",
+        "name": "RZH",
+        "path": "/PU06-Supervisor/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "67cec3ca-05d8-4446-813e-a7ce546c2983",
+            "name": "POWER",
+            "path": "/PU06-Supervisor/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "180c25b3-50ff-43cf-8e9e-d58fd25b989e",
+            "name": "PULP",
+            "path": "/PU06-Supervisor/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ffd27039-f0ac-4505-8e24-80d04178a5b6",
+    "name": "PU07-Team Leader",
+    "path": "/PU07-Team Leader",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "570d811a-5991-4ee6-b1ac-8f403c21ed95",
+        "name": "TPL",
+        "path": "/PU07-Team Leader/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "6e1e8f73-ea10-4e89-bdea-fb74c8c08f71",
+            "name": "PULP",
+            "path": "/PU07-Team Leader/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "d688b710-49da-464a-a7c6-493f03a25624",
+            "name": "POWER",
+            "path": "/PU07-Team Leader/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "d9e60563-93ce-41ec-946c-6f1aeafcb3d4",
+        "name": "RZH",
+        "path": "/PU07-Team Leader/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "7eba28dc-dbdc-437d-be78-a817a287cc28",
+            "name": "POWER",
+            "path": "/PU07-Team Leader/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "1cc449dc-629f-4534-aedb-a0bdd6392159",
+            "name": "PULP",
+            "path": "/PU07-Team Leader/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "3f93862c-87c5-4190-a940-51012039d980",
+        "name": "BRC",
+        "path": "/PU07-Team Leader/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "9f83a19f-1f4b-40f7-bdc5-33c007ec4dc0",
+            "name": "PULP",
+            "path": "/PU07-Team Leader/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "ed95c866-b4f9-4677-939c-305068b8296d",
+            "name": "POWER",
+            "path": "/PU07-Team Leader/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "acfcbc76-215c-465c-91eb-1ab088d19079",
+        "name": "KRC",
+        "path": "/PU07-Team Leader/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "1e39d937-eb9f-432b-aa7d-a4a56bedca73",
+            "name": "POWER",
+            "path": "/PU07-Team Leader/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "887771b6-f6b0-43a3-996c-ae0b4b262c1a",
+            "name": "PULP",
+            "path": "/PU07-Team Leader/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eb814ffc-8381-4833-b33f-26dd7a495f52",
+    "name": "PU08-Automation",
+    "path": "/PU08-Automation",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "b0304b07-d25b-4fee-ab82-5592276b8858",
+        "name": "KRC",
+        "path": "/PU08-Automation/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "83345cf2-0436-4cdb-9c14-bd75faaae804",
+            "name": "PULP",
+            "path": "/PU08-Automation/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "ab5317dd-fdbd-4ae5-a1c2-e833b8c88cb5",
+            "name": "POWER",
+            "path": "/PU08-Automation/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "ba35f599-4d97-4750-aa03-9f18bc8489c7",
+        "name": "BRC",
+        "path": "/PU08-Automation/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "7355f323-a361-46cb-9481-db07027975b1",
+            "name": "PULP",
+            "path": "/PU08-Automation/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "d03925b8-60ec-4622-9ba9-2e67296fcb68",
+            "name": "POWER",
+            "path": "/PU08-Automation/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "f5d677ea-c1f6-404d-961e-e597dd35127e",
+        "name": "TPL",
+        "path": "/PU08-Automation/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "d9fe49d4-efcc-49ef-86c6-cde823cc5f90",
+            "name": "PULP",
+            "path": "/PU08-Automation/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "9b49f31d-331d-4064-8cd6-3b7087befc42",
+            "name": "POWER",
+            "path": "/PU08-Automation/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "65724475-2653-41de-a397-f7b9b258f69b",
+        "name": "RZH",
+        "path": "/PU08-Automation/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "8958ecf2-83ee-4269-9840-104f1926018f",
+            "name": "POWER",
+            "path": "/PU08-Automation/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "5475e73c-25cd-4e52-b6e6-91d3e7635fd2",
+            "name": "PULP",
+            "path": "/PU08-Automation/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0b659177-480a-4b22-85b3-906094b8dbc0",
+    "name": "PU09-BCID",
+    "path": "/PU09-BCID",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "248835bf-a622-490e-b783-247674553d3a",
+        "name": "TPL",
+        "path": "/PU09-BCID/TPL",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f75bee10-285f-4964-9c27-03c0ef885c8d",
+            "name": "POWER",
+            "path": "/PU09-BCID/TPL/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "4589c7d2-307d-4803-949a-d33268e9d732",
+            "name": "PULP",
+            "path": "/PU09-BCID/TPL/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "7418b830-4050-429d-a1d8-efafd18cddba",
+        "name": "KRC",
+        "path": "/PU09-BCID/KRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f472cced-5f9a-4e8b-bef6-98103962b7c8",
+            "name": "POWER",
+            "path": "/PU09-BCID/KRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "27f1db1a-064c-4676-8c61-f2056d3182ec",
+            "name": "PULP",
+            "path": "/PU09-BCID/KRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "aaacccac-aed0-4930-823f-1e8b2b19c820",
+        "name": "RZH",
+        "path": "/PU09-BCID/RZH",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "b711f223-56c3-4604-9b10-b264099b1456",
+            "name": "POWER",
+            "path": "/PU09-BCID/RZH/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "91bc7983-884a-493c-8689-a5c495bac7ed",
+            "name": "PULP",
+            "path": "/PU09-BCID/RZH/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "a7542de7-65a3-4916-816f-d916aa4ee2a6",
+        "name": "BRC",
+        "path": "/PU09-BCID/BRC",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "fe01d811-a079-4267-8684-9a3b58a5ee1d",
+            "name": "PULP",
+            "path": "/PU09-BCID/BRC/PULP",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "e5835abf-69c6-4877-a776-3de0cafb702d",
+            "name": "POWER",
+            "path": "/PU09-BCID/BRC/POWER",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "22a5a0b8-2a7f-4fbd-9177-6d7e8d16a54e",
+    "name": "ProcessEngineer",
+    "path": "/ProcessEngineer",
+    "attributes": {},
+    "realmRoles": [],
+    "clientRoles": {},
+    "subGroups": [
+      {
+        "id": "f0752f2a-b62f-4a03-be09-8143c0c32290",
+        "name": "PULP",
+        "path": "/ProcessEngineer/PULP",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "291eab5b-4b4e-4c5f-9514-af4dcf4cb299",
+            "name": "BSC",
+            "path": "/ProcessEngineer/PULP/BSC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "18da8e61-9a23-4c22-a45b-4ca42cfa2bfd",
+            "name": "KRC",
+            "path": "/ProcessEngineer/PULP/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "2d6d5ed1-58c9-418c-bbde-112b98344a71",
+            "name": "RZH",
+            "path": "/ProcessEngineer/PULP/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "96ec715e-c57f-41fa-99de-e2cc3994d233",
+            "name": "TPL",
+            "path": "/ProcessEngineer/PULP/TPL",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      },
+      {
+        "id": "31d3bd49-63d0-4d5e-8dee-5f6c9df4847b",
+        "name": "POWER",
+        "path": "/ProcessEngineer/POWER",
+        "attributes": {},
+        "realmRoles": [],
+        "clientRoles": {},
+        "subGroups": [
+          {
+            "id": "f45e16d5-d4c4-4a5b-9dd9-6a3104b5e7eb",
+            "name": "KRC",
+            "path": "/ProcessEngineer/POWER/KRC",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          },
+          {
+            "id": "3d7de7e2-9294-49f9-a795-4402d6622299",
+            "name": "RZH",
+            "path": "/ProcessEngineer/POWER/RZH",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+          }
+        ]
+      }
+    ]
+  }
+]
