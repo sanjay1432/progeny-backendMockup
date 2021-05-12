@@ -67,6 +67,7 @@ function authenticateToken(req, res, next) {
   // Gather the jwt access token from the request header
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
+  console.log({token})
   if (token == null) return res.sendStatus(401); // if there isn't any token
 
   jwt.verify(token, "duong-test", (err, user) => {
@@ -4402,6 +4403,171 @@ app.post(
 
 //End Loskcook
 
+//PROGENY
+
+
+app.get(
+  "/api/v1/general/master-data/estate",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          estate:"KLS",
+          estatefullname:"Kebuan Lokasi Satu",
+          noofestateblock:3,
+          nooftrails:3,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102a",
+            size:"123.0",
+            density:420
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:360
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KSG",
+          estatefullname:"Kebuan Lokasi Dua",
+          noofestateblock:1,
+          nooftrails:2,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KBL",
+          estatefullname:"Kebuan Lokasi Satu",
+          noofestateblock:5,
+          nooftrails:3,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        }
+      ],
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
+app.get(
+  "/api/v1/general/master-data/trial",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          estate:"KLS",
+          trialid:"001",  
+          trial:"PT01_001KPM02",
+          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
+          area: "50.50",
+          planteddate:"Dec-02",
+          nofprogeny:50,
+          nofreplicate:6,
+          soiltype:"Mineral",
+          nofplot:300,
+          nofplot_subblock:10,
+          nofsubblock:10,
+          status:"active",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KPM",
+          trialid:"002",  
+          trial:"PT02_002KPM03",
+          trialremark:"Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+          area: "50.50",
+          planteddate:"Dec-02",
+          nofprogeny:50,
+          nofreplicate:5,
+          soiltype:"Mineral",
+          nofplot:250,
+          nofplot_subblock:10,
+          nofsubblock:5,
+          status:"canceled",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"ASG",
+          trialid:"003",  
+          trial:"PT01_001KPM02",
+          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGhaand “b” Cross DelixEko",
+          area: "50.50",
+          planteddate:"Dec-02",
+          nofprogeny:10,
+          nofreplicate:7,
+          soiltype:"Mineral",
+          nofplot:250,
+          nofplot_subblock:5,
+          nofsubblock:3,
+          status:"finished",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        }
+      ],
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
 var server = app.listen(8000, function () {
   var host = server.address().address;
   var port = server.address().port;
