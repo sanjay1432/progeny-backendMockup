@@ -4457,7 +4457,403 @@ app.get(
         },
         {
           estate:"KBL",
-          estatefullname:"Kebuan Lokasi Satu",
+          estatefullname:"Kebuan Lokasi Tiga",
+          noofestateblock:4,
+          nooftrails:7,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KCL",
+          estatefullname:"Kebuan Lokasi Empat",
+          noofestateblock:9,
+          nooftrails:1,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KEL",
+          estatefullname:"Kebuan Lokasi Lima",
+          noofestateblock:2,
+          nooftrails:6,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KFL",
+          estatefullname:"Kebuan Lokasi Enam",
+          noofestateblock:6,
+          nooftrails:6,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KGQ",
+          estatefullname:"Kebuan Lokasi Lapan",
+          noofestateblock:1,
+          nooftrails:4,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KQS",
+          estatefullname:"Kebuan Lokasi Sembilan",
+          noofestateblock:1,
+          nooftrails:6,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KLG",
+          estatefullname:"Kebuan Lokasi Sepuluh",
+          noofestateblock:1,
+          nooftrails:4,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KVG",
+          estatefullname:"Kebuan Lokasi Sebelas",
+          noofestateblock:6,
+          nooftrails:2,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KZA",
+          estatefullname:"Kebuan Lokasi Dua Belas",
+          noofestateblock:2,
+          nooftrails:4,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KJV",
+          estatefullname:"Kebuan Lokasi Tiga Belas",
+          noofestateblock:7,
+          nooftrails:1,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KJV",
+          estatefullname:"Kebuan Lokasi Empat Belas",
+          noofestateblock:8,
+          nooftrails:5,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KLA",
+          estatefullname:"Kebuan Lokasi Lima Belas",
           noofestateblock:5,
           nooftrails:3,
           estateblocks: [
@@ -4492,10 +4888,190 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
-          estate:"KBC",
-          estatefullname:"Kebuan Lokasi Catu",
+          estate:"KLZ",
+          estatefullname:"Kebuan Lokasi Enam Belas",
           noofestateblock:5,
           nooftrails:3,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KPQ",
+          estatefullname:"Kebuan Tujuh Belas",
+          noofestateblock:4,
+          nooftrails:1,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KMB",
+          estatefullname:"Kebuan Lokasi Lapan Belas",
+          noofestateblock:1,
+          nooftrails:1,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KZQ",
+          estatefullname:"Kebuan Lokasi Sembilan Belas",
+          noofestateblock:2,
+          nooftrails:3,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KZF",
+          estatefullname:"Kebuan Dua Buluh",
+          noofestateblock:1,
+          nooftrails:5,
+          estateblocks: [
+          {
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KAM",
+          estatefullname:"Kebuan Lokasi Dua Puluh Satu",
+          noofestateblock:5,
+          nooftrails:5,
           estateblocks: [
           {
             estateblock:"102d",
