@@ -5446,6 +5446,653 @@ app.get(
     res.end(JSON.stringify(result));
   }
 );
+
+
+app.get(
+  "/api/v1/general/master-data/estate/estate-blocks",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          estate:"KLS",
+          
+          estateblocks: [
+          {
+            assigned: false,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102a",
+            size:"123.0",
+            density:420
+          },
+          {
+            assigned: true,
+            estateblock:"102e",
+            size:"123.0",
+            density:360
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KSG",
+         
+          estateblocks: [
+          {
+            assigned: true,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KBL",
+        
+          estateblocks: [
+          {
+            assigned: true,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KCL",
+        
+          estateblocks: [
+          {
+            assigned: true,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KEL",
+         
+          estateblocks: [
+          {
+            assigned: true,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KFL",
+        
+          estateblocks: [
+          {
+            assigned: true,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KGQ",
+         
+          estateblocks: [
+          {
+            assigned: true,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KQS",
+       
+          estateblocks: [
+          {
+            assigned: true,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: true,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KLG",
+         
+          estateblocks: [
+          {
+            assigned: false,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KVG",
+        
+          estateblocks: [
+          {
+            assigned: false,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KZA",
+      
+          estateblocks: [
+          {
+            assigned: false,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KAM",
+          estateblocks: [
+          {
+            assigned: false,
+            estateblock:"102d",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102e",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102f",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102g",
+            size:"123.0",
+            density:230
+          },
+          {
+            assigned: false,
+            estateblock:"102h",
+            size:"123.0",
+            density:230
+          }],
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        }
+      ],
+      updatedDate:"2021-05-11T02:22:39.829Z"
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
+app.put(
+  "/api/v1/general/master-data/estate/map-estate-blocks",
+  authenticateToken,
+  function (req, res) {
+    const { estate, blocks } = req.body;
+    const result = {
+      success: true,
+      data: [],
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
+//USER BLOCK
+
+app.get(
+  "/api/v1/general/master-data/userlist",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          userId:"001",
+          username:"Ali",
+          position:"Mandore",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"002",
+          username:"Aqeel",
+          position:"Mandore",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"003",
+          username:"Dexter",
+          position:"Recorder",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"004",
+          username:"Jack",
+          position:"Recorder",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"005",
+          username:"Maxwell",
+          position:"Recorder",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        }, {
+          userId:"006",
+          username:"Ahmed",
+          position:"Assistant",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"007",
+          username:"Amir",
+          position:"Assistant",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"008",
+          username:"Joe",
+          position:"Mandore",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"009",
+          username:"Smith",
+          position:"Recorder",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"010",
+          username:"Tim",
+          position:"Mandore",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          userId:"011",
+          username:"Jhon",
+          position:"Mandore",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        }
+      ],
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+app.post(
+  "/api/v1/general/master-data/user",
+  authenticateToken,
+  function (req, res) {
+    const {userId, username, position} =  req.body
+    const result = {
+      success: true,
+      data: {userId, username, position},
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+app.delete(
+  "/api/v1/general/master-data/user",
+  authenticateToken,
+  function (req, res) {
+    const {userId} =  req.body
+    const result = {
+      success: true,
+      data: {userId},
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+app.get(
+  "/api/v1/general/master-data/user-position",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          position:"Mandore",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          position:"Recorder",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          position:"Assistant",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        }
+      ],
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
 var server = app.listen(8000, function () {
   var host = server.address().address;
   var port = server.address().port;
