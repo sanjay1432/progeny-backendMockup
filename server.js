@@ -5461,21 +5461,15 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: true,
-            estateblock:"102a",
-            size:"123.0",
-            density:420
+            estateblock:"102a"
           },
           {
             assigned: true,
-            estateblock:"102e",
-            size:"123.0",
-            density:360
+            estateblock:"102e"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5488,21 +5482,15 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: false,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: false,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5515,33 +5503,23 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: true,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: true,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: false,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: false,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5554,33 +5532,23 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: false,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: false,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: false,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: true,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5593,33 +5561,23 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: true,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: true,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: true,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: true,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5632,33 +5590,23 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: false,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: false,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: false,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: false,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5671,33 +5619,23 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: false,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: false,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: false,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: false,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5710,33 +5648,23 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: true,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: true,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: true,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: false,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5749,33 +5677,23 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: false,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: false,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: false,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: false,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5788,33 +5706,23 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: false,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: false,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: false,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: false,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5827,33 +5735,23 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: false,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: false,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: false,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: false,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5865,33 +5763,23 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d",
-            size:"123.0",
-            density:230
+            estateblock:"102d"
           },
           {
             assigned: false,
-            estateblock:"102e",
-            size:"123.0",
-            density:230
+            estateblock:"102e"
           },
           {
             assigned: false,
-            estateblock:"102f",
-            size:"123.0",
-            density:230
+            estateblock:"102f"
           },
           {
             assigned: false,
-            estateblock:"102g",
-            size:"123.0",
-            density:230
+            estateblock:"102g"
           },
           {
             assigned: false,
-            estateblock:"102h",
-            size:"123.0",
-            density:230
+            estateblock:"102h"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5911,6 +5799,7 @@ app.put(
   authenticateToken,
   function (req, res) {
     const { estate, blocks } = req.body;
+    if(!estate || blocks.length === 0) return res.status(500).send("There is something wrong!")
     const result = {
       success: true,
       data: [],
