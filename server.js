@@ -5130,7 +5130,7 @@ app.get(
           nofplot:300,
           nofplot_subblock:10,
           nofsubblock:10,
-          status:"active",
+          
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5450,7 +5450,7 @@ app.get(
 
 app.get(
   "/api/v1/general/master-data/estate/estate-blocks",
-  authenticateToken,
+  //authenticateToken,
   function (req, res) {
     const result = {
       success: true,
@@ -5796,7 +5796,7 @@ app.get(
 
 app.put(
   "/api/v1/general/master-data/estate/map-estate-blocks",
-  authenticateToken,
+  //authenticateToken,
   function (req, res) {
     const { estate, blocks } = req.body;
     if(!estate || blocks.length === 0) return res.status(500).send("There is something wrong!")
@@ -5822,6 +5822,7 @@ app.get(
           userId:"001",
           username:"Ali",
           position:"Mandore",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5831,6 +5832,7 @@ app.get(
           userId:"002",
           username:"Aqeel",
           position:"Mandore",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5840,6 +5842,7 @@ app.get(
           userId:"003",
           username:"Dexter",
           position:"Recorder",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5849,6 +5852,7 @@ app.get(
           userId:"004",
           username:"Jack",
           position:"Recorder",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5858,6 +5862,7 @@ app.get(
           userId:"005",
           username:"Maxwell",
           position:"Recorder",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5866,6 +5871,7 @@ app.get(
           userId:"006",
           username:"Ahmed",
           position:"Assistant",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5875,6 +5881,7 @@ app.get(
           userId:"007",
           username:"Amir",
           position:"Assistant",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5884,6 +5891,7 @@ app.get(
           userId:"008",
           username:"Joe",
           position:"Mandore",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5893,6 +5901,7 @@ app.get(
           userId:"009",
           username:"Smith",
           position:"Recorder",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5902,6 +5911,7 @@ app.get(
           userId:"010",
           username:"Tim",
           position:"Mandore",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5911,6 +5921,7 @@ app.get(
           userId:"011",
           username:"Jhon",
           position:"Mandore",
+          status: "Active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5922,9 +5933,88 @@ app.get(
     res.end(JSON.stringify(result));
   }
 );
+
+app.get(
+  "/api/v1/general/master-data/estateAssignment",
+  authenticateToken,
+  function(req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          estate: "KLS",
+          estatefullname: "KLS",
+          noTrialOnHere: 2,
+          assignedUser: 20
+        },
+        {
+          estate: "KSG",
+          estatefullname: "KSG",
+          noTrialOnHere: 5,
+          assignedUser: 20
+        },
+        {
+          estate: "KLS",
+          estatefullname: "KLS",
+          noTrialOnHere: 6,
+          assignedUser: 20
+        }
+      ],
+    };
+    res.writeHead(200, {"content-type" : "application/json"});
+    res.end(JSON.stringify(result));
+  }
+)
+
+app.get(
+  "/api/v1/general/master-data/userAssignment",
+  //authenticationToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          userId: "001",
+          username: "Ali",
+          position: "Mandore",
+          Estate: [
+            {
+              Estate: "KLM"
+            },
+            {
+              Estate: "KLS"
+            }
+          ]
+        },
+        {
+          userId: "002",
+          username: "Aqeel",
+          position: "Mandore",
+          Estate: [
+            {
+              Estate: "KKK"
+            }
+          ]
+        },
+        {
+          userId: "003",
+          username: "Dexter",
+          position: "Recorder",
+          Estate: [
+            {
+              Estate: "KBM"
+            }
+          ]
+        }
+      ],
+    };
+    res.writeHead(200, {"Content-Type": "application/json"});
+    res.end(JSON.stringify(result));
+  }
+)
 app.post(
   "/api/v1/general/master-data/user",
-  authenticateToken,
+  //authenticateToken,
   function (req, res) {
     const {userId, username, position} =  req.body
     const result = {
@@ -5937,7 +6027,7 @@ app.post(
 );
 app.delete(
   "/api/v1/general/master-data/user",
-  authenticateToken,
+  //authenticateToken,
   function (req, res) {
     const {userId} =  req.body
     const result = {
@@ -5950,7 +6040,7 @@ app.delete(
 );
 app.get(
   "/api/v1/general/master-data/user-position",
-  authenticateToken,
+  //authenticateToken,
   function (req, res) {
     const result = {
       success: true,
