@@ -5130,7 +5130,7 @@ app.get(
           nofplot:300,
           nofplot_subblock:10,
           nofsubblock:10,
-          
+          status: "active",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5813,7 +5813,7 @@ app.put(
 
 app.get(
   "/api/v1/general/master-data/userlist",
-  authenticateToken,
+  //authenticateToken,
   function (req, res) {
     const result = {
       success: true,
@@ -5936,7 +5936,7 @@ app.get(
 
 app.get(
   "/api/v1/general/master-data/estateAssignment",
-  authenticateToken,
+  //authenticateToken,
   function(req, res) {
     const result = {
       success: true,
