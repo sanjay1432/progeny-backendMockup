@@ -666,139 +666,139 @@ app.post("/api/v1/general/login/user-login", function (req, res) {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(
       JSON.stringify({
-        userId: "7",
+        // userId: "7",
         firstName: "Aceras",
         lastName: "Admin",
         email: "aceras@opex.com",
-        phone: "",
+        // phone: "",
         username: "aceadmin",
-        address: "",
-        country: {
-          active: true,
-          countryCode: "IDN",
-          countryId: 1,
-          countryName: "Indonesia",
-          createdBy: "admin",
-          createdDate: "2019-04-25T03:11:59.208Z",
-          updatedBy: "admin",
-          updatedDate: "2019-04-25T03:11:59.208Z",
-        },
-        createdBy: "admin",
-        createdDate: "2019-06-30T16:00:00.000Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-28T06:20:46.703Z",
-        department: null,
-        originMill: 1,
-        millRoles: [
-          {
-            millRoleId: "311",
-            selectedMill: {
-              active: true,
-              millCode: "KRC",
-              millId: 1,
-              millName: "Kerinci",
-              createdBy: "admin",
-              createdDate: "2019-04-25T03:18:11.022Z",
-              updatedBy: "admin",
-              updatedDate: "2019-04-25T03:18:11.022Z",
-              country: {
-                countryId: 1,
-                countryCode: "IDN",
-                countryName: "Indonesia",
-                createdBy: "admin",
-                createdDate: "2019-04-25T03:11:59.208Z",
-                updatedBy: "admin",
-                updatedDate: "2019-04-25T03:11:59.208Z",
-              },
-            },
-            selectedUserRole: {
-              roleName: "Admin",
-              showUserManagement: true,
-              userRoleId: "1",
-            },
-          },
-          {
-            millRoleId: "312",
-            selectedMill: {
-              active: true,
-              millCode: "KRC",
-              millId: 1,
-              millName: "Kerinci",
-              createdBy: "admin",
-              createdDate: "2019-04-25T03:18:11.022Z",
-              updatedBy: "admin",
-              updatedDate: "2019-04-25T03:18:11.022Z",
-              country: {
-                countryId: 1,
-                countryCode: "IDN",
-                countryName: "Indonesia",
-                createdBy: "admin",
-                createdDate: "2019-04-25T03:11:59.208Z",
-                updatedBy: "admin",
-                updatedDate: "2019-04-25T03:11:59.208Z",
-              },
-            },
-            selectedUserRole: {
-              roleName: "Admin",
-              showUserManagement: true,
-              userRoleId: "1",
-            },
-          },
-          {
-            millRoleId: "313",
-            selectedMill: {
-              active: true,
-              millCode: "KRC",
-              millId: 1,
-              millName: "Kerinci",
-              createdBy: "admin",
-              createdDate: "2019-04-25T03:18:11.022Z",
-              updatedBy: "admin",
-              updatedDate: "2019-04-25T03:18:11.022Z",
-              country: {
-                countryId: 1,
-                countryCode: "IDN",
-                countryName: "Indonesia",
-                createdBy: "admin",
-                createdDate: "2019-04-25T03:11:59.208Z",
-                updatedBy: "admin",
-                updatedDate: "2019-04-25T03:11:59.208Z",
-              },
-            },
-            selectedUserRole: {
-              roleName: "Admin",
-              showUserManagement: true,
-              userRoleId: "1",
-            },
-          },
-          {
-            millRoleId: "314",
-            selectedMill: {
-              active: true,
-              millCode: "KRC",
-              millId: 1,
-              millName: "Kerinci",
-              createdBy: "admin",
-              createdDate: "2019-04-25T03:18:11.022Z",
-              updatedBy: "admin",
-              updatedDate: "2019-04-25T03:18:11.022Z",
-              country: {
-                countryId: 1,
-                countryCode: "IDN",
-                countryName: "Indonesia",
-                createdBy: "admin",
-                createdDate: "2019-04-25T03:11:59.208Z",
-                updatedBy: "admin",
-                updatedDate: "2019-04-25T03:11:59.208Z",
-              },
-            },
-            selectedUserRole: {
-              roleName: "Admin",
-              showUserManagement: true,
-              userRoleId: "1",
-            },
-          },
-        ],
+        // address: "",
+        // country: {
+        //   active: true,
+        //   countryCode: "IDN",
+        //   countryId: 1,
+        //   countryName: "Indonesia",
+        //   createdBy: "admin",
+        //   createdDate: "2019-04-25T03:11:59.208Z",
+        //   updatedBy: "admin",
+        //   updatedDate: "2019-04-25T03:11:59.208Z",
+        // },
+        // createdBy: "admin",
+        // createdDate: "2019-06-30T16:00:00.000Z",
+        // updatedBy: "aceadmin",
+        // updatedDate: "2020-05-28T06:20:46.703Z",
+        // department: null,
+        // originMill: 1,
+        // millRoles: [
+        //   {
+        //     millRoleId: "311",
+        //     selectedMill: {
+        //       active: true,
+        //       millCode: "KRC",
+        //       millId: 1,
+        //       millName: "Kerinci",
+        //       createdBy: "admin",
+        //       createdDate: "2019-04-25T03:18:11.022Z",
+        //       updatedBy: "admin",
+        //       updatedDate: "2019-04-25T03:18:11.022Z",
+        //       country: {
+        //         countryId: 1,
+        //         countryCode: "IDN",
+        //         countryName: "Indonesia",
+        //         createdBy: "admin",
+        //         createdDate: "2019-04-25T03:11:59.208Z",
+        //         updatedBy: "admin",
+        //         updatedDate: "2019-04-25T03:11:59.208Z",
+        //       },
+        //     },
+        //     selectedUserRole: {
+        //       roleName: "Admin",
+        //       showUserManagement: true,
+        //       userRoleId: "1",
+        //     },
+        //   },
+        //   {
+        //     millRoleId: "312",
+        //     selectedMill: {
+        //       active: true,
+        //       millCode: "KRC",
+        //       millId: 1,
+        //       millName: "Kerinci",
+        //       createdBy: "admin",
+        //       createdDate: "2019-04-25T03:18:11.022Z",
+        //       updatedBy: "admin",
+        //       updatedDate: "2019-04-25T03:18:11.022Z",
+        //       country: {
+        //         countryId: 1,
+        //         countryCode: "IDN",
+        //         countryName: "Indonesia",
+        //         createdBy: "admin",
+        //         createdDate: "2019-04-25T03:11:59.208Z",
+        //         updatedBy: "admin",
+        //         updatedDate: "2019-04-25T03:11:59.208Z",
+        //       },
+        //     },
+        //     selectedUserRole: {
+        //       roleName: "Admin",
+        //       showUserManagement: true,
+        //       userRoleId: "1",
+        //     },
+        //   },
+        //   {
+        //     millRoleId: "313",
+        //     selectedMill: {
+        //       active: true,
+        //       millCode: "KRC",
+        //       millId: 1,
+        //       millName: "Kerinci",
+        //       createdBy: "admin",
+        //       createdDate: "2019-04-25T03:18:11.022Z",
+        //       updatedBy: "admin",
+        //       updatedDate: "2019-04-25T03:18:11.022Z",
+        //       country: {
+        //         countryId: 1,
+        //         countryCode: "IDN",
+        //         countryName: "Indonesia",
+        //         createdBy: "admin",
+        //         createdDate: "2019-04-25T03:11:59.208Z",
+        //         updatedBy: "admin",
+        //         updatedDate: "2019-04-25T03:11:59.208Z",
+        //       },
+        //     },
+        //     selectedUserRole: {
+        //       roleName: "Admin",
+        //       showUserManagement: true,
+        //       userRoleId: "1",
+        //     },
+        //   },
+        //   {
+        //     millRoleId: "314",
+        //     selectedMill: {
+        //       active: true,
+        //       millCode: "KRC",
+        //       millId: 1,
+        //       millName: "Kerinci",
+        //       createdBy: "admin",
+        //       createdDate: "2019-04-25T03:18:11.022Z",
+        //       updatedBy: "admin",
+        //       updatedDate: "2019-04-25T03:18:11.022Z",
+        //       country: {
+        //         countryId: 1,
+        //         countryCode: "IDN",
+        //         countryName: "Indonesia",
+        //         createdBy: "admin",
+        //         createdDate: "2019-04-25T03:11:59.208Z",
+        //         updatedBy: "admin",
+        //         updatedDate: "2019-04-25T03:11:59.208Z",
+        //       },
+        //     },
+        //     selectedUserRole: {
+        //       roleName: "Admin",
+        //       showUserManagement: true,
+        //       userRoleId: "1",
+        //     },
+        //   },
+        // ],
         token: token,
       })
     );
@@ -4407,7 +4407,7 @@ app.post(
 
 
 app.get(
-  "/api/v1/general/master-data/estate",
+  "/admin/estate",
   authenticateToken,
   function (req, res) {
     const result = {
@@ -5111,7 +5111,7 @@ app.get(
 );
 
 app.get(
-  "/api/v1/general/master-data/trial",
+  "/admin/trial",
   authenticateToken,
   function (req, res) {
     const result = {
@@ -5182,7 +5182,7 @@ app.get(
 );
 
 app.get(
-  "/api/v1/general/master-data/plot",
+  "/admin/plot",
   authenticateToken,
   function (req, res) {
     const result = {
@@ -5276,7 +5276,7 @@ app.get(
 );
 
 app.get(
-  "/api/v1/general/master-data/palm",
+  "/admin/palm",
   authenticateToken,
   function (req, res) {
     const result = {
@@ -5350,7 +5350,7 @@ app.get(
 );
 
 app.get(
-  "/api/v1/general/master-data/progeny",
+  "/admin/progeny",
   authenticateToken,
   function (req, res) {
     const result = {
@@ -5449,7 +5449,7 @@ app.get(
 
 
 app.get(
-  "/api/v1/general/master-data/estate/estate-blocks",
+  "/admin/estate/estate-blocks",
   authenticateToken,
   function (req, res) {
     const result = {
@@ -5795,7 +5795,7 @@ app.get(
 );
 
 app.put(
-  "/api/v1/general/master-data/estate/map-estate-blocks",
+  "/admin/estate/map-estate-blocks",
   authenticateToken,
   function (req, res) {
     const { estate, blocks } = req.body;
@@ -5812,7 +5812,7 @@ app.put(
 //USER BLOCK
 
 app.get(
-  "/api/v1/general/master-data/userlist",
+  "/admin/userlist",
   authenticateToken,
   function (req, res) {
     const result = {
@@ -5923,7 +5923,7 @@ app.get(
   }
 );
 app.post(
-  "/api/v1/general/master-data/user",
+  "/admin/user",
   authenticateToken,
   function (req, res) {
     const {userId, username, position} =  req.body
@@ -5936,7 +5936,7 @@ app.post(
   }
 );
 app.delete(
-  "/api/v1/general/master-data/user",
+  "/admin/user",
   authenticateToken,
   function (req, res) {
     const {userId} =  req.body
@@ -5949,7 +5949,7 @@ app.delete(
   }
 );
 app.get(
-  "/api/v1/general/master-data/user-position",
+  "/admin/user-position",
   authenticateToken,
   function (req, res) {
     const result = {
