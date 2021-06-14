@@ -5461,15 +5461,18 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: true,
-            estateblock:"102a"
+            estateblock:"102a",
+            soiltype:"Alluvial"
           },
           {
             assigned: true,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5482,15 +5485,18 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5503,23 +5509,28 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: true,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: true,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5532,23 +5543,28 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: true,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5561,23 +5577,28 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: true,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: true,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: true,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: true,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5590,23 +5611,28 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5619,23 +5645,28 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5648,23 +5679,28 @@ app.get(
           estateblocks: [
           {
             assigned: true,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: true,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: true,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: true,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5677,23 +5713,28 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5706,23 +5747,28 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5735,23 +5781,28 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5763,23 +5814,28 @@ app.get(
           estateblocks: [
           {
             assigned: false,
-            estateblock:"102d"
+            estateblock:"102d",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102e"
+            estateblock:"102e",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102f"
+            estateblock:"102f",
+            soiltype:"Minerals"
           },
           {
             assigned: false,
-            estateblock:"102g"
+            estateblock:"102g",
+            soiltype:"Inland"
           },
           {
             assigned: false,
-            estateblock:"102h"
+            estateblock:"102h",
+            soiltype:"Alluvial"
           }],
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -5809,6 +5865,40 @@ app.put(
   }
 );
 
+app.get(
+  "/admin/design",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          design:"Alpha Design",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          design:"RCBD",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          design:"identified plot",
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        }
+      ],
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
 //USER BLOCK
 
 app.get(
@@ -5977,6 +6067,23 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         }
       ],
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
+
+//TRIAL
+
+app.post(
+  "/admin/trial",
+  authenticateToken,
+  function (req, res) {
+    
+    const result = {
+      success: true,
+      data: null,
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
