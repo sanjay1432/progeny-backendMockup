@@ -6089,6 +6089,91 @@ app.post(
     res.end(JSON.stringify(result));
   }
 );
+
+
+app.get(
+  "/admin/trial/replicates/:trialid",
+  authenticateToken,
+  function (req, res) {
+    const trialId =  req.params.trialid;
+    const trials = [
+      {
+        estate:"KLS",
+        trialid:"001",  
+        trial:"PT01_001KPM02",
+        trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
+        area: "50.50",
+        planteddate:"Dec-02",
+        nofprogeny:50,
+        nofreplicate:6,
+        soiltype:"Mineral",
+        nofplot:300,
+        nofplot_subblock:10,
+        nofsubblock:10,
+        status:"active",
+        createdBy: "acerasadmin",
+        createdDate: "2020-04-28T07:19:30.646Z",
+        updatedBy: "aceadmin",
+        updatedDate: "2020-05-11T02:22:39.829Z",
+      },
+      {
+        estate:"KPM",
+        trialid:"002",  
+        trial:"PT02_002KPM03",
+        trialremark:"Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+        area: "50.50",
+        planteddate:"Dec-02",
+        nofprogeny:50,
+        nofreplicate:5,
+        soiltype:"Mineral",
+        nofplot:250,
+        nofplot_subblock:10,
+        nofsubblock:5,
+        status:"canceled",
+        createdBy: "acerasadmin",
+        createdDate: "2020-04-28T07:19:30.646Z",
+        updatedBy: "aceadmin",
+        updatedDate: "2020-05-11T02:22:39.829Z",
+      },
+      {
+        estate:"ASG",
+        trialid:"003",  
+        trial:"PT01_001KPM02",
+        trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGhaand “b” Cross DelixEko",
+        area: "50.50",
+        planteddate:"Dec-02",
+        nofprogeny:10,
+        nofreplicate:7,
+        soiltype:"Mineral",
+        nofplot:250,
+        nofplot_subblock:5,
+        nofsubblock:3,
+        status:"finished",
+        createdBy: "acerasadmin",
+        createdDate: "2020-04-28T07:19:30.646Z",
+        updatedBy: "aceadmin",
+        updatedDate: "2020-05-11T02:22:39.829Z",
+      }
+    ];
+  
+    const trial =  trials.find((t)=> t.trialid === trialId)
+    const replicates = []
+    for(let i = 1; i<= trial.nofreplicate; i++){
+         const rep = {
+          replicate: i,
+          estateblock:"102e",
+          density: "123",
+          design:"Alhpa Design",
+          soiltype:"Mineral"
+         }
+         replicates.push(rep)
+    }
+
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(replicates));
+  }
+);
+
 var server = app.listen(8000, function () {
   var host = server.address().address;
   var port = server.address().port;
