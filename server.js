@@ -5891,6 +5891,7 @@ app.get(
           nofplot_subblock:10,
           nofsubblock:5,
           status:"canceled",
+          design: "Alhpa Design",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5909,6 +5910,7 @@ app.get(
           nofplot:250,
           nofplot_subblock:5,
           nofsubblock:3,
+          design: "Alhpa Design",
           status:"finished",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -7149,6 +7151,19 @@ app.post(
   }
 );
 
+app.put(
+  "/admin/trial",
+  authenticateToken,
+  function (req, res) {
+    
+    const result = {
+      success: true,
+      data: null,
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
 
 app.get(
   "/admin/trial/replicates/:trialid",
@@ -7167,9 +7182,10 @@ app.get(
         nofreplicate:6,
         soiltype:"Mineral",
         nofplot:300,
-        nofplot_subblock:10,
+        nofplot_subblock:5,
         nofsubblock:10,
         status:"active",
+        design: "Alhpa Design",
         createdBy: "acerasadmin",
         createdDate: "2020-04-28T07:19:30.646Z",
         updatedBy: "aceadmin",
@@ -7185,8 +7201,9 @@ app.get(
         nofprogeny:50,
         nofreplicate:5,
         soiltype:"Mineral",
-        nofplot:250,
+        nofplot:5,
         nofplot_subblock:10,
+        design: "Alhpa Design",
         nofsubblock:5,
         status:"canceled",
         createdBy: "acerasadmin",
@@ -7201,11 +7218,12 @@ app.get(
         trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGhaand “b” Cross DelixEko",
         area: "50.50",
         planteddate:"Dec-02",
-        nofprogeny:10,
+        nofprogeny:50,
         nofreplicate:7,
         soiltype:"Mineral",
-        nofplot:250,
+        nofplot:10,
         nofplot_subblock:5,
+        design: "Alhpa Design",
         nofsubblock:3,
         status:"finished",
         createdBy: "acerasadmin",
@@ -7221,6 +7239,7 @@ app.get(
     for(let i = 1; i<= trial.nofreplicate; i++){
          const rep = {
           replicate: i,
+          estate: trial.estate,
           estateblock:"102e",
           density: "123",
           design:"Alhpa Design",
@@ -7228,9 +7247,9 @@ app.get(
          }
          replicates.push(rep)
     }
-
+    trial["replicates"] =  replicates
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify(replicates));
+    res.end(JSON.stringify(trial));
   }
 );
 
