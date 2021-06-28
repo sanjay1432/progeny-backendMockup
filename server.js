@@ -5945,7 +5945,27 @@ app.get(
           ortet:"C9212.57",
           fp:"C 27,36",
           mp:"C 27,2489",
-          noofPalm:"16",
+          noofPalm:16,
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KPP",
+          trialid:"001", 
+          replicate:6, 
+          estateblock:"102e",
+          design:"Alpha Design",
+          density:136,
+          plot:"Plot 2",
+          subblock:5,
+          progenyId: "D001",
+          progeny:"Ce 1.1",
+          ortet:"C9212.57",
+          fp:"C 27,36",
+          mp:"C 27,2489",
+          noofPalm:16,
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5965,7 +5985,27 @@ app.get(
           ortet:"C9212.57",
           fp:"C 27,36",
           mp:"C 27,2489",
-          noofPalm:"16",
+          noofPalm:16,
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
+          estate:"KBP",
+          trialid:"002", 
+          replicate:6, 
+          estateblock:"102e",
+          design:"Alpha Design",
+          density:136,
+          plot:"Plot 2",
+          subblock:4,
+          progenyId: "D002",
+          progeny:"Ce 1.1",
+          ortet:"C9212.57",
+          fp:"C 27,36",
+          mp:"C 27,2489",
+          noofPalm:16,
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -5973,7 +6013,7 @@ app.get(
         },
         {
           estate:"KLS",
-          trialid:"019", 
+          trialid:"003", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
@@ -5992,8 +6032,28 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estate:"KOL",
+          trialid:"003", 
+          replicate:6, 
+          estateblock:"102e",
+          design:"Alpha Design",
+          density:136,
+          plot:"Plot 3",
+          subblock:6,
+          progenyId: "D003",
+          progeny:"Ce 1.1",
+          ortet:"C9212.57",
+          fp:"C 27,36",
+          mp:"C 27,2489",
+          noofPalm:16,
+          createdBy: "acerasadmin",
+          createdDate: "2020-04-28T07:19:30.646Z",
+          updatedBy: "aceadmin",
+          updatedDate: "2020-05-11T02:22:39.829Z",
+        },
+        {
           estate:"KLS",
-          trialid:"020", 
+          trialid:"004", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
@@ -6005,7 +6065,7 @@ app.get(
           ortet:"C9212.57",
           fp:"C 27,36",
           mp:"C 27,2489",
-          noofPalm:"16",
+          noofPalm:16,
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
           updatedBy: "aceadmin",
@@ -6020,7 +6080,7 @@ app.get(
 
 app.get(
   "/admin/plot/qrcode/:trialid",
-  //authenticateToken,
+  authenticateToken,
   function(req, res) {
     const trialId = req.params.trialid;
     const trialReq = [
@@ -6108,47 +6168,47 @@ app.get(
     const palm = [
       {
         plot:"Plot 1",
-        palmno:1,
+        palmno:"1",
         palmname:"Palm1",
       },
       {
         plot:"Plot 1",
-        palmno:2,
+        palmno:"2",
         palmname:"Palm2",
       },
       {
         plot:"Plot 1",
-        palmno:3,
+        palmno:"3",
         palmname:"Palm3",
       },
       {
         plot:"Plot 1",
-        palmno:4,
+        palmno:"4",
         palmname:"Palm4",
       },
       {
         plot:"Plot 1",
-        palmno:5,
+        palmno:"5",
         palmname:"Palm5",
       },
       {
         plot:"Plot 1",
-        palmno:6,
+        palmno:"6",
         palmname:"Palm6",
       },
       {
         plot:"Plot 2",
-        palmno:4,
+        palmno:"4",
         palmname:"Palm4",
       },
       {
         plot:"Plot 2",
-        palmno:5,
+        palmno:"5",
         palmname:"Palm5",
       },
       {
         plot:"Plot 2",
-        palmno:6,
+        palmno:"6",
         palmname:"Palm6",
       }
     ];
@@ -6158,6 +6218,72 @@ app.get(
     const result = palm.filter(palm => palm.plot === meetPlot.plot)
     
     res.writeHead(200, { "Content-Type" : "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
+app.get(
+  "/admin/plot/PalmInformation",
+  authenticateToken,
+  function (req, res) {
+    const result = [
+        {
+          trialid:"001", 
+          estate: "KLS",
+          replicate:6, 
+          estateblock:"102e",
+          plot:"Plot 1",
+          palmNum:"16",
+          palmName: "hello1",
+          
+        },
+        {
+          trialid:"001", 
+          estate: "KGP",
+          replicate:2, 
+          estateblock:"102e",
+          plot:"Plot 2",
+          palmNum:"12",
+          palmName: "hello2",
+        },
+        {
+          trialid:"001", 
+          estate: "KOP",
+          replicate:3, 
+          estateblock:"102e",
+          plot:"Plot 3",
+          palmNum:"14",
+          palmName: "hello3",
+        },
+        {
+          trialid:"001", 
+          estate: "KOP",
+          replicate:6, 
+          estateblock:"102e",
+          plot:"Plot 3",
+          palmNum:"14",
+          palmName: "hello3",
+        },
+        {
+          trialid:"002", 
+          estate: "KGL",
+          replicate:4, 
+          estateblock:"102e",
+          plot:"Plot 4",
+          palmNum:"11",
+          palmName: "hello4",
+        },
+        {
+          trialid:"003", 
+          estate: "KGG",
+          replicate:5, 
+          estateblock:"102e",
+          plot:"Plot 5",
+          palmNum:"11",
+          palmName: "hello4",
+        },
+      ]
+    res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
   }
 );
