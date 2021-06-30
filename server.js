@@ -20,38 +20,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("/opex/login", (req, res) => {
-  const username = "duong";
-  let payload = { username: username };
-  setTimeout(() => {
-    const token = jwt.sign(payload, "duong-test-sso-key", { expiresIn: "10s" });
-    res.redirect(
-      `http://localhost:3000/dmp/#/login?username=${username}&token=${token}`
-    );
-  }, 1000);
-});
-
-app.get("/sso/opex/login", (req, res) => {
-  const username = "duong";
-  let payload = { username: username };
-  const token = jwt.sign(payload, "duong-test-sso-key", { expiresIn: "10s" });
-  res.redirect(
-    `http://localhost:5000/#/login?username=${username}&token=${token}`
-  );
-});
-
-function authenticateTokenSSO(req, res, next) {
-  // Gather the jwt access token from the request header
-  const token = req.body["ssoToken"];
-  if (token == null) return res.sendStatus(401); // if there isn't any token
-
-  jwt.verify(token, "duong-test-sso-key", (err, user) => {
-    console.log(err);
-    if (err) return res.sendStatus(401);
-    req.user = user;
-    next(); // pass the execution off to whatever request the client intended
-  });
-}
 
 function authenticateToken(req, res, next) {
   // Gather the jwt access token from the request header
@@ -66,6 +34,141 @@ function authenticateToken(req, res, next) {
     req.user = user;
     next(); // pass the execution off to whatever request the client intended
   });
+}
+
+
+function getTrials () {
+  const trials = [
+    {
+      estate:"KLS",
+      trialId:1,  
+      trialCode:"001", 
+      trial:"PT01_001KPM02",
+      trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
+      area: "50.50",
+      planteddate:"Dec-02",
+      nofprogeny:50,
+      nofreplicate:6,
+      soiltype:"Mineral",
+      nofplot:300,
+      nofplot_subblock:5,
+      nofsubblock:10,
+      status:"active",
+      design: "Alhpa Design",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate:"KPM",
+      trialId:2,  
+      trialCode:"002", 
+      trial:"PT02_002KPM03",
+      trialremark:"Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: "50.50",
+      planteddate:"Dec-02",
+      nofprogeny:2,
+      nofreplicate:2,
+      soiltype:"Mineral",
+      nofplot:4,
+      nofplot_subblock:1,
+      design: "Alhpa Design",
+      nofsubblock:2,
+      status:"canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate:"ASG",
+      trialId:3,  
+      trialCode:"003", 
+      trial:"PT01_001KPM02",
+      trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGhaand “b” Cross DelixEko",
+      area: "50.50",
+      planteddate:"Dec-02",
+      nofprogeny:50,
+      nofreplicate:7,
+      soiltype:"Mineral",
+      nofplot:350,
+      nofplot_subblock:5,
+      design: "Alhpa Design",
+      nofsubblock:3,
+      status:"finished",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate:"KLS",
+      trialId:4,  
+      trialCode:"004",   
+      trial:"PT01_001KPM05",
+      trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
+      area: "50.50",
+      planteddate:"Feb-03",
+      nofprogeny:100,
+      nofreplicate:600,
+      soiltype:"Mineral",
+      nofplot:1,
+      nofplot_subblock:4,
+      nofsubblock:2,
+      isEditable:true,
+      status: "finished",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate:"KPM",
+      trialId:5,  
+      trialCode:"005",  
+      trial:"PT02_002KPM03",
+      trialremark:"Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: "50.50",
+      planteddate:"Dec-02",
+      nofprogeny:50,
+      nofreplicate:5,
+      soiltype:"Mineral",
+      nofplot:250,
+      nofplot_subblock:10,
+      nofsubblock:5,
+      isEditable:true,
+      status:"canceled",
+      design: "Alhpa Design",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate:"ASG",
+      trialId:6,  
+      trialCode:"006", 
+      trial:"PT01_001KPM02",
+      trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGhaand “b” Cross DelixEko",
+      area: "50.50",
+      planteddate:"Dec-02",
+      nofprogeny:10,
+      nofreplicate:7,
+      soiltype:"Mineral",
+      nofplot:250,
+      nofplot_subblock:5,
+      nofsubblock:3,
+      isEditable:true,
+      design: "Alhpa Design",
+      status:"finished",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    }
+  ];
+  return trials;
 }
 
 app.post("/api/v1/general/login/user-login", function (req, res) {
@@ -122,22 +225,26 @@ app.get(
       success: true,
       data: [
         {
+          estateId:1,
           estate:"KLS",
           estatefullname:"Kebuan Lokasi Satu",
           noofestateblock:3,
           nooftrails:3,
           estateblocks: [
           {
+            blockId:1,
             estateblock:"102d",
             size:"123.0",
             density:230
           },
           {
+            blockId:2,
             estateblock:"102a",
             size:"123.0",
             density:420
           },
           {
+            blockId:3,
             estateblock:"102e",
             size:"123.0",
             density:360
@@ -148,12 +255,14 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:2,
           estate:"KSG",
           estatefullname:"Kebuan Lokasi Dua",
           noofestateblock:1,
           nooftrails:2,
           estateblocks: [
           {
+            blockId:1,
             estateblock:"102d",
             size:"123.0",
             density:230
@@ -164,32 +273,38 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:3,
           estate:"KBL",
           estatefullname:"Kebuan Lokasi Tiga",
           noofestateblock:4,
           nooftrails:7,
           estateblocks: [
           {
+            blockId:1,
             estateblock:"102d",
             size:"123.0",
             density:230
           },
           {
+            blockId:2,
             estateblock:"102e",
             size:"123.0",
             density:230
           },
           {
+            blockId:3,
             estateblock:"102f",
             size:"123.0",
             density:230
           },
           {
+            blockId:4,
             estateblock:"102g",
             size:"123.0",
             density:230
           },
           {
+            blockId:5,
             estateblock:"102h",
             size:"123.0",
             density:230
@@ -200,68 +315,38 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
-          estate:"KCL",
-          estatefullname:"Kebuan Lokasi Empat",
-          noofestateblock:9,
-          nooftrails:1,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
+          estateId:4,
           estate:"KEL",
           estatefullname:"Kebuan Lokasi Lima",
           noofestateblock:2,
           nooftrails:6,
           estateblocks: [
           {
+            blockId:1,
             estateblock:"102d",
             size:"123.0",
             density:230
           },
           {
+            blockId:2,
             estateblock:"102e",
             size:"123.0",
             density:230
           },
           {
+            blockId:3,
             estateblock:"102f",
             size:"123.0",
             density:230
           },
           {
+            blockId:4,
             estateblock:"102g",
             size:"123.0",
             density:230
           },
           {
+            blockId:5,
             estateblock:"102h",
             size:"123.0",
             density:230
@@ -272,32 +357,38 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:5,
           estate:"KFL",
           estatefullname:"Kebuan Lokasi Enam",
           noofestateblock:6,
           nooftrails:6,
           estateblocks: [
           {
+            blockId:1,
             estateblock:"102d",
             size:"123.0",
             density:230
           },
           {
+            blockId:2,
             estateblock:"102e",
             size:"123.0",
             density:230
           },
           {
+            blockId:3,
             estateblock:"102f",
             size:"123.0",
             density:230
           },
           {
+            blockId:4,
             estateblock:"102g",
             size:"123.0",
             density:230
           },
           {
+            blockId:5,
             estateblock:"102h",
             size:"123.0",
             density:230
@@ -308,32 +399,38 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:6,
           estate:"KGQ",
           estatefullname:"Kebuan Lokasi Lapan",
           noofestateblock:1,
           nooftrails:4,
           estateblocks: [
           {
+            blockId:1,
             estateblock:"102d",
             size:"123.0",
             density:230
           },
           {
+            blockId:2,
             estateblock:"102e",
             size:"123.0",
             density:230
           },
           {
+            blockId:3,
             estateblock:"102f",
             size:"123.0",
             density:230
           },
           {
+            blockId:4,
             estateblock:"102g",
             size:"123.0",
             density:230
           },
           {
+            blockId:5,
             estateblock:"102h",
             size:"123.0",
             density:230
@@ -344,464 +441,38 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:7,
           estate:"KQS",
           estatefullname:"Kebuan Lokasi Sembilan",
           noofestateblock:1,
           nooftrails:6,
           estateblocks: [
           {
+            blockId:1,
             estateblock:"102d",
             size:"123.0",
             density:230
           },
           {
+            blockId:2,
             estateblock:"102e",
             size:"123.0",
             density:230
           },
           {
+            blockId:3,
             estateblock:"102f",
             size:"123.0",
             density:230
           },
           {
+            blockId:4,
             estateblock:"102g",
             size:"123.0",
             density:230
           },
           {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLG",
-          estatefullname:"Kebuan Lokasi Sepuluh",
-          noofestateblock:1,
-          nooftrails:4,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KVG",
-          estatefullname:"Kebuan Lokasi Sebelas",
-          noofestateblock:6,
-          nooftrails:2,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KZA",
-          estatefullname:"Kebuan Lokasi Dua Belas",
-          noofestateblock:2,
-          nooftrails:4,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KJV",
-          estatefullname:"Kebuan Lokasi Tiga Belas",
-          noofestateblock:7,
-          nooftrails:1,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KJV",
-          estatefullname:"Kebuan Lokasi Empat Belas",
-          noofestateblock:8,
-          nooftrails:5,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLA",
-          estatefullname:"Kebuan Lokasi Lima Belas",
-          noofestateblock:5,
-          nooftrails:3,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLZ",
-          estatefullname:"Kebuan Lokasi Enam Belas",
-          noofestateblock:5,
-          nooftrails:3,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KPQ",
-          estatefullname:"Kebuan Tujuh Belas",
-          noofestateblock:4,
-          nooftrails:1,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KMB",
-          estatefullname:"Kebuan Lokasi Lapan Belas",
-          noofestateblock:1,
-          nooftrails:1,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KZQ",
-          estatefullname:"Kebuan Lokasi Sembilan Belas",
-          noofestateblock:2,
-          nooftrails:3,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KZF",
-          estatefullname:"Kebuan Dua Buluh",
-          noofestateblock:1,
-          nooftrails:5,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102h",
-            size:"123.0",
-            density:230
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KAM",
-          estatefullname:"Kebuan Lokasi Dua Puluh Satu",
-          noofestateblock:5,
-          nooftrails:5,
-          estateblocks: [
-          {
-            estateblock:"102d",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102e",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102f",
-            size:"123.0",
-            density:230
-          },
-          {
-            estateblock:"102g",
-            size:"123.0",
-            density:230
-          },
-          {
+            blockId:5,
             estateblock:"102h",
             size:"123.0",
             density:230
@@ -822,810 +493,10 @@ app.get(
   "/admin/trial",
   authenticateToken,
   function (req, res) {
+    const trials =  getTrials()
     const result = {
       success: true,
-      data: [
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:300,
-          nofplot_subblock:10,
-          nofsubblock:10,
-          status: "active",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"002",  
-          trial:"PT01_001KPM78",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Jan-01",
-          nofprogeny:1,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:3,
-          nofplot_subblock:2,
-          nofsubblock:5,
-          status: "canceled",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:300,
-          nofplot_subblock:10,
-          nofsubblock:10,
-          status: "active",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM78",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Jan-01",
-          nofprogeny:1,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:3,
-          nofplot_subblock:2,
-          nofsubblock:5,
-          status: "canceled",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:300,
-          nofplot_subblock:10,
-          nofsubblock:10,
-          status: "active",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM78",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Jan-01",
-          nofprogeny:1,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:3,
-          nofplot_subblock:2,
-          nofsubblock:5,
-          status: "canceled",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:300,
-          nofplot_subblock:10,
-          nofsubblock:10,
-          status: "active",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM78",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Jan-01",
-          nofprogeny:1,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:3,
-          nofplot_subblock:2,
-          nofsubblock:5,
-          status: "canceled",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:300,
-          nofplot_subblock:10,
-          nofsubblock:10,
-          status: "active",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM78",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Jan-01",
-          nofprogeny:1,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:3,
-          nofplot_subblock:2,
-          nofsubblock:5,
-          status: "canceled",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:300,
-          nofplot_subblock:10,
-          nofsubblock:10,
-          status: "active",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM78",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Jan-01",
-          nofprogeny:1,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:3,
-          nofplot_subblock:2,
-          nofsubblock:5,
-          status: "canceled",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:300,
-          nofplot_subblock:10,
-          nofsubblock:10,
-          status: "active",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM78",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Jan-01",
-          nofprogeny:1,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:3,
-          nofplot_subblock:2,
-          nofsubblock:5,
-          status: "canceled",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:300,
-          nofplot_subblock:10,
-          nofsubblock:10,
-          status: "active",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"001",  
-          trial:"PT01_001KPM78",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Jan-01",
-          nofprogeny:1,
-          nofreplicate:6,
-          soiltype:"Mineral",
-          nofplot:3,
-          nofplot_subblock:2,
-          nofsubblock:5,
-          status: "canceled",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"017",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLS",
-          trialid:"020",  
-          trial:"PT01_001KPM05",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Feb-03",
-          nofprogeny:100,
-          nofreplicate:600,
-          soiltype:"Mineral",
-          nofplot:1,
-          nofplot_subblock:4,
-          nofsubblock:2,
-          status: "finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KPM",
-          trialid:"018",  
-          trial:"PT02_002KPM03",
-          trialremark:"Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:50,
-          nofreplicate:5,
-          soiltype:"Mineral",
-          nofplot:250,
-          nofplot_subblock:10,
-          nofsubblock:5,
-          status:"canceled",
-          design: "Alhpa Design",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"ASG",
-          trialid:"020",  
-          trial:"PT01_001KPM02",
-          trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGhaand “b” Cross DelixEko",
-          area: "50.50",
-          planteddate:"Dec-02",
-          nofprogeny:10,
-          nofreplicate:7,
-          soiltype:"Mineral",
-          nofplot:250,
-          nofplot_subblock:5,
-          nofsubblock:3,
-          design: "Alhpa Design",
-          status:"finished",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        }
-      ],
+      data: trials
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
@@ -1640,15 +511,16 @@ app.get(
       success: true,
       data: [
         {
+          plotId:1,
           estate:"KLS",
-          trialid:"001", 
+          trialCode:"001", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
           density:136,
           plot:"Plot 1",
           subblock:5,
-          progenyId: "D001",
+          progenyCode: "D001",
           progeny:"Ce 1.1",
           ortet:"C9212.57",
           fp:"C 27,36",
@@ -1680,15 +552,16 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          plotId:2,
           estate:"KLS",
-          trialid:"002", 
+          trialCode:"002", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
           density:136,
           plot:"Plot 2",
           subblock:4,
-          progenyId: "D002",
+          progenyCode: "D002",
           progeny:"Ce 1.1",
           ortet:"C9212.57",
           fp:"C 27,36",
@@ -1720,15 +593,16 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          plotId:3,
           estate:"KLS",
-          trialid:"003", 
+          trialCode:"019", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
           density:136,
           plot:"Plot 3",
           subblock:6,
-          progenyId: "D003",
+          progenyCode: "D003",
           progeny:"Ce 1.1",
           ortet:"C9212.57",
           fp:"C 27,36",
@@ -1740,35 +614,16 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
-          estate:"KOL",
-          trialid:"003", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 3",
-          subblock:6,
-          progenyId: "D003",
-          progeny:"Ce 1.1",
-          ortet:"C9212.57",
-          fp:"C 27,36",
-          mp:"C 27,2489",
-          noofPalm:16,
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
+          plotId:4,
           estate:"KLS",
-          trialid:"004", 
+          trialCode:"020", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
           density:136,
           plot:"Plot 4",
           subblock:3,
-          progenyId: "D004",
+          progenyCode: "D004",
           progeny:"Ce 1.1",
           ortet:"C9212.57",
           fp:"C 27,36",
@@ -1790,11 +645,12 @@ app.get(
   "/admin/plot/qrcode/:trialid",
   authenticateToken,
   function(req, res) {
-    const trialId = req.params.trialid;
+    const trialId = parseInt(req.params.trialid);
     const trialReq = [
       {
         estate:"KLS",
-        trialid:"001",  
+        trialId:1,  
+        trialCode:"001",  
         trial:"PT01_001KPM02",
         trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
         area: "50.50",
@@ -1813,7 +669,8 @@ app.get(
       },
       {
         estate:"KLS",
-        trialid:"002",  
+        trialId:2, 
+        trialCode:"002",  
         trial:"PT01_001KPM02",
         trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
         area: "50.50",
@@ -1834,14 +691,15 @@ app.get(
     const plotReq  = [
       {
         estate:"KLS",
-        trialid:"001", 
+        trialId:1, 
+        trialCode:"001", 
         replicate:6, 
         estateblock:"102e",
         design:"Alpha Design",
         density:136,
         plot:"Plot 1",
         subblock:5,
-        progenyId: "D001",
+        progenyCode: "D001",
         progeny:"Ce 1.1",
         ortet:"C9212.57",
         fp:"C 27,36",
@@ -1854,14 +712,15 @@ app.get(
       },
       {
         estate:"KPM",
-        trialid:"002", 
+        trialId:2, 
+        trialCode:"002", 
         replicate:6, 
         estateblock:"102e",
         design:"Alpha Design",
         density:136,
         plot:"Plot 2",
         subblock:4,
-        progenyId: "D002",
+        progenyCode: "D002",
         progeny:"Ce 1.1",
         ortet:"C9212.57",
         fp:"C 27,36",
@@ -1939,8 +798,8 @@ app.get(
       }
     ];
 
-    const meetTrial = trialReq.find(trial => trial.trialid === trialId)
-    const meetPlot  = plotReq.find(plot => plot.trialid === meetTrial.trialid)
+    const meetTrial = trialReq.find(trial => trial.trialId === trialId)
+    const meetPlot  = plotReq.find(plot => plot.trialId === meetTrial.trialId)
     const result = palm.filter(palm => palm.plot === meetPlot.plot)
     
     res.writeHead(200, { "Content-Type" : "application/json" });
@@ -2050,8 +909,9 @@ app.get(
       success: true,
       data: [
         {
+          palmId:1,
           estate:"KLS",
-          trialid:"001", 
+          trialCode:"001", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
@@ -2065,8 +925,9 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          palmId:2,
           estate:"KEQ",
-          trialid:"002", 
+          trialCode:"002", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
@@ -2080,8 +941,9 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          palmId:3,
           estate:"FLZ",
-          trialid:"003", 
+          trialCode:"003", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
@@ -2095,8 +957,9 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          palmId:4,
           estate:"HFS",
-          trialid:"004", 
+          trialCode:"004", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
@@ -2138,7 +1001,8 @@ app.get(
       success: true,
       data: [
         {
-          progenyId:"D001",
+          progenyId:1,
+          progenyCode:"D001",
           popvar:"Dura111",
           origin:"Chemera (100% Ce)",
           progenyremark:"Ce 1",
@@ -2159,7 +1023,8 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
-          progenyId:"D002",
+          progenyId:2,
+          progenyCode:"D002",
           popvar:"Dura222",
           origin:"Chemera (100% Ce)",
           progenyremark:"Ce 1",
@@ -2180,7 +1045,8 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
-          progenyId:"D003",
+          progenyId:3,
+          progenyCode:"D003",
           popvar:"Dura333",
           origin:"Chemera (100% Ce)",
           progenyremark:"Ce 1",
@@ -2201,7 +1067,8 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
-          progenyId:"D004",
+          progenyId:4,
+          progenyCode:"D004",
           popvar:"Dura444",
           origin:"Chemera (100% Ce)",
           progenyremark:"Ce 1",
@@ -2264,6 +1131,7 @@ app.get(
       success: true,
       data: [
         {
+          estateId:1,
           estate:"KLS",
           
           estateblocks: [
@@ -2291,6 +1159,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:2,
           estate:"KSG",
          
           estateblocks: [
@@ -2318,6 +1187,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:3,
           estate:"KBL",
         
           estateblocks: [
@@ -2357,6 +1227,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:4,
           estate:"KCL",
         
           estateblocks: [
@@ -2396,6 +1267,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:5,
           estate:"KEL",
          
           estateblocks: [
@@ -2435,6 +1307,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:6,
           estate:"KFL",
         
           estateblocks: [
@@ -2474,6 +1347,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:7,
           estate:"KGQ",
          
           estateblocks: [
@@ -2513,6 +1387,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          estateId:8,
           estate:"KQS",
        
           estateblocks: [
@@ -2537,161 +1412,6 @@ app.get(
           {
             id:"4",
             assigned: true,
-            estateblock:"102g",
-            soiltype:"Inland"
-          },
-          {
-            id:"5",
-            assigned: false,
-            estateblock:"102h",
-            soiltype:"Alluvial"
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KLG",
-         
-          estateblocks: [
-          {
-            id:"1",
-            assigned: false,
-            estateblock:"102d",
-            soiltype:"Minerals"
-          },
-          {
-            id:"2",
-            assigned: false,
-            estateblock:"102e",
-            soiltype:"Inland"
-          },
-          {
-            id:"3",
-            assigned: false,
-            estateblock:"102f",
-            soiltype:"Minerals"
-          },
-          {
-            id:"4",
-            assigned: false,
-            estateblock:"102g",
-            soiltype:"Inland"
-          },
-          {
-            id:"5",
-            assigned: false,
-            estateblock:"102h",
-            soiltype:"Alluvial"
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KVG",
-        
-          estateblocks: [
-          {
-            id:"1",
-            assigned: false,
-            estateblock:"102d",
-            soiltype:"Minerals"
-          },
-          {
-            id:"2",
-            assigned: false,
-            estateblock:"102e",
-            soiltype:"Inland"
-          },
-          {
-            id:"3",
-            assigned: false,
-            estateblock:"102f",
-            soiltype:"Minerals"
-          },
-          {
-            id:"4",
-            assigned: false,
-            estateblock:"102g",
-            soiltype:"Inland"
-          },
-          {
-            id:"5",
-            assigned: false,
-            estateblock:"102h",
-            soiltype:"Alluvial"
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KZA",
-      
-          estateblocks: [
-          {
-            id:"1",
-            assigned: false,
-            estateblock:"102d",
-            soiltype:"Minerals"
-          },
-          {
-            id:"2",
-            assigned: false,
-            estateblock:"102e",
-            soiltype:"Inland"
-          },
-          {
-            id:"3",
-            assigned: false,
-            estateblock:"102f",
-            soiltype:"Minerals"
-          },
-          {
-            id:"4",
-            assigned: false,
-            estateblock:"102g",
-            soiltype:"Inland"
-          },
-          {
-            id:"5",
-            assigned: false,
-            estateblock:"102h",
-            soiltype:"Alluvial"
-          }],
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KAM",
-          estateblocks: [
-          {
-            id:"1",
-            assigned: false,
-            estateblock:"102d",
-            soiltype:"Minerals"
-          },
-          {
-            id:"2",
-            assigned: false,
-            estateblock:"102e",
-            soiltype:"Inland"
-          },
-          {
-            id:"3",
-            assigned: false,
-            estateblock:"102f",
-            soiltype:"Minerals"
-          },
-          {
-            id:"4",
-            assigned: false,
             estateblock:"102g",
             soiltype:"Inland"
           },
@@ -2737,6 +1457,7 @@ app.get(
       success: true,
       data: [
         {
+          designId:1,
           design:"Alpha Design",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -2744,6 +1465,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          designId:2,
           design:"RCBD",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -2751,6 +1473,7 @@ app.get(
           updatedDate: "2020-05-11T02:22:39.829Z",
         },
         {
+          designId:3,
           design:"identified plot",
           createdBy: "acerasadmin",
           createdDate: "2020-04-28T07:19:30.646Z",
@@ -3087,82 +1810,37 @@ app.put(
   }
 );
 
+app.put(
+  "/admin/trial/replicate",
+  authenticateToken,
+  function (req, res) {
+    
+    const result = {
+      success: true,
+      data: null,
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
 app.get(
   "/admin/trial/replicates/:trialid",
   authenticateToken,
   function (req, res) {
-    const trialId =  req.params.trialid;
-    const trials = [
-      {
-        estate:"KLS",
-        trialid:"001",  
-        trial:"PT01_001KPM02",
-        trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-        area: "50.50",
-        planteddate:"Dec-02",
-        nofprogeny:50,
-        nofreplicate:6,
-        soiltype:"Mineral",
-        nofplot:300,
-        nofplot_subblock:5,
-        nofsubblock:10,
-        status:"active",
-        design: "Alhpa Design",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        estate:"KPM",
-        trialid:"002",  
-        trial:"PT02_002KPM03",
-        trialremark:"Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
-        area: "50.50",
-        planteddate:"Dec-02",
-        nofprogeny:50,
-        nofreplicate:5,
-        soiltype:"Mineral",
-        nofplot:5,
-        nofplot_subblock:10,
-        design: "Alhpa Design",
-        nofsubblock:5,
-        status:"canceled",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        estate:"ASG",
-        trialid:"003",  
-        trial:"PT01_001KPM02",
-        trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGhaand “b” Cross DelixEko",
-        area: "50.50",
-        planteddate:"Dec-02",
-        nofprogeny:50,
-        nofreplicate:7,
-        soiltype:"Mineral",
-        nofplot:10,
-        nofplot_subblock:5,
-        design: "Alhpa Design",
-        nofsubblock:3,
-        status:"finished",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      }
-    ];
+    const trialId =  parseInt(req.params.trialid);
+    console.log({trialId})
+    const trials =  getTrials()
   
-    const trial =  trials.find((t)=> t.trialid === trialId)
-    console.log("backend trial",trial)
+    const trial =  trials.find((t)=> t.trialId === trialId)
+    console.log(trial)
     const replicates = []
     for(let i = 1; i<= trial.nofreplicate; i++){
          const rep = {
           replicate: i,
+          replicateId: i,
           estate: trial.estate,
-          estateblock:"102e",
+          estateblocks: (trial.trialId===2 && [1,3].includes(i))?[{id: "1", name: "102e"}, {id: "2", name: "102f"}]:[{id: "1", name: "102e"}],
           density: "123",
           design:"Alhpa Design",
           soiltype:"Mineral"
@@ -3181,84 +1859,33 @@ app.get(
   "/admin/trial/replicates/plots/:trialid",
   authenticateToken,
   function (req, res) {
-    const trialId =  req.params.trialid;
+    const trialId =  parseInt(req.params.trialid);
     const estate =  req.params.estate;
-    const trials = [
-      {
-        estate:"KLS",
-        trialid:"001",  
-        trial:"PT01_001KPM02",
-        trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-        area: "50.50",
-        planteddate:"Dec-02",
-        nofprogeny:50,
-        nofreplicate:6,
-        soiltype:"Mineral",
-        nofplot:300,
-        nofplot_subblock:5,
-        nofsubblock:10,
-        status:"active",
-        design: "Alhpa Design",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        estate:"KPM",
-        trialid:"002",  
-        trial:"PT02_002KPM03",
-        trialremark:"Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
-        area: "50.50",
-        planteddate:"Dec-02",
-        nofprogeny:2,
-        nofreplicate:2,
-        soiltype:"Mineral",
-        nofplot:4,
-        nofplot_subblock:1,
-        design: "Alhpa Design",
-        nofsubblock:2,
-        status:"canceled",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        estate:"ASG",
-        trialid:"003",  
-        trial:"PT01_001KPM02",
-        trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGhaand “b” Cross DelixEko",
-        area: "50.50",
-        planteddate:"Dec-02",
-        nofprogeny:50,
-        nofreplicate:7,
-        soiltype:"Mineral",
-        nofplot:10,
-        nofplot_subblock:5,
-        design: "Alhpa Design",
-        nofsubblock:3,
-        status:"finished",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      }
-    ];
+    const trials =  getTrials()
   
-    const trial =  trials.find((t)=> t.trialid === trialId)
+    const trial =  trials.find((t)=> t.trialId === trialId)
     const trialPlots = []
     const plots =  trial.nofreplicate*trial.nofprogeny
     let count = 0
+    let repcount = 0
+    let replicatecount = 1
     let subblockCount = 1
     for(let i = 1; i<= plots; i++){
-        count++;    
+        count++; 
+        repcount++;  
         if(count > trial.nofplot_subblock){
           count = 0
           subblockCount++
         }
+        console.log(repcount, trial.nofplot/trial.nofreplicate)
+        if(repcount > trial.nofplot/trial.nofreplicate){
+          repcount = 0
+          replicatecount++
+        }
          const plot = {
-          plot: i,
+          replicate: replicatecount,
+          plotName: `Plot ${i}`,
+          plotId: i,
           subblock:subblockCount,
           estateblock:"102e",
           design:"Alhpa Design",
@@ -3270,6 +1897,20 @@ app.get(
   }
 );
 
+app.post(
+  "/admin/trial/replicates/plots/:trialid",
+  authenticateToken,
+  function (req, res) {
+    
+    const result = {
+      success: true,
+      data: null,
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
 var server = app.listen(8000, function () {
   var host = server.address().address;
   var port = server.address().port;
@@ -3277,14 +1918,3 @@ var server = app.listen(8000, function () {
   console.log("Node.js API app listening at http://%s:%s", host, port);
 });
 
-function testGaugeChart(name) {
-  return {
-    name,
-    threshold: 4500,
-    min: 0,
-    max: Math.floor(Math.random() * (6500 - 5600) + 5600),
-    minValue: 0,
-    maxValue: Math.floor(Math.random() * (6500 - 5600) + 5600),
-    value: Math.floor(Math.random() * (5500 - 5000) + 5000),
-  };
-}
