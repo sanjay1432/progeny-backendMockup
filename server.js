@@ -1875,46 +1875,64 @@ app.get(
     ]; 
     const palm = [
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 1",
         palmno:"1",
         palmname:"Palm1",
       },
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 1",
         palmno:"2",
         palmname:"Palm2",
       },
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 1",
         palmno:"3",
         palmname:"Palm3",
       },
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 1",
         palmno:"4",
         palmname:"Palm4",
       },
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 1",
         palmno:"5",
         palmname:"Palm5",
       },
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 1",
         palmno:"6",
         palmname:"Palm6",
       },
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 2",
         palmno:"4",
         palmname:"Palm4",
       },
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 2",
         palmno:"5",
         palmname:"Palm5",
       },
       {
+        trialid: "001",
+        estateblock:"102e",
         plot:"Plot 2",
         palmno:"6",
         palmname:"Palm6",
@@ -1998,6 +2016,20 @@ app.get(
 
 app.put(
   "/admin/plot",
+  authenticateToken,
+  function (req, res) {
+    
+    const result = {
+      success: true,
+      data: null,
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
+app.post(
+  "/admin/plot/editPalmInformation",
   authenticateToken,
   function (req, res) {
     
