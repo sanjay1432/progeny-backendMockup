@@ -540,7 +540,7 @@ app.get(
           density:136,
           plot:"Plot 2",
           subblock:5,
-          progenyId: "D001",
+          progenyCode: "D001",
           progeny:"Ce 1.1",
           ortet:"C9212.57",
           fp:"C 27,36",
@@ -581,7 +581,7 @@ app.get(
           density:136,
           plot:"Plot 2",
           subblock:4,
-          progenyId: "D002",
+          progenyCode: "D002",
           progeny:"Ce 1.1",
           ortet:"C9212.57",
           fp:"C 27,36",
@@ -874,7 +874,7 @@ app.get(
 );
 
 app.put(
-  "/admin/plot",
+  "/admin/update-plot",
   authenticateToken,
   function (req, res) {
     
@@ -980,7 +980,7 @@ app.get(
 );
 
 app.put(
-  "/admin/palm",
+  "/admin/update-palm",
   authenticateToken,
   function (req, res) {
     
@@ -1032,10 +1032,10 @@ app.get(
           generation:"Gen 2",
           ortet:"C 9212.57",
           fp:"C 27.36",
-          fpFam:"C 27",
+          fpFam:"C 28",
           fpVar:"D",
           mp:"C 27, 2489",
-          mpFam:"C 27",
+          mpFam:"C 28",
           mpVar: "B",
           cross:"C 27,36 x C 27, 2489",
           crossType:"DXD Sibling",
@@ -1054,10 +1054,10 @@ app.get(
           generation:"Gen 3",
           ortet:"C 9212.57",
           fp:"C 27.36",
-          fpFam:"C 27",
+          fpFam:"C 29",
           fpVar:"D",
           mp:"C 27, 2489",
-          mpFam:"C 27",
+          mpFam:"C 29",
           mpVar: "D",
           cross:"C 27,36 x C 27, 2489",
           crossType:"DXD Sibling",
@@ -1096,7 +1096,7 @@ app.get(
 );
 
 app.post(
-  "/admin/progeny",
+  "/admin/create-progeny",
   authenticateToken,
   function (req, res) {
     
@@ -1110,7 +1110,7 @@ app.post(
 );
 
 app.put(
-  "/admin/progeny",
+  "/admin/update-progeny",
   authenticateToken,
   function (req, res) {
     
@@ -1690,7 +1690,7 @@ app.get(
   }
 )
 app.post(
-  "/admin/user",
+  "/admin/create-user",
   authenticateToken,
   function (req, res) {
     const {userId, username, position} =  req.body
@@ -1704,7 +1704,7 @@ app.post(
 );
 
 app.put(
-  "/admin/user",
+  "/admin/update-user",
   authenticateToken,
   function (req, res) {
     const {userId, username, position, status} =  req.body
