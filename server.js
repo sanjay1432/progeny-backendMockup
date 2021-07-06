@@ -28,12 +28,12 @@ function authenticateToken(req, res, next) {
   console.log({token})
   if (token == null) return res.sendStatus(401); // if there isn't any token
 
-  jwt.verify(token, "duong-test", (err, user) => {
-    console.log(err);
-    if (err) return res.sendStatus(401);
-    req.user = user;
+  // jwt.verify(token, "duong-test", (err, user) => {
+  //   console.log(err);
+  //   if (err) return res.sendStatus(401);
+    // req.user = user;
     next(); // pass the execution off to whatever request the client intended
-  });
+  // });
 }
 
 
@@ -642,166 +642,61 @@ app.get(
 );
 
 app.get(
-  "/admin/plot/qrcode/:trialid",
+  "/admin/plot/qrcode/:plotId",
   authenticateToken,
   function(req, res) {
-    const trialId = parseInt(req.params.trialid);
-    const trialReq = [
+    const plotId = parseInt(req.params.plotId);
+
+    const originalData = [
       {
-        estate:"KLS",
-        trialId:1,  
-        trialCode:"001",  
-        trial:"PT01_001KPM02",
-        trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-        area: "50.50",
-        planteddate:"Dec-02",
-        nofprogeny:50,
-        nofreplicate:6,
-        soiltype:"Mineral",
-        nofplot:300,
-        nofplot_subblock:10,
-        nofsubblock:10,
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        estate:"KLS",
-        trialId:2, 
-        trialCode:"002",  
-        trial:"PT01_001KPM02",
-        trialremark:"Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
-        area: "50.50",
-        planteddate:"Dec-02",
-        nofprogeny:50,
-        nofreplicate:6,
-        soiltype:"Mineral",
-        nofplot:300,
-        nofplot_subblock:10,
-        nofsubblock:10,
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      }
-    ];
-    const plotReq  = [
-      {
-        estate:"KLS",
-        trialId:1, 
-        trialCode:"001", 
-        replicate:6, 
-        estateblock:"102e",
-        design:"Alpha Design",
-        density:136,
-        plot:"Plot 1",
-        subblock:5,
-        progenyCode: "D001",
-        progeny:"Ce 1.1",
-        ortet:"C9212.57",
-        fp:"C 27,36",
-        mp:"C 27,2489",
-        noofPalm:"16",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        estate:"KPM",
-        trialId:2, 
-        trialCode:"002", 
-        replicate:6, 
-        estateblock:"102e",
-        design:"Alpha Design",
-        density:136,
-        plot:"Plot 2",
-        subblock:4,
-        progenyCode: "D002",
-        progeny:"Ce 1.1",
-        ortet:"C9212.57",
-        fp:"C 27,36",
-        mp:"C 27,2489",
-        noofPalm:"16",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      }
-    ]; 
-    const palm = [
-      {
-        trialid: "001",
-        estateblock:"102e",
+        trialId: 1,
+        plotId: 1,
+        trialCode: "001",
+        estateblock:"102aaa",
         plot:"Plot 1",
         palmno:"1",
         palmname:"Palm1",
       },
       {
-        trialid: "001",
-        estateblock:"102e",
-        plot:"Plot 1",
+        trialId: 2,
+        plotId: 1,
+        trialCode: "002",
+        plot:"Plot 2",
+        estateblock:"102bbb",
         palmno:"2",
         palmname:"Palm2",
       },
       {
-        trialid: "001",
-        estateblock:"102e",
-        plot:"Plot 1",
+        trialId: 3,
+        plotId: 1,
+        trialCode: "003",
+        estateblock:"102ccc",
+        plot:"Plot 3",
         palmno:"3",
         palmname:"Palm3",
       },
       {
-        trialid: "001",
-        estateblock:"102e",
-        plot:"Plot 1",
+        trialId: 4,
+        plotId: 1,
+        trialCode: "004",
+        estateblock:"102ddd",
+        plot:"Plot 4",
         palmno:"4",
         palmname:"Palm4",
       },
       {
-        trialid: "001",
-        estateblock:"102e",
-        plot:"Plot 1",
+        trialId: 5,
+        plotId: 1,
+        trialCode: "005",
+        estateblock:"102eee",
+        plot:"Plot 5",
         palmno:"5",
         palmname:"Palm5",
-      },
-      {
-        trialid: "001",
-        estateblock:"102e",
-        plot:"Plot 1",
-        palmno:"6",
-        palmname:"Palm6",
-      },
-      {
-        trialid: "001",
-        estateblock:"102e",
-        plot:"Plot 2",
-        palmno:"4",
-        palmname:"Palm4",
-      },
-      {
-        trialid: "001",
-        estateblock:"102e",
-        plot:"Plot 2",
-        palmno:"5",
-        palmname:"Palm5",
-      },
-      {
-        trialid: "001",
-        estateblock:"102e",
-        plot:"Plot 2",
-        palmno:"6",
-        palmname:"Palm6",
       }
     ];
 
-    const meetTrial = trialReq.find(trial => trial.trialId === trialId)
-    const meetPlot  = plotReq.find(plot => plot.trialId === meetTrial.trialId)
-    const result = palm.filter(palm => palm.plot === meetPlot.plot)
-    
+    const result = originalData.filter(data => data.plotId === plotId)
+
     res.writeHead(200, { "Content-Type" : "application/json" });
     res.end(JSON.stringify(result));
   }
@@ -813,59 +708,53 @@ app.get(
   function (req, res) {
     const result = [
         {
-          trialid:"001", 
+          trialCode:"001", 
           estate: "KLS",
           replicate:6, 
           estateblock:"102e",
           plot:"Plot 1",
-          palmNum:"16",
-          palmName: "hello1",
+          palmno: 1,
           
         },
         {
-          trialid:"001", 
+          trialCode:"001", 
           estate: "KGP",
           replicate:2, 
           estateblock:"102e",
           plot:"Plot 2",
-          palmNum:"12",
-          palmName: "hello2",
+          palmno: 2,
         },
         {
-          trialid:"001", 
+          trialCode:"001", 
           estate: "KOP",
           replicate:3, 
           estateblock:"102e",
           plot:"Plot 3",
-          palmNum:"14",
-          palmName: "hello3",
+          palmno: 3,
         },
         {
-          trialid:"001", 
+          trialCode:"001", 
           estate: "KOP",
           replicate:6, 
           estateblock:"102e",
           plot:"Plot 3",
-          palmNum:"14",
-          palmName: "hello3",
+          palmno: 4,
         },
         {
-          trialid:"002", 
+          trialCode:"002", 
           estate: "KGL",
           replicate:4, 
           estateblock:"102e",
           plot:"Plot 4",
-          palmNum:"11",
-          palmName: "hello4",
+          palmno: 5,
         },
         {
-          trialid:"003", 
+          trialCode:"003", 
           estate: "KGG",
           replicate:5, 
           estateblock:"102e",
           plot:"Plot 5",
-          palmNum:"11",
-          palmName: "hello4",
+          palmno: 6,
         },
       ]
     res.writeHead(200, { "Content-Type": "application/json" });
