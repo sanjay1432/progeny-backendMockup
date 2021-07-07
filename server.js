@@ -878,7 +878,7 @@ app.get(
   }
 );
 
-app.put(
+app.post(
   "/admin/update-plot",
   authenticateToken,
   function (req, res) {
@@ -1067,7 +1067,7 @@ app.get("/admin/palm", authenticateToken, function (req, res) {
   res.end(JSON.stringify(result));
 });
 
-app.put("/admin/palm", authenticateToken, function (req, res) {
+app.post("/admin/update-palm", authenticateToken, function (req, res) {
   const result = {
     success: true,
     data: null,
