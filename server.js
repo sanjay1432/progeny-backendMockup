@@ -649,7 +649,7 @@ app.get(
         },
         {
           estate:"KPP",
-          trialid:"001", 
+          trialCode:"001", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
@@ -690,7 +690,7 @@ app.get(
         },
         {
           estate:"KBP",
-          trialid:"002", 
+          trialCode:"002", 
           replicate:6, 
           estateblock:"102e",
           design:"Alpha Design",
@@ -1766,7 +1766,7 @@ app.get("/admin/user-position", authenticateToken, function (req, res) {
 });
 
 //TRIAL
-app.post("/admin/trial", authenticateToken, function (req, res) {
+app.post("/admin/create-trial", authenticateToken, function (req, res) {
   const result = {
     success: true,
     data: null,
@@ -1775,7 +1775,7 @@ app.post("/admin/trial", authenticateToken, function (req, res) {
   res.end(JSON.stringify(result));
 });
 
-app.put("/admin/trial", authenticateToken, function (req, res) {
+app.put("/admin/update-trial", authenticateToken, function (req, res) {
   const result = {
     success: true,
     data: null,
