@@ -1867,6 +1867,7 @@ app.get(
       success: true,
       data: trial,
     };
+    console.log(result)
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
   }
