@@ -1963,7 +1963,23 @@ app.put(
   function (req, res) {
     const result = {
       success: true,
-      data: null,
+      data: {
+        nofplot:300,
+        nofplotAttached: 100,   
+        isComplete: true
+      },
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+app.post(
+  "/admin/update-trial-state/:trialid",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: null
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
