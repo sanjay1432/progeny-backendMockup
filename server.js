@@ -281,6 +281,42 @@ function getTrials() {
       updatedBy: "aceadmin",
       updatedDate: "2020-05-11T02:22:39.829Z",
     },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: "123.0",
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: "50.50",
+      planteddate: "Dec-02",
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "Mineral",
+      nofplot: 4,
+      isEditable: true,
+      nofplot_subblock: 1,
+      design: "Alhpa Design",
+      nofsubblock: 2,
+      status: "canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
   ];
   return trials;
 }
@@ -1826,8 +1862,13 @@ app.get(
     }
 
     trial["replicates"] = replicates;
+
+    const result = {
+      success: true,
+      data: trial,
+    };
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify(trial));
+    res.end(JSON.stringify(result));
   }
 );
 
@@ -1840,8 +1881,13 @@ app.get(
     const trials = getTrials();
 
     const trial = trials.find((t) => t.trialCode === trialCode);
+
+      const result = {
+      success: true,
+      data: trial,
+    };
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify(trial));
+    res.end(JSON.stringify(result));
   }
 );
 //PLOT
@@ -1888,8 +1934,12 @@ app.get(
       };
       trialPlots.push(plot);
     }
+    const result = {
+      success: true,
+      data: trialPlots,
+    };
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify(trialPlots));
+    res.end(JSON.stringify(result));
   }
 );
 
