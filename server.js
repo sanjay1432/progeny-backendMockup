@@ -866,6 +866,7 @@ app.get(
           estateblock:"102e",
           plot:"Plot 1",
           palmno: 1,
+          palmId: 1,
           
         },
         {
@@ -875,6 +876,7 @@ app.get(
           estateblock:"102e",
           plot:"Plot 2",
           palmno: 2,
+          palmId: 2,
         },
         {
           trialCode:"001", 
@@ -883,6 +885,7 @@ app.get(
           estateblock:"102e",
           plot:"Plot 3",
           palmno: 3,
+          palmId: 3,
         },
         {
           trialCode:"001", 
@@ -891,6 +894,7 @@ app.get(
           estateblock:"102e",
           plot:"Plot 3",
           palmno: 4,
+          palmId: 4,
         },
         {
           trialCode:"002", 
@@ -899,6 +903,7 @@ app.get(
           estateblock:"102e",
           plot:"Plot 4",
           palmno: 5,
+          palmId: 5,
         },
         {
           trialCode:"003", 
@@ -907,6 +912,7 @@ app.get(
           estateblock:"102e",
           plot:"Plot 5",
           palmno: 6,
+          palmId: 6,
         },
       ]
     res.writeHead(200, { "Content-Type": "application/json" });
