@@ -803,7 +803,10 @@ app.get(
       {
         trialId: 1,
         plotId: 1,
+        estateblockId: 1,
+        palmId: 1,
         trialCode: "001",
+        
         estateblock:"102aaa",
         plot:"Plot 1",
         palmno:"1",
@@ -812,6 +815,8 @@ app.get(
       {
         trialId: 2,
         plotId: 1,
+        estateblockId: 2,
+        palmId: 2,
         trialCode: "002",
         plot:"Plot 2",
         estateblock:"102bbb",
@@ -821,6 +826,8 @@ app.get(
       {
         trialId: 3,
         plotId: 1,
+        estateblockId: 3,
+        palmId: 3,
         trialCode: "003",
         estateblock:"102ccc",
         plot:"Plot 3",
@@ -830,6 +837,8 @@ app.get(
       {
         trialId: 4,
         plotId: 1,
+        estateblockId: 4,
+        palmId: 4,
         trialCode: "004",
         estateblock:"102ddd",
         plot:"Plot 4",
@@ -839,6 +848,8 @@ app.get(
       {
         trialId: 5,
         plotId: 1,
+        estateblockId: 5,
+        palmId: 5,
         trialCode: "005",
         estateblock:"102eee",
         plot:"Plot 5",
