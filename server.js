@@ -326,6 +326,26 @@ function pad(s) {
   return s;
 }
 
+
+app.get("/account/login", function (req, res) {
+  const token = jwt.sign({ username: req.query.username }, "duong-test", {
+    expiresIn: "30d",
+  });
+  const result = {
+    response: {
+      userID: 1,
+      username: req.query.username,
+      password:req.query.password,
+      firstName:"Aceras",
+      lastName:"Admin",
+      email:"aceresource@progeny.com",
+      token:token
+    },
+  };
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify(result));
+});
+
 app.post("/api/v1/general/login/user-login", function (req, res) {
   const { username, password } = req.body;
   if (username === "aceadmin" && password === "aceadmin123") {
@@ -1894,15 +1914,13 @@ app.get(
   "/admin/trial/:trialCode",
   authenticateToken,
   function (req, res) {
-    const trialCode = req.params.trialCode;
-    console.log({ trialCode });
     const trials = getTrials();
 
-    const trial = trials.find((t) => t.trialCode === trialCode);
-
+    const {trialCode, trialId, estate} = trials.find((t) => t.trialCode === req.params.trialCode);
+    
       const result = {
       success: true,
-      data: trial,
+      data: {trialCode, trialId, estate},
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
@@ -1981,7 +1999,6 @@ app.put(
     const result = {
       success: true,
       data: {
-        nofplot:300,
         nofplotAttached: 100,   
         isComplete: true
       },
