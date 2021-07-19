@@ -326,7 +326,6 @@ function pad(s) {
   return s;
 }
 
-
 app.get("/account/login", function (req, res) {
   const token = jwt.sign({ username: req.query.username }, "duong-test", {
     expiresIn: "30d",
@@ -667,6 +666,31 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
 
 app.get("/admin/trial", authenticateToken, function (req, res) {
   const trials = getTrials();
+  trials.forEach(trial => {
+    const replicates = [];
+    for (let e = 0; e < trial.estate.length; e++) {
+      for (let i = 1; i <= trial.estate[e].replicate; i++) {
+        const rep = {
+          replicate: i,
+          replicateId: i,
+          estate: trial.estate[e].name,
+          estateblocks:
+            trial.trialId === 2 && [1, 3].includes(i)
+              ? [
+                  { id: "1", name: "102e" },
+                  { id: "2", name: "102f" },
+                ]
+              : [{ id: "1", name: "102e" }],
+          density: "123",
+          design: "Alhpa Design",
+          soiltype: "Mineral",
+        };
+        replicates.push(rep);
+      }
+    }
+
+    trial["replicates"] = replicates;
+   });
   const result = {
     success: true,
     data: trials,
