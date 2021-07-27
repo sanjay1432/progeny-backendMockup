@@ -2044,6 +2044,184 @@ app.post(
   }
 );
 
+//Statistician Part
+app.get(
+  "/admin/yearlyverification",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [{}]
+    }
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+)
+
+app.get(
+  "/admin/verifyforms",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+        {
+          trialId: 1,
+          trialCode: "001",
+          trial: "PT01_001KPM02",
+          form: "Form 13",
+          uploadedDate: "07/05/2021",
+          uploadedBy: "Eko",
+          recordDate: "04/05/2021",
+          recordedBy: "Eko"
+        },
+      ]
+    }
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+)
+
 var server = app.listen(8000, function () {
   var host = server.address().address;
   var port = server.address().port;
