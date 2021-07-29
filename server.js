@@ -838,10 +838,10 @@ app.get(
 );
 
 app.get(
-  "/admin/plot/qrcode/:plotId",
+  "/admin/plot/qrcode",
   authenticateToken,
   function(req, res) {
-    const plotId = parseInt(req.params.plotId);
+    const plotId = parseInt(req.query.plotId);
 
     const originalData = [
       {
@@ -1593,274 +1593,274 @@ app.get("/admin/design", authenticateToken, function (req, res) {
 });
 //USER BLOCK
 
-app.get("/admin/userlist", authenticateToken, function (req, res) {
-  const result = {
-    success: true,
-    data: [
-      {
-        userId: "001",
-        username: "Ali",
-        position: "Mandore",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "002",
-        username: "Aqeel",
-        position: "Mandore",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "003",
-        username: "Dexter",
-        position: "Recorder",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "004",
-        username: "Jack",
-        position: "Recorder",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "005",
-        username: "Maxwell",
-        position: "Recorder",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "006",
-        username: "Ahmed",
-        position: "Assistant",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "007",
-        username: "Amir",
-        position: "Assistant",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "008",
-        username: "Joe",
-        position: "Mandore",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "009",
-        username: "Smith",
-        position: "Recorder",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "010",
-        username: "Tim",
-        position: "Mandore",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        userId: "011",
-        username: "Jhon",
-        position: "Mandore",
-        status: "active",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-    ],
-  };
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(JSON.stringify(result));
-});
+// app.get("/admin/userlist", authenticateToken, function (req, res) {
+//   const result = {
+//     success: true,
+//     data: [
+//       {
+//         userId: "001",
+//         username: "Ali",
+//         position: "Mandore",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "002",
+//         username: "Aqeel",
+//         position: "Mandore",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "003",
+//         username: "Dexter",
+//         position: "Recorder",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "004",
+//         username: "Jack",
+//         position: "Recorder",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "005",
+//         username: "Maxwell",
+//         position: "Recorder",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "006",
+//         username: "Ahmed",
+//         position: "Assistant",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "007",
+//         username: "Amir",
+//         position: "Assistant",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "008",
+//         username: "Joe",
+//         position: "Mandore",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "009",
+//         username: "Smith",
+//         position: "Recorder",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "010",
+//         username: "Tim",
+//         position: "Mandore",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         userId: "011",
+//         username: "Jhon",
+//         position: "Mandore",
+//         status: "active",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//     ],
+//   };
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify(result));
+// });
 
-app.get(
-  "/admin/estateAssignment",
-  //authenticateToken,
-  function (req, res) {
-    const result = {
-      success: true,
-      data: [
-        {
-          estate: "KLS",
-          estatefullname: "KLS",
-          noTrialOnHere: 2,
-          assignedUser: 20,
-        },
-        {
-          estate: "KPM",
-          estatefullname: "KPM",
-          noTrialOnHere: 5,
-          assignedUser: 20,
-        },
-        {
-          estate: "ASG",
-          estatefullname: "ASG",
-          noTrialOnHere: 6,
-          assignedUser: 20,
-        },
-      ],
-    };
-    res.writeHead(200, { "content-type": "application/json" });
-    res.end(JSON.stringify(result));
-  }
-);
+// app.get(
+//   "/admin/estateAssignment",
+//   //authenticateToken,
+//   function (req, res) {
+//     const result = {
+//       success: true,
+//       data: [
+//         {
+//           estate: "KLS",
+//           estatefullname: "KLS",
+//           noTrialOnHere: 2,
+//           assignedUser: 20,
+//         },
+//         {
+//           estate: "KPM",
+//           estatefullname: "KPM",
+//           noTrialOnHere: 5,
+//           assignedUser: 20,
+//         },
+//         {
+//           estate: "ASG",
+//           estatefullname: "ASG",
+//           noTrialOnHere: 6,
+//           assignedUser: 20,
+//         },
+//       ],
+//     };
+//     res.writeHead(200, { "content-type": "application/json" });
+//     res.end(JSON.stringify(result));
+//   }
+// );
 
-app.get(
-  "/admin/userAssignment",
-  //authenticationToken,
-  function (req, res) {
-    const result = {
-      success: true,
-      data: [
-        {
-          userId: "001",
-          username: "Ali",
-          position: "Mandore",
-          estate: [
-            {
-              name: "KLM"
-            },
-            {
-              name: "KLS"
-            }
-          ]
-        },
-        {
-          userId: "002",
-          username: "Aqeel",
-          position: "Mandore",
-          estate: [
-            {
-              name: "KKK"
-            }
-          ]
-        },
-        {
-          userId: "003",
-          username: "Dexter",
-          position: "Recorder",
-          estate: [
-            {
-              name: "KBM"
-            }
-          ]
-        },
-      ],
-    };
-    res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify(result));
-  }
-);
-app.post("/admin/create-user", authenticateToken, function (req, res) {
-  const { userId, username, position } = req.body;
-  const result = {
-    success: true,
-    data: { userId, username, position },
-  };
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(JSON.stringify(result));
-});
+// app.get(
+//   "/admin/userAssignment",
+//   //authenticationToken,
+//   function (req, res) {
+//     const result = {
+//       success: true,
+//       data: [
+//         {
+//           userId: "001",
+//           username: "Ali",
+//           position: "Mandore",
+//           estate: [
+//             {
+//               name: "KLM"
+//             },
+//             {
+//               name: "KLS"
+//             }
+//           ]
+//         },
+//         {
+//           userId: "002",
+//           username: "Aqeel",
+//           position: "Mandore",
+//           estate: [
+//             {
+//               name: "KKK"
+//             }
+//           ]
+//         },
+//         {
+//           userId: "003",
+//           username: "Dexter",
+//           position: "Recorder",
+//           estate: [
+//             {
+//               name: "KBM"
+//             }
+//           ]
+//         },
+//       ],
+//     };
+//     res.writeHead(200, { "Content-Type": "application/json" });
+//     res.end(JSON.stringify(result));
+//   }
+// );
+// app.post("/admin/create-user", authenticateToken, function (req, res) {
+//   const { userId, username, position } = req.body;
+//   const result = {
+//     success: true,
+//     data: { userId, username, position },
+//   };
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify(result));
+// });
 
-app.put("/admin/update-user", authenticateToken, function (req, res) {
-  const { userId, username, position, status } = req.body;
-  const result = {
-    success: true,
-    data: { userId, username, position, status },
-  };
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(JSON.stringify(result));
-});
+// app.put("/admin/update-user", authenticateToken, function (req, res) {
+//   const { userId, username, position, status } = req.body;
+//   const result = {
+//     success: true,
+//     data: { userId, username, position, status },
+//   };
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify(result));
+// });
 
-app.put("/admin/assign-user-to-estate", authenticateToken, function (req, res) {
-  const { estate, userId } = req.body;
-  const result = {
-    success: true,
-    data: { estate, userId },
-  };
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(JSON.stringify(result));
-});
+// app.put("/admin/assign-user-to-estate", authenticateToken, function (req, res) {
+//   const { estate, userId } = req.body;
+//   const result = {
+//     success: true,
+//     data: { estate, userId },
+//   };
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify(result));
+// });
 
-app.put("/admin/assign-estate-to-user", authenticateToken, function (req, res) {
-  const { username, estate } = req.body;
-  const result = {
-    success: true,
-    data: { username, estate },
-  };
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(JSON.stringify(result));
-});
+// app.put("/admin/assign-estate-to-user", authenticateToken, function (req, res) {
+//   const { username, estate } = req.body;
+//   const result = {
+//     success: true,
+//     data: { username, estate },
+//   };
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify(result));
+// });
 
-app.get("/admin/user-position", authenticateToken, function (req, res) {
-  const result = {
-    success: true,
-    data: [
-      {
-        position: "Mandore",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        position: "Recorder",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        position: "Assistant",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-    ],
-  };
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(JSON.stringify(result));
-});
+// app.get("/admin/user-position", authenticateToken, function (req, res) {
+//   const result = {
+//     success: true,
+//     data: [
+//       {
+//         position: "Mandore",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         position: "Recorder",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         position: "Assistant",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//     ],
+//   };
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify(result));
+// });
 
 //TRIAL
 app.post("/admin/create-trial", authenticateToken, function (req, res) {
@@ -1890,57 +1890,56 @@ app.put("/admin/trial/replicate", authenticateToken, function (req, res) {
   res.end(JSON.stringify(result));
 });
 
+// app.get(
+//   "/admin/trial/replicates",
+//   authenticateToken,
+//   function (req, res) {
+//     const trialId = parseInt(req.query.trialid);
+//     console.log({ trialId });
+//     const trials = getTrials();
+
+//     const trial = trials.find((t) => t.trialId === trialId);
+//     console.log(trial);
+//     const replicates = [];
+//     for (let e = 0; e < trial.estate.length; e++) {
+//       for (let i = 1; i <= trial.estate[e].replicate; i++) {
+//         const rep = {
+//           replicate: i,
+//           replicateId: i,
+//           estate: trial.estate[e].name,
+//           estateblocks:
+//             trial.trialId === 2 && [1, 3].includes(i)
+//               ? [
+//                   { id: "1", name: "102e" },
+//                   { id: "2", name: "102f" },
+//                 ]
+//               : [{ id: "1", name: "102e" }],
+//           density: "123",
+//           design: "Alhpa Design",
+//           soiltype: "1",
+//         };
+//         replicates.push(rep);
+//       }
+//     }
+
+//     trial["replicates"] = replicates;
+
+//     const result = {
+//       success: true,
+//       data: trial,
+//     };
+//     console.log(result)
+//     res.writeHead(200, { "Content-Type": "application/json" });
+//     res.end(JSON.stringify(result));
+//   }
+// );
+
 app.get(
-  "/admin/trial/replicates/:trialid",
+  "/admin/trial",
   authenticateToken,
   function (req, res) {
-    const trialId = parseInt(req.params.trialid);
-    console.log({ trialId });
     const trials = getTrials();
-
-    const trial = trials.find((t) => t.trialId === trialId);
-    console.log(trial);
-    const replicates = [];
-    for (let e = 0; e < trial.estate.length; e++) {
-      for (let i = 1; i <= trial.estate[e].replicate; i++) {
-        const rep = {
-          replicate: i,
-          replicateId: i,
-          estate: trial.estate[e].name,
-          estateblocks:
-            trial.trialId === 2 && [1, 3].includes(i)
-              ? [
-                  { id: "1", name: "102e" },
-                  { id: "2", name: "102f" },
-                ]
-              : [{ id: "1", name: "102e" }],
-          density: "123",
-          design: "Alhpa Design",
-          soiltype: "1",
-        };
-        replicates.push(rep);
-      }
-    }
-
-    trial["replicates"] = replicates;
-
-    const result = {
-      success: true,
-      data: trial,
-    };
-    console.log(result)
-    res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify(result));
-  }
-);
-
-app.get(
-  "/admin/trial/:trialCode",
-  authenticateToken,
-  function (req, res) {
-    const trials = getTrials();
-
-    const {trialCode, trialId, estate} = trials.find((t) => t.trialCode === req.params.trialCode);
+    const {trialCode, trialId, estate} = trials.find((t) => t.trialCode ===  req.query.trialCode);
     
       const result = {
       success: true,
@@ -1952,11 +1951,11 @@ app.get(
 );
 //PLOT
 app.get(
-  "/admin/trial/replicates/plots/:trialid",
+  "/admin/trial/replicates/plots",
   authenticateToken,
   function (req, res) {
-    const trialId = parseInt(req.params.trialid);
-    const estate = req.params.estate;
+    const trialId = parseInt(req.query.trialId);
+    // const estate = req.params.estate;
     const trials = getTrials();
 
     const trial = trials.find((t) => t.trialId === trialId);
@@ -2004,12 +2003,13 @@ app.get(
 );
 
 app.post(
-  "/admin/trial/replicates/plots/:trialid",
+  "/admin/trial/replicates/plots",
   authenticateToken,
   function (req, res) {
+    const trialId =  req.query.trialId
     const result = {
       success: true,
-      data: null,
+      data: {trialId},
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
@@ -2017,9 +2017,10 @@ app.post(
 );
 
 app.put(
-  "/admin/attach-progeny/:trialid",
+  "/admin/attach-progeny",
   authenticateToken,
   function (req, res) {
+    const trialId =  req.query.trialId
     const result = {
       success: true,
       data: {
@@ -2032,12 +2033,13 @@ app.put(
   }
 );
 app.post(
-  "/admin/update-trial-state/:trialid",
+  "/admin/update-trial-state",
   authenticateToken,
   function (req, res) {
+     const trialId =  req.query.trialId
     const result = {
       success: true,
-      data: null
+      data: {trialId}
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
