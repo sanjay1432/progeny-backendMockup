@@ -24,7 +24,6 @@ function authenticateToken(req, res, next) {
   // Gather the jwt access token from the request header
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
-  console.log({ token });
   if (token == null) return res.sendStatus(401); // if there isn't any token
 
   // jwt.verify(token, "duong-test", (err, user) => {
@@ -74,7 +73,7 @@ function getTrials() {
       nofsubblock: 10,
       isEditable: true,
       status: "Active",
-      design: "Alhpa Design",
+      design: "Alpha Design",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
       updatedBy: "aceadmin",
@@ -108,7 +107,7 @@ function getTrials() {
       nofplot: 4,
       isEditable: false,
       nofplot_subblock: 1,
-      design: "Alhpa Design",
+      design: "Alpha Design",
       nofsubblock: 2,
       status: "canceled",
       createdBy: "acerasadmin",
@@ -164,7 +163,7 @@ function getTrials() {
       nofplot: 350,
       isEditable: true,
       nofplot_subblock: 5,
-      design: "Alhpa Design",
+      design: "Alpha Design",
       nofsubblock: 3,
       status: "finished",
       createdBy: "acerasadmin",
@@ -238,7 +237,7 @@ function getTrials() {
       nofsubblock: 5,
       isEditable: true,
       status: "canceled",
-      design: "Alhpa Design",
+      design: "Alpha Design",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
       updatedBy: "aceadmin",
@@ -274,7 +273,7 @@ function getTrials() {
       nofplot_subblock: 5,
       nofsubblock: 3,
       isEditable: true,
-      design: "Alhpa Design",
+      design: "Alpha Design",
       status: "finished",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
@@ -309,7 +308,7 @@ function getTrials() {
       nofplot: 4,
       isEditable: true,
       nofplot_subblock: 1,
-      design: "Alhpa Design",
+      design: "Alpha Design",
       nofsubblock: 2,
       status: "canceled",
       createdBy: "acerasadmin",
@@ -319,6 +318,141 @@ function getTrials() {
     },
   ];
   return trials;
+}
+
+function getPlots() {
+  return  [
+    {
+      plotId:1,
+      estate:"KLS",
+      trialId: 1,
+      trialCode:"001", 
+      replicate:6, 
+      estateblock:"102e",
+      design:"Alpha Design",
+      density:136,
+      plot:"Plot 1",
+      subblock:5,
+      progenyCode: "D001",
+      progeny:"Ce 1.1",
+      ortet:"C9212.57",
+      fp:"C 27,36",
+      mp:"C 27,2489",
+      noofPalm:16,
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate:"KPP",
+      trialId: 1,
+      trialCode:"001", 
+      replicate:6, 
+      estateblock:"102e",
+      design:"Alpha Design",
+      density:136,
+      plot:"Plot 2",
+      subblock:5,
+      progenyCode: "D001",
+      progeny:"Ce 1.1",
+      ortet:"C9212.57",
+      fp:"C 27,36",
+      mp:"C 27,2489",
+      noofPalm:16,
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      plotId:2,
+      estate:"KLS",
+      trialId: 2,
+      trialCode:"002", 
+      replicate:6, 
+      estateblock:"102e",
+      design:"Alpha Design",
+      density:136,
+      plot:"Plot 2",
+      subblock:4,
+      progenyCode: "D002",
+      progeny:"Ce 1.1",
+      ortet:"C9212.57",
+      fp:"C 27,36",
+      mp:"C 27,2489",
+      noofPalm:16,
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate:"KBP",
+      trialId: 2,
+      trialCode:"002", 
+      replicate:6, 
+      estateblock:"102e",
+      design:"Alpha Design",
+      density:136,
+      plot:"Plot 2",
+      subblock:4,
+      progenyCode: "D002",
+      progeny:"Ce 1.1",
+      ortet:"C9212.57",
+      fp:"C 27,36",
+      mp:"C 27,2489",
+      noofPalm:16,
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      plotId:3,
+      estate:"KLS",
+      trialId: 3,
+      trialCode:"019", 
+      replicate:6, 
+      estateblock:"102e",
+      design:"Alpha Design",
+      density:136,
+      plot:"Plot 3",
+      subblock:6,
+      progenyCode: "D003",
+      progeny:"Ce 1.1",
+      ortet:"C9212.57",
+      fp:"C 27,36",
+      mp:"C 27,2489",
+      noofPalm:"16",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      plotId:4,
+      estate:"KLS",
+      trialId: 4,
+      trialCode:"020", 
+      replicate:6, 
+      estateblock:"102e",
+      design:"Alpha Design",
+      density:136,
+      plot:"Plot 4",
+      subblock:3,
+      progenyCode: "D004",
+      progeny:"Ce 1.1",
+      ortet:"C9212.57",
+      fp:"C 27,36",
+      mp:"C 27,2489",
+      noofPalm:16,
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    }
+  ]
 }
 
 function pad(s) {
@@ -669,6 +803,17 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
 
 app.get("/admin/trial", authenticateToken, function (req, res) {
   const trials = getTrials();
+
+  if(req.query.trialCode){
+    const trial = trials.filter((t) => t.trialCode ===  '001');
+    
+      const result = {
+      success: true,
+      data: trial,
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
   trials.forEach(trial => {
     const replicates = [];
     for (let e = 0; e < trial.estate.length; e++) {
@@ -705,132 +850,7 @@ app.get(
   function (req, res) {
     const result = {
       success: true,
-      data: [
-        {
-          plotId:1,
-          estate:"KLS",
-          trialCode:"001", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 1",
-          subblock:5,
-          progenyCode: "D001",
-          progeny:"Ce 1.1",
-          ortet:"C9212.57",
-          fp:"C 27,36",
-          mp:"C 27,2489",
-          noofPalm:16,
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KPP",
-          trialCode:"001", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 2",
-          subblock:5,
-          progenyCode: "D001",
-          progeny:"Ce 1.1",
-          ortet:"C9212.57",
-          fp:"C 27,36",
-          mp:"C 27,2489",
-          noofPalm:16,
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          plotId:2,
-          estate:"KLS",
-          trialCode:"002", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 2",
-          subblock:4,
-          progenyCode: "D002",
-          progeny:"Ce 1.1",
-          ortet:"C9212.57",
-          fp:"C 27,36",
-          mp:"C 27,2489",
-          noofPalm:16,
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          estate:"KBP",
-          trialCode:"002", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 2",
-          subblock:4,
-          progenyCode: "D002",
-          progeny:"Ce 1.1",
-          ortet:"C9212.57",
-          fp:"C 27,36",
-          mp:"C 27,2489",
-          noofPalm:16,
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          plotId:3,
-          estate:"KLS",
-          trialCode:"019", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 3",
-          subblock:6,
-          progenyCode: "D003",
-          progeny:"Ce 1.1",
-          ortet:"C9212.57",
-          fp:"C 27,36",
-          mp:"C 27,2489",
-          noofPalm:"16",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          plotId:4,
-          estate:"KLS",
-          trialCode:"020", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 4",
-          subblock:3,
-          progenyCode: "D004",
-          progeny:"Ce 1.1",
-          ortet:"C9212.57",
-          fp:"C 27,36",
-          mp:"C 27,2489",
-          noofPalm:16,
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        }
-      ],
+      data: getPlots(),
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
@@ -842,139 +862,262 @@ app.get(
   authenticateToken,
   function(req, res) {
     const plotId = parseInt(req.query.plotId);
+    const plots =  getPlots();
+    const {trialCode, trialId, estateblock, plot } =  plots.find((p)=>p.plotId === plotId)
 
-    const originalData = [
-      {
-        trialId: 1,
-        plotId: 1,
-        estateblockId: 1,
-        palmId: 1,
-        trialCode: "001",
+    const foundplot = {
+      trialCode, trialId, estateblock, plot, plotId 
+    }
+    const palms = [];
+
+    for (let i = 0; i<10; i++){
+      palms.push({
+        palmId: i+1,
+        palmno: i+1
+      })
+    }
+
+    foundplot['palms'] = palms;
+    foundplot['estateblockId'] = 1;
+    // const originalData = [
+    //   {
+    //     trialId: 1,
+    //     plotId: 1,
+    //     estateblockId: 1,
+    //     palmId: 1,
+    //     trialCode: "001",
         
-        estateblock:"102aaa",
-        plot:"Plot 1",
-        palmno:"1",
-        palmname:"Palm1",
-      },
-      {
-        trialId: 2,
-        plotId: 1,
-        estateblockId: 2,
-        palmId: 2,
-        trialCode: "002",
-        plot:"Plot 2",
-        estateblock:"102bbb",
-        palmno:"2",
-        palmname:"Palm2",
-      },
-      {
-        trialId: 3,
-        plotId: 1,
-        estateblockId: 3,
-        palmId: 3,
-        trialCode: "003",
-        estateblock:"102ccc",
-        plot:"Plot 3",
-        palmno:"3",
-        palmname:"Palm3",
-      },
-      {
-        trialId: 4,
-        plotId: 1,
-        estateblockId: 4,
-        palmId: 4,
-        trialCode: "004",
-        estateblock:"102ddd",
-        plot:"Plot 4",
-        palmno:"4",
-        palmname:"Palm4",
-      },
-      {
-        trialId: 5,
-        plotId: 1,
-        estateblockId: 5,
-        palmId: 5,
-        trialCode: "005",
-        estateblock:"102eee",
-        plot:"Plot 5",
-        palmno:"5",
-        palmname:"Palm5",
-      }
-    ];
-
-    const result = originalData.filter(data => data.plotId === plotId)
-
+    //     estateblock:"102aaa",
+    //     plot:"Plot 1",
+    //     palmno:"1",
+    //     palmname:"Palm1",
+    //   },
+    //   {
+    //     trialId: 2,
+    //     plotId: 1,
+    //     estateblockId: 2,
+    //     palmId: 2,
+    //     trialCode: "002",
+    //     plot:"Plot 2",
+    //     estateblock:"102bbb",
+    //     palmno:"2",
+    //     palmname:"Palm2",
+    //   },
+    //   {
+    //     trialId: 3,
+    //     plotId: 1,
+    //     estateblockId: 3,
+    //     palmId: 3,
+    //     trialCode: "003",
+    //     estateblock:"102ccc",
+    //     plot:"Plot 3",
+    //     palmno:"3",
+    //     palmname:"Palm3",
+    //   },
+    //   {
+    //     trialId: 4,
+    //     plotId: 1,
+    //     estateblockId: 4,
+    //     palmId: 4,
+    //     trialCode: "004",
+    //     estateblock:"102ddd",
+    //     plot:"Plot 4",
+    //     palmno:"4",
+    //     palmname:"Palm4",
+    //   },
+    //   {
+    //     trialId: 5,
+    //     plotId: 1,
+    //     estateblockId: 5,
+    //     palmId: 5,
+    //     trialCode: "005",
+    //     estateblock:"102eee",
+    //     plot:"Plot 5",
+    //     palmno:"5",
+    //     palmname:"Palm5",
+    //   }
+    // ];
+    
+    // const result = originalData.filter(data => data.plotId === plotId)
+    const result = {
+      success: true,
+      data: [foundplot],
+    };
     res.writeHead(200, { "Content-Type" : "application/json" });
     res.end(JSON.stringify(result));
   }
 );
 
+// app.get(
+//   "/admin/plot/PalmInformation",
+//   authenticateToken,
+//   function (req, res) {
+//     const result = [
+//         {
+//           trialCode:"001", 
+//           estate: "KLS",
+//           replicate:6, 
+//           estateblock:"102e",
+//           plot:"Plot 1",
+//           palmno: 1,
+//           palmId: 1,
+          
+//         },
+//         {
+//           trialCode:"001", 
+//           estate: "KGP",
+//           replicate:2, 
+//           estateblock:"102e",
+//           plot:"Plot 2",
+//           palmno: 2,
+//           palmId: 2,
+//         },
+//         {
+//           trialCode:"001", 
+//           estate: "KOP",
+//           replicate:3, 
+//           estateblock:"102e",
+//           plot:"Plot 3",
+//           palmno: 3,
+//           palmId: 3,
+//         },
+//         {
+//           trialCode:"001", 
+//           estate: "KOP",
+//           replicate:6, 
+//           estateblock:"102e",
+//           plot:"Plot 3",
+//           palmno: 4,
+//           palmId: 4,
+//         },
+//         {
+//           trialCode:"002", 
+//           estate: "KGL",
+//           replicate:4, 
+//           estateblock:"102e",
+//           plot:"Plot 4",
+//           palmno: 5,
+//           palmId: 5,
+//         },
+//         {
+//           trialCode:"003", 
+//           estate: "KGG",
+//           replicate:5, 
+//           estateblock:"102e",
+//           plot:"Plot 5",
+//           palmno: 6,
+//           palmId: 6,
+//         },
+//       ]
+//     res.writeHead(200, { "Content-Type": "application/json" });
+//     res.end(JSON.stringify(result));
+//   }
+// );
 app.get(
   "/admin/plot/PalmInformation",
   authenticateToken,
   function (req, res) {
-    const result = [
-        {
-          trialCode:"001", 
-          estate: "KLS",
-          replicate:6, 
+
+    const trialId = parseInt(req.query.trialId);
+    const trials =  getTrials()
+    const findTrial =  trials.find((trial) => trial.trialId === trialId)
+    const plots = findTrial.nofreplicate * findTrial.nofprogeny;
+    const plotsPalms = []
+    let plotCount = 0
+    let palmCount = 0
+    let repCount = 1
+    let repGap  = plots/findTrial.nofreplicate
+    let repGapCount  = 0
+    for (let i = 1; i <= plots; i++) {
+      plotCount++;
+      for (let j = 1; j <= 16; j++) {
+        palmCount++
+        repGapCount++
+        if(repGapCount > repGap){
+          repCount++;
+          repGapCount = 0;
+        }
+        const palm =  {
+          trialCode:findTrial.trialCode, 
+          trialId:findTrial.trialId, 
+          estate: findTrial.estate[0].name,
+          replicate:repCount, 
           estateblock:"102e",
-          plot:"Plot 1",
-          palmno: 1,
-          palmId: 1,
+          plot:`Plot ${plotCount}`,
+          plotId: plotCount,
+          palmno: `Palm ${palmCount}`,
+          palmId: palmCount      
+        }
+        plotsPalms.push(palm)          
+      }
+
+    }
+    // const result = [
+    //     {
+    //       trialCode:"001", 
+    //       estate: "KLS",
+    //       replicate:6, 
+    //       estateblock:"102e",
+    //       plot:"Plot 1",
+    //       palmno: 1,
+    //       palmId: 1,
           
-        },
-        {
-          trialCode:"001", 
-          estate: "KGP",
-          replicate:2, 
-          estateblock:"102e",
-          plot:"Plot 2",
-          palmno: 2,
-          palmId: 2,
-        },
-        {
-          trialCode:"001", 
-          estate: "KOP",
-          replicate:3, 
-          estateblock:"102e",
-          plot:"Plot 3",
-          palmno: 3,
-          palmId: 3,
-        },
-        {
-          trialCode:"001", 
-          estate: "KOP",
-          replicate:6, 
-          estateblock:"102e",
-          plot:"Plot 3",
-          palmno: 4,
-          palmId: 4,
-        },
-        {
-          trialCode:"002", 
-          estate: "KGL",
-          replicate:4, 
-          estateblock:"102e",
-          plot:"Plot 4",
-          palmno: 5,
-          palmId: 5,
-        },
-        {
-          trialCode:"003", 
-          estate: "KGG",
-          replicate:5, 
-          estateblock:"102e",
-          plot:"Plot 5",
-          palmno: 6,
-          palmId: 6,
-        },
-      ]
+    //     },
+    //     {
+    //       trialCode:"001", 
+    //       estate: "KGP",
+    //       replicate:2, 
+    //       estateblock:"102e",
+    //       plot:"Plot 2",
+    //       palmno: 2,
+    //       palmId: 2,
+    //     },
+    //     {
+    //       trialCode:"001", 
+    //       estate: "KOP",
+    //       replicate:3, 
+    //       estateblock:"102e",
+    //       plot:"Plot 3",
+    //       palmno: 3,
+    //       palmId: 3,
+    //     },
+    //     {
+    //       trialCode:"001", 
+    //       estate: "KOP",
+    //       replicate:6, 
+    //       estateblock:"102e",
+    //       plot:"Plot 3",
+    //       palmno: 4,
+    //       palmId: 4,
+    //     },
+    //     {
+    //       trialCode:"002", 
+    //       estate: "KGL",
+    //       replicate:4, 
+    //       estateblock:"102e",
+    //       plot:"Plot 4",
+    //       palmno: 5,
+    //       palmId: 5,
+    //     },
+    //     {
+    //       trialCode:"003", 
+    //       estate: "KGG",
+    //       replicate:5, 
+    //       estateblock:"102e",
+    //       plot:"Plot 5",
+    //       palmno: 6,
+    //       palmId: 6,
+    //     },
+    //   ]
+
+    const result = {
+      success: true,
+      data: plotsPalms,
+    };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
   }
 );
-
 app.post(
   "/admin/update-plot",
   authenticateToken,
@@ -1007,74 +1150,50 @@ app.get(
   "/admin/palm",
   authenticateToken,
   function (req, res) {
+    // const trialId = parseInt(req.query.trialId);
+    // console.log({trialId})
+    const trials  = getTrials();
+    // const trial =  trials.find((trial) => trial.trialId === trialId)
+    const TrialplotsPalms = []
+    trials.forEach(trial => {
+      const plots = trial.nofreplicate * trial.nofprogeny;
+      let plotCount = 0
+      let palmCount = 0
+      let repCount = 1
+      let repGap  = plots/trial.nofreplicate
+      let repGapCount  = 0
+      for (let i = 1; i <= plots; i++) {
+        plotCount++;
+        for (let j = 1; j <= 16; j++) {
+          palmCount++
+          repGapCount++
+          if(repGapCount > repGap){
+            repCount++;
+            repGapCount = 0;
+          }
+          const palm =   {
+            palmId:palmCount,
+            estate:trial.estate[0].name,
+            trialCode:trial.trialCode, 
+            replicate:repCount, 
+            estateblock:"102e",
+            design:"Alpha Design",
+            density:136,
+            plot:`Plot ${plotCount}`,
+            palmno: `Palm ${palmCount}`,
+            createdBy: "acerasadmin",
+            createdDate: "2020-04-28T07:19:30.646Z",
+            updatedBy: "aceadmin",
+            updatedDate: "2020-05-11T02:22:39.829Z",
+          }
+          TrialplotsPalms.push(palm)          
+        }
+  
+      }
+    });
     const result = {
       success: true,
-      data: [
-        {
-          palmId:1,
-          estate:"KLS",
-          trialCode:"001", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 1",
-          palmno:1,
-          palmname:"Palm1",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          palmId:2,
-          estate:"KEQ",
-          trialCode:"002", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 2",
-          palmno:2,
-          palmname:"Palm2",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          palmId:3,
-          estate:"FLZ",
-          trialCode:"003", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 3",
-          palmno:3,
-          palmname:"Palm3",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        },
-        {
-          palmId:4,
-          estate:"HFS",
-          trialCode:"004", 
-          replicate:6, 
-          estateblock:"102e",
-          design:"Alpha Design",
-          density:136,
-          plot:"Plot 4",
-          palmno:4,
-          palmname:"Palm4",
-          createdBy: "acerasadmin",
-          createdDate: "2020-04-28T07:19:30.646Z",
-          updatedBy: "aceadmin",
-          updatedDate: "2020-05-11T02:22:39.829Z",
-        }
-      ],
+      data:TrialplotsPalms
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
@@ -1090,79 +1209,79 @@ app.put("/admin/update-palm", authenticateToken, function (req, res) {
   res.end(JSON.stringify(result));
 });
 
-app.get("/admin/palm", authenticateToken, function (req, res) {
-  const result = {
-    success: true,
-    data: [
-      {
-        palmId: 1,
-        estate: "KLS",
-        trialCode: "001",
-        replicate: 6,
-        estateblock: "102e",
-        design: "Alpha Design",
-        density: 136,
-        plot: "Plot 1",
-        palmno: 1,
-        palmname: "Palm1",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        palmId: 2,
-        estate: "KEQ",
-        trialCode: "002",
-        replicate: 6,
-        estateblock: "102e",
-        design: "Alpha Design",
-        density: 136,
-        plot: "Plot 2",
-        palmno: 2,
-        palmname: "Palm2",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        palmId: 3,
-        estate: "FLZ",
-        trialCode: "003",
-        replicate: 6,
-        estateblock: "102e",
-        design: "Alpha Design",
-        density: 136,
-        plot: "Plot 3",
-        palmno: 3,
-        palmname: "Palm3",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-      {
-        palmId: 4,
-        estate: "HFS",
-        trialCode: "004",
-        replicate: 6,
-        estateblock: "102e",
-        design: "Alpha Design",
-        density: 136,
-        plot: "Plot 4",
-        palmno: 4,
-        palmname: "Palm4",
-        createdBy: "acerasadmin",
-        createdDate: "2020-04-28T07:19:30.646Z",
-        updatedBy: "aceadmin",
-        updatedDate: "2020-05-11T02:22:39.829Z",
-      },
-    ],
-  };
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(JSON.stringify(result));
-});
+// app.get("/admin/palm", authenticateToken, function (req, res) {
+//   const result = {
+//     success: true,
+//     data: [
+//       {
+//         palmId: 1,
+//         estate: "KLS",
+//         trialCode: "001",
+//         replicate: 6,
+//         estateblock: "102e",
+//         design: "Alpha Design",
+//         density: 136,
+//         plot: "Plot 1",
+//         palmno: 1,
+//         palmname: "Palm1",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         palmId: 2,
+//         estate: "KEQ",
+//         trialCode: "002",
+//         replicate: 6,
+//         estateblock: "102e",
+//         design: "Alpha Design",
+//         density: 136,
+//         plot: "Plot 2",
+//         palmno: 2,
+//         palmname: "Palm2",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         palmId: 3,
+//         estate: "FLZ",
+//         trialCode: "003",
+//         replicate: 6,
+//         estateblock: "102e",
+//         design: "Alpha Design",
+//         density: 136,
+//         plot: "Plot 3",
+//         palmno: 3,
+//         palmname: "Palm3",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         palmId: 4,
+//         estate: "HFS",
+//         trialCode: "004",
+//         replicate: 6,
+//         estateblock: "102e",
+//         design: "Alpha Design",
+//         density: 136,
+//         plot: "Plot 4",
+//         palmno: 4,
+//         palmname: "Palm4",
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//     ],
+//   };
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify(result));
+// });
 
 app.post("/admin/update-palm", authenticateToken, function (req, res) {
   const result = {
@@ -1939,6 +2058,7 @@ app.get(
   authenticateToken,
   function (req, res) {
     const trials = getTrials();
+    console.log(req.query.trialCode)
     const {trialCode, trialId, estate} = trials.find((t) => t.trialCode ===  req.query.trialCode);
     
       const result = {
@@ -1989,7 +2109,7 @@ app.get(
                 { id: 2, name: "102f" },
               ]
             : [{ id: 1, name: "102e" }],
-        design: "Alhpa Design",
+        design: "Alpha Design",
       };
       trialPlots.push(plot);
     }
