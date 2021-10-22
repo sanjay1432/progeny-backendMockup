@@ -1,11 +1,41 @@
 const express = require("express");
 const app = express();
 const moment = require("moment");
+var cors = require('cors');
 const faker = require("faker");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//const keycloak = require('./keycloak-config.js').initKeycloak()
+//app.use(keycloak.middleware());
+
+const session = require('express-session');
+const Keycloak = require('keycloak-connect');
+
+var keycloakConfig = {
+  "realm": "ProgenyLocal",
+  "auth-server-url":"http://localhost:8080/auth/",
+  "ssl-required":"none",
+  "resource":"node-microservice",
+  "realmPublicKey":"",
+  "bearer-only": true
+};
+
+var memoryStore = new session.MemoryStore();
+
+app.use(session({
+  secret: 'your_secret',
+  resave: false,
+  saveUninitialized: true,
+  store: memoryStore
+}));
+
+var keycloak = new Keycloak({ store: memoryStore}, keycloakConfig);
+
+app.use(keycloak.middleware());
+
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -19,7 +49,8 @@ app.use(function (req, res, next) {
   );
   next();
 });
-
+// Enable CORS support
+app.use(cors());
 function authenticateToken(req, res, next) {
   // Gather the jwt access token from the request header
   const authHeader = req.headers["authorization"];
@@ -59,19 +90,20 @@ function getTrials() {
         },
       ],
       trialId: 1,
+      type: 'DD',
       trialCode: "001",
       trial: "PT01_001KPM02",
       trialremark:
         "Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
       area: 50.50,
-      planteddate: new Date("2002-12-01"),
+      planteddate: new Date("2002-11-01"),
       nofprogeny: 50,
       nofreplicate: 6,
       soiltype: "1",
       nofplot: 300,
       nofplot_subblock: 5,
       nofsubblock: 10,
-      isEditable: true,
+      isEditable: "true",
       status: "Active",
       design: "Alpha Design",
       createdBy: "acerasadmin",
@@ -96,20 +128,21 @@ function getTrials() {
         },
       ],
       trialId: 2,
+      type: 'PT',
       trialCode: "002",
       trial: "PT02_002KPM03",
       trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
       area: 50.50,
-      planteddate: new Date("2002-12-01"),
+      planteddate: new Date("2002-10-01"),
       nofprogeny: 2,
       nofreplicate: 2,
       soiltype: "1",
       nofplot: 4,
-      isEditable: false,
+      isEditable: "false",
       nofplot_subblock: 1,
       design: "Alpha Design",
       nofsubblock: 2,
-      status: "canceled",
+      status: "Canceled",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
       updatedBy: "aceadmin",
@@ -119,7 +152,7 @@ function getTrials() {
       estate: [
         {
           id: 3,
-          name: "ASG",
+          name: "KSG",
           replicate: 4,
           estateblocks: [
             {
@@ -132,7 +165,7 @@ function getTrials() {
         },
         {
           id: 4,
-          name: "KBA",
+          name: "KLS",
           replicate: 3,
           estateblocks: [
             {
@@ -151,6 +184,7 @@ function getTrials() {
         },
       ],
       trialId: 3,
+      type: 'PT',
       trialCode: "003",
       trial: "PT01_001KPM02",
       trialremark:
@@ -161,11 +195,11 @@ function getTrials() {
       nofreplicate: 7,
       soiltype: "1",
       nofplot: 350,
-      isEditable: true,
+      isEditable: "true",
       nofplot_subblock: 5,
       design: "Alpha Design",
       nofsubblock: 3,
-      status: "finished",
+      status: "Finished",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
       updatedBy: "aceadmin",
@@ -188,19 +222,20 @@ function getTrials() {
         },
       ],
       trialId: 4,
+      type: 'PT',
       trialCode: "004",
       trial: "PT01_001KPM05",
       trialremark:
         "Density Trial: 136, 143, 155 SPH with “a” Cross DelixGha and “b” Cross DelixEko",
       area: 50.50,
-      planteddate: "Feb-03",
+      planteddate: new Date("2002-12-01"),
       nofprogeny: 100,
       nofreplicate: 6,
       soiltype: "1",
       nofplot: 1,
       nofplot_subblock: 4,
       nofsubblock: 2,
-      isEditable: true,
+      isEditable: "true",
       status: "Closed",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
@@ -224,6 +259,7 @@ function getTrials() {
         },
       ],
       trialId: 5,
+      type: 'PT',
       trialCode: "005",
       trial: "PT02_002KPM03",
       trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
@@ -235,8 +271,8 @@ function getTrials() {
       nofplot: 250,
       nofplot_subblock: 10,
       nofsubblock: 5,
-      isEditable: true,
-      status: "canceled",
+      isEditable: "true",
+      status: "Canceled",
       design: "Alpha Design",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
@@ -260,6 +296,7 @@ function getTrials() {
         },
       ],
       trialId: 6,
+      type: 'PT',
       trialCode: "006",
       trial: "PT01_001KPM02",
       trialremark:
@@ -272,9 +309,9 @@ function getTrials() {
       nofplot: 250,
       nofplot_subblock: 5,
       nofsubblock: 3,
-      isEditable: true,
+      isEditable: "true",
       design: "Alpha Design",
-      status: "finished",
+      status: "Pending",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
       updatedBy: "aceadmin",
@@ -297,6 +334,7 @@ function getTrials() {
         },
       ],
       trialId: 7,
+      type: 'PT',
       trialCode: "007",
       trial: "PT02_002KPM03",
       trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
@@ -306,11 +344,751 @@ function getTrials() {
       nofreplicate: 2,
       soiltype: "1",
       nofplot: 4,
-      isEditable: true,
+      isEditable: "true",
       nofplot_subblock: 1,
       design: "Alpha Design",
       nofsubblock: 2,
-      status: "canceled",
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      estate: [
+        {
+          id: 2,
+          name: "KPM",
+          replicate: 2,
+          estateblocks: [
+            {
+              blockId: 1,
+              estateblock: "102d",
+              size: 28,
+              density: 230,
+            },
+          ],
+        },
+      ],
+      trialId: 7,
+      type: 'PT',
+      trialCode: "007",
+      trial: "PT02_002KPM03",
+      trialremark: "Progeny Trial: “a” Cross DelixGha and “b” Cross DelixEko",
+      area: 50.50,
+      planteddate: new Date("2002-12-01"),
+      nofprogeny: 2,
+      nofreplicate: 2,
+      soiltype: "1",
+      nofplot: 4,
+      isEditable: "true",
+      nofplot_subblock: 1,
+      design: "Alpha Design",
+      nofsubblock: 2,
+      status: "Canceled",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
       updatedBy: "aceadmin",
@@ -325,6 +1103,7 @@ function getPlots() {
     {
       plotId:1,
       estate:"KLS",
+      trial: "PT01_001KPM02",
       trialId: 1,
       trialCode:"001", 
       replicate:6, 
@@ -336,7 +1115,7 @@ function getPlots() {
       progenyCode: "D001",
       progeny:"Ce 1.1",
       ortet:"C9212.57",
-      fp:"C 27,36",
+      fp:"C 27.36",
       mp:"C 27,2489",
       noofPalm:16,
       createdBy: "acerasadmin",
@@ -347,60 +1126,19 @@ function getPlots() {
     {
       estate:"KPP",
       trialId: 1,
+      trial: "PT01_001KPM02",
       trialCode:"001", 
       replicate:6, 
       estateblock:"102e",
       design:"Alpha Design",
       density:136,
       plot:"Plot 2",
+      plotId:2,
       subblock:5,
       progenyCode: "D001",
       progeny:"Ce 1.1",
       ortet:"C9212.57",
-      fp:"C 27,36",
-      mp:"C 27,2489",
-      noofPalm:16,
-      createdBy: "acerasadmin",
-      createdDate: "2020-04-28T07:19:30.646Z",
-      updatedBy: "aceadmin",
-      updatedDate: "2020-05-11T02:22:39.829Z",
-    },
-    {
-      plotId:2,
-      estate:"KLS",
-      trialId: 2,
-      trialCode:"002", 
-      replicate:6, 
-      estateblock:"102e",
-      design:"Alpha Design",
-      density:136,
-      plot:"Plot 2",
-      subblock:4,
-      progenyCode: "D002",
-      progeny:"Ce 1.1",
-      ortet:"C9212.57",
-      fp:"C 27,36",
-      mp:"C 27,2489",
-      noofPalm:16,
-      createdBy: "acerasadmin",
-      createdDate: "2020-04-28T07:19:30.646Z",
-      updatedBy: "aceadmin",
-      updatedDate: "2020-05-11T02:22:39.829Z",
-    },
-    {
-      estate:"KBP",
-      trialId: 2,
-      trialCode:"002", 
-      replicate:6, 
-      estateblock:"102e",
-      design:"Alpha Design",
-      density:136,
-      plot:"Plot 2",
-      subblock:4,
-      progenyCode: "D002",
-      progeny:"Ce 1.1",
-      ortet:"C9212.57",
-      fp:"C 27,36",
+      fp:"C 27.36",
       mp:"C 27,2489",
       noofPalm:16,
       createdBy: "acerasadmin",
@@ -411,7 +1149,54 @@ function getPlots() {
     {
       plotId:3,
       estate:"KLS",
+      trialId: 2,
+      trial: "PT02_002KPM03",
+      trialCode:"002", 
+      replicate:6, 
+      estateblock:"102e",
+      design:"Alpha Design",
+      density:136,
+      plot:"Plot 2",
+      subblock:4,
+      progenyCode: "D002",
+      progeny:"Ce 1.1",
+      ortet:"C9212.57",
+      fp:"C 27.36",
+      mp:"C 27,2489",
+      noofPalm:16,
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      plotId:4,
+      estate:"KBP",
+      trialId: 2,
+      trial: "PT02_002KPM03",
+      trialCode:"002", 
+      replicate:6, 
+      estateblock:"102e",
+      design:"Alpha Design",
+      density:136,
+      plot:"Plot 2",
+      subblock:4,
+      progenyCode: "D002",
+      progeny:"Ce 1.1",
+      ortet:"C9212.57",
+      fp:"C 27.36",
+      mp:"C 27,2489",
+      noofPalm:16,
+      createdBy: "acerasadmin",
+      createdDate: "2020-04-28T07:19:30.646Z",
+      updatedBy: "aceadmin",
+      updatedDate: "2020-05-11T02:22:39.829Z",
+    },
+    {
+      plotId:5,
+      estate:"KLS",
       trialId: 3,
+      trial: "PT02_002KPM03",
       trialCode:"019", 
       replicate:6, 
       estateblock:"102e",
@@ -422,7 +1207,7 @@ function getPlots() {
       progenyCode: "D003",
       progeny:"Ce 1.1",
       ortet:"C9212.57",
-      fp:"C 27,36",
+      fp:"C 27.36",
       mp:"C 27,2489",
       noofPalm:"16",
       createdBy: "acerasadmin",
@@ -431,9 +1216,10 @@ function getPlots() {
       updatedDate: "2020-05-11T02:22:39.829Z",
     },
     {
-      plotId:4,
+      plotId:6,
       estate:"KLS",
       trialId: 4,
+      trial: "PT02_002KPM03",
       trialCode:"020", 
       replicate:6, 
       estateblock:"102e",
@@ -444,7 +1230,7 @@ function getPlots() {
       progenyCode: "D004",
       progeny:"Ce 1.1",
       ortet:"C9212.57",
-      fp:"C 27,36",
+      fp:"C 27.36",
       mp:"C 27,2489",
       noofPalm:16,
       createdBy: "acerasadmin",
@@ -523,7 +1309,372 @@ app.get("/api/v1/general/login/refresh", function (req, res) {
 
 //PROGENY
 
-app.get("/admin/estate", authenticateToken, function (req, res) {
+// app.get("/admin/estate", authenticateToken, function (req, res) {
+//   const result = {
+//     success: true,
+//     data: [
+//       {
+//         estateId: 1,
+//         estate: "KLS",
+//         estatefullname: "Kebuan Lokasi Satu",
+//         noofestateblock: 3,
+//         nooftrails: 3,
+//         estateblocks: [
+//           {
+//             blockId: 1,
+//             estateblock: "102d",
+//             size: 28,
+//             density: 230,
+//             soiltype: "1",
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 2,
+//             estateblock: "102a",
+//             size: 28,
+//             density: 420,
+//             soiltype: "2",
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 3,
+//             estateblock: "102e",
+//             size: 28,
+//             density: 360,
+//             soiltype: "3",
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//         ],
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         estateId: 2,
+//         estate: "KSG",
+//         estatefullname: "Kebuan Lokasi Dua",
+//         noofestateblock: 1,
+//         nooftrails: 2,
+//         estateblocks: [
+//           {
+//             blockId: 1,
+//             estateblock: "102d",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//         ],
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         estateId: 3,
+//         estate: "KBL",
+//         estatefullname: "Kebuan Lokasi Tiga",
+//         noofestateblock: 4,
+//         nooftrails: 7,
+//         estateblocks: [
+//           {
+//             blockId: 1,
+//             estateblock: "102d",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 2,
+//             estateblock: "102e",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 3,
+//             estateblock: "102f",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 4,
+//             estateblock: "102g",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 5,
+//             estateblock: "102h",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//         ],
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         estateId: 4,
+//         estate: "KEL",
+//         estatefullname: "Kebuan Lokasi Lima",
+//         noofestateblock: 2,
+//         nooftrails: 6,
+//         estateblocks: [
+//           {
+//             blockId: 1,
+//             estateblock: "102d",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 2,
+//             estateblock: "102e",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 3,
+//             estateblock: "102f",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 4,
+//             estateblock: "102g",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 5,
+//             estateblock: "102h",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//         ],
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         estateId: 5,
+//         estate: "KFL",
+//         estatefullname: "Kebuan Lokasi Enam",
+//         noofestateblock: 6,
+//         nooftrails: 6,
+//         estateblocks: [
+//           {
+//             blockId: 1,
+//             estateblock: "102d",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 2,
+//             estateblock: "102e",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 3,
+//             estateblock: "102f",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 4,
+//             estateblock: "102g",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 5,
+//             estateblock: "102h",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//         ],
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         estateId: 6,
+//         estate: "KGQ",
+//         estatefullname: "Kebuan Lokasi Lapan",
+//         noofestateblock: 1,
+//         nooftrails: 4,
+//         estateblocks: [
+//           {
+//             blockId: 1,
+//             estateblock: "102d",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 2,
+//             estateblock: "102e",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 3,
+//             estateblock: "102f",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 4,
+//             estateblock: "102g",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 5,
+//             estateblock: "102h",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//         ],
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//       {
+//         estateId: 7,
+//         estate: "KQS",
+//         estatefullname: "Kebuan Lokasi Sembilan",
+//         noofestateblock: 1,
+//         nooftrails: 6,
+//         estateblocks: [
+//           {
+//             blockId: 1,
+//             estateblock: "102d",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 2,
+//             estateblock: "102e",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 3,
+//             estateblock: "102f",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 4,
+//             estateblock: "102g",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//           {
+//             blockId: 5,
+//             estateblock: "102h",
+//             size: 28,
+//             density: 230,
+//             trialId: 1,
+//             trialCode: "001",
+//             trial: "PT01_001KPM02",
+//           },
+//         ],
+//         createdBy: "acerasadmin",
+//         createdDate: "2020-04-28T07:19:30.646Z",
+//         updatedBy: "aceadmin",
+//         updatedDate: "2020-05-11T02:22:39.829Z",
+//       },
+//     ],
+//   };
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   res.end(JSON.stringify(result));
+// });
+
+app.get("/admin/estate", keycloak.protect('Administrator'), function (req, res) {
   const result = {
     success: true,
     data: [
@@ -539,21 +1690,30 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
             estateblock: "102d",
             size: 28,
             density: 230,
-            soiltype: "1"
+            soiltype: "1",
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 2,
             estateblock: "102a",
             size: 28,
             density: 420,
-            soiltype: "2"
+            soiltype: "2",
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 3,
             estateblock: "102e",
             size: 28,
             density: 360,
-            soiltype: "3"
+            soiltype: "3",
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
         ],
         createdBy: "acerasadmin",
@@ -573,6 +1733,9 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
             estateblock: "102d",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
         ],
         createdBy: "acerasadmin",
@@ -592,30 +1755,45 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
             estateblock: "102d",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 2,
             estateblock: "102e",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 3,
             estateblock: "102f",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 4,
             estateblock: "102g",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 5,
             estateblock: "102h",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
         ],
         createdBy: "acerasadmin",
@@ -635,30 +1813,45 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
             estateblock: "102d",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 2,
             estateblock: "102e",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 3,
             estateblock: "102f",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 4,
             estateblock: "102g",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 5,
             estateblock: "102h",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
         ],
         createdBy: "acerasadmin",
@@ -678,30 +1871,45 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
             estateblock: "102d",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 2,
             estateblock: "102e",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 3,
             estateblock: "102f",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 4,
             estateblock: "102g",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 5,
             estateblock: "102h",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
         ],
         createdBy: "acerasadmin",
@@ -721,30 +1929,45 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
             estateblock: "102d",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 2,
             estateblock: "102e",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 3,
             estateblock: "102f",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 4,
             estateblock: "102g",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 5,
             estateblock: "102h",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
         ],
         createdBy: "acerasadmin",
@@ -764,30 +1987,45 @@ app.get("/admin/estate", authenticateToken, function (req, res) {
             estateblock: "102d",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 2,
             estateblock: "102e",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 3,
             estateblock: "102f",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 4,
             estateblock: "102g",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
           {
             blockId: 5,
             estateblock: "102h",
             size: 28,
             density: 230,
+            trialId: 1,
+            trialCode: "001",
+            trial: "PT01_001KPM02",
           },
         ],
         createdBy: "acerasadmin",
@@ -863,10 +2101,10 @@ app.get(
   function(req, res) {
     const plotId = parseInt(req.query.plotId);
     const plots =  getPlots();
-    const {trialCode, trialId, estateblock, plot } =  plots.find((p)=>p.plotId === plotId)
+    const {trialCode, trialId, trial, estateblock, plot } =  plots.find((p)=>p.plotId === plotId)
 
     const foundplot = {
-      trialCode, trialId, estateblock, plot, plotId 
+      trialCode, trialId, trial, estateblock, plot, plotId 
     }
     const palms = [];
 
@@ -879,6 +2117,7 @@ app.get(
 
     foundplot['palms'] = palms;
     foundplot['estateblockId'] = 1;
+    foundplot['estateId'] = 1;
     // const originalData = [
     //   {
     //     trialId: 1,
@@ -948,71 +2187,36 @@ app.get(
   }
 );
 
-// app.get(
-//   "/admin/plot/PalmInformation",
-//   authenticateToken,
-//   function (req, res) {
-//     const result = [
-//         {
-//           trialCode:"001", 
-//           estate: "KLS",
-//           replicate:6, 
-//           estateblock:"102e",
-//           plot:"Plot 1",
-//           palmno: 1,
-//           palmId: 1,
-          
-//         },
-//         {
-//           trialCode:"001", 
-//           estate: "KGP",
-//           replicate:2, 
-//           estateblock:"102e",
-//           plot:"Plot 2",
-//           palmno: 2,
-//           palmId: 2,
-//         },
-//         {
-//           trialCode:"001", 
-//           estate: "KOP",
-//           replicate:3, 
-//           estateblock:"102e",
-//           plot:"Plot 3",
-//           palmno: 3,
-//           palmId: 3,
-//         },
-//         {
-//           trialCode:"001", 
-//           estate: "KOP",
-//           replicate:6, 
-//           estateblock:"102e",
-//           plot:"Plot 3",
-//           palmno: 4,
-//           palmId: 4,
-//         },
-//         {
-//           trialCode:"002", 
-//           estate: "KGL",
-//           replicate:4, 
-//           estateblock:"102e",
-//           plot:"Plot 4",
-//           palmno: 5,
-//           palmId: 5,
-//         },
-//         {
-//           trialCode:"003", 
-//           estate: "KGG",
-//           replicate:5, 
-//           estateblock:"102e",
-//           plot:"Plot 5",
-//           palmno: 6,
-//           palmId: 6,
-//         },
-//       ]
-//     res.writeHead(200, { "Content-Type": "application/json" });
-//     res.end(JSON.stringify(result));
-//   }
-// );
+app.get(
+  "/admin/trial-types",
+  authenticateToken,
+  function (req, res) {
+    const result = {
+      success: true,
+      data: [
+        {
+          trialId:1, 
+          trialType: "DD"      
+        },
+        {
+          trialId:2, 
+          trialType: "PT"      
+        },
+        {
+          trialId:3, 
+          trialType: "TP"      
+        },
+        {
+          trialId:4, 
+          trialType: "PC"      
+        }
+      ]
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
 app.get(
   "/admin/plot/PalmInformation",
   authenticateToken,
@@ -1150,12 +2354,18 @@ app.get(
   "/admin/palm",
   authenticateToken,
   function (req, res) {
-    // const trialId = parseInt(req.query.trialId);
-    // console.log({trialId})
-    const trials  = getTrials();
-    // const trial =  trials.find((trial) => trial.trialId === trialId)
+    const trialId = parseInt(req.query.trialId);
+    const estateId = parseInt(req.query.estateId);
+    console.log('CALL FROM CLIENT', {trialId, estateId})
+    let  trials  = getTrials();
+    let foundTrials = [];
+    if(trialId) {
+      foundTrials =  trials.filter((trial) => trial.trialId === trialId)
+    } else {
+      foundTrials = trials
+    }
     const TrialplotsPalms = []
-    trials.forEach(trial => {
+    foundTrials.forEach(trial => {
       const plots = trial.nofreplicate * trial.nofprogeny;
       let plotCount = 0
       let palmCount = 0
@@ -1175,11 +2385,14 @@ app.get(
             palmId:palmCount,
             estate:trial.estate[0].name,
             trialCode:trial.trialCode, 
+            trialId:trial.trialId, 
             replicate:repCount, 
+            replicateno:repCount,
             estateblock:"102e",
             design:"Alpha Design",
             density:136,
             plot:`Plot ${plotCount}`,
+            plotId: plotCount,
             palmno: `Palm ${palmCount}`,
             createdBy: "acerasadmin",
             createdDate: "2020-04-28T07:19:30.646Z",
@@ -1200,88 +2413,14 @@ app.get(
   }
 );
 
-app.put("/admin/update-palm", authenticateToken, function (req, res) {
+app.post("/admin/update-palm", authenticateToken, function (req, res) {
   const result = {
     success: true,
     data: null,
   };
   res.writeHead(200, { "Content-Type": "application/json" });
   res.end(JSON.stringify(result));
-});
-
-// app.get("/admin/palm", authenticateToken, function (req, res) {
-//   const result = {
-//     success: true,
-//     data: [
-//       {
-//         palmId: 1,
-//         estate: "KLS",
-//         trialCode: "001",
-//         replicate: 6,
-//         estateblock: "102e",
-//         design: "Alpha Design",
-//         density: 136,
-//         plot: "Plot 1",
-//         palmno: 1,
-//         palmname: "Palm1",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         palmId: 2,
-//         estate: "KEQ",
-//         trialCode: "002",
-//         replicate: 6,
-//         estateblock: "102e",
-//         design: "Alpha Design",
-//         density: 136,
-//         plot: "Plot 2",
-//         palmno: 2,
-//         palmname: "Palm2",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         palmId: 3,
-//         estate: "FLZ",
-//         trialCode: "003",
-//         replicate: 6,
-//         estateblock: "102e",
-//         design: "Alpha Design",
-//         density: 136,
-//         plot: "Plot 3",
-//         palmno: 3,
-//         palmname: "Palm3",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         palmId: 4,
-//         estate: "HFS",
-//         trialCode: "004",
-//         replicate: 6,
-//         estateblock: "102e",
-//         design: "Alpha Design",
-//         density: 136,
-//         plot: "Plot 4",
-//         palmno: 4,
-//         palmname: "Palm4",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//     ],
-//   };
-//   res.writeHead(200, { "Content-Type": "application/json" });
-//   res.end(JSON.stringify(result));
-// });
+})
 
 app.post("/admin/update-palm", authenticateToken, function (req, res) {
   const result = {
@@ -1298,20 +2437,20 @@ app.get("/admin/progeny", authenticateToken, function (req, res) {
   for (let i = 1; i <= 26; i++) {
     const pro = {
       progenyId: i,
-      progenyCode: `D${pad("" + i)}`,
+      progenyCode: i === 1? 'undefined': `D${pad("" + i)}`,
       popvar: "Dura111",
       origin: "Chemera (100% Ce)",
       progenyremark: "Ce 1",
-      progeny: "Ce 1.1",
-      generation: "Gen 1",
+      progeny: `Ce ${i}.1`,
+      generation: i === 2? `Gen 29` : `Gen ${i}`,
       ortet: "C9212.57",
       fp: "C 27.36",
       fpFam: "C 27",
       fpVar: "D",
-      mp: "C 27, 2489",
+      mp: "C 27.2489",
       mpFam: "C 27",
       mpVar: "A",
-      cross: "C 27,36 x C 27, 2489",
+      cross: "C 27.36 x C 27.2489",
       crossType: "DXD Sibling",
       createdBy: "acerasadmin",
       createdDate: "2020-04-28T07:19:30.646Z",
@@ -1336,8 +2475,15 @@ app.post("/admin/create-progeny", authenticateToken, function (req, res) {
   res.writeHead(200, { "Content-Type": "application/json" });
   res.end(JSON.stringify(result));
 });
-
-app.put("/admin/update-progeny", authenticateToken, function (req, res) {
+app.post("/admin/delete-progeny", authenticateToken, function (req, res) {
+  const result = {
+    success: true,
+    data: null,
+  };
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify(result));
+});
+app.post("/admin/update-progeny", authenticateToken, function (req, res) {
   const result = {
     success: true,
     data: null,
@@ -1359,19 +2505,19 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
             id: 1,
             assigned: false,
             estateblock: "102d",
-            soiltype: "1",
+            soiltype: "Alluvial",
           },
           {
             id: 2,
             assigned: true,
             estateblock: "102a",
-            soiltype: "3",
+            soiltype: "Deep Peat",
           },
           {
             id: 3,
             assigned: true,
             estateblock: "102e",
-            soiltype: "2",
+            soiltype: "Inland",
           },
         ],
         createdBy: "acerasadmin",
@@ -1388,19 +2534,19 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
             id: 1,
             assigned: true,
             estateblock: "102d",
-            soiltype: "1",
+            soiltype: "Alluvial",
           },
           {
             id: 2,
             assigned: false,
             estateblock: "102e",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 3,
             assigned: false,
             estateblock: "102f",
-            soiltype: "1",
+            soiltype: "Peat",
           },
         ],
         createdBy: "acerasadmin",
@@ -1410,38 +2556,38 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
       },
       {
         estateId: 3,
-        estate: "KNS",
+        estate: "KBL",
 
         estateblocks: [
           {
             id: 1,
             assigned: true,
             estateblock: "102d",
-            soiltype: "1",
+            soiltype: "Alluvial",
           },
           {
             id: 2,
             assigned: true,
             estateblock: "102e",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 3,
             assigned: true,
             estateblock: "102f",
-            soiltype: "1",
+            soiltype: "Peat",
           },
           {
             id: 4,
             assigned: false,
             estateblock: "102g",
-            soiltype: "2",
+            soiltype: "Mineral",
           },
           {
             id: 5,
             assigned: false,
             estateblock: "102h",
-            soiltype: "3",
+            soiltype: "Shallow Peat",
           },
         ],
         createdBy: "acerasadmin",
@@ -1458,31 +2604,31 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
             id: 1,
             assigned: true,
             estateblock: "102d",
-            soiltype: "1",
+            soiltype: "Alluvial",
           },
           {
             id: 2,
             assigned: false,
             estateblock: "102e",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 3,
             assigned: false,
             estateblock: "102f",
-            soiltype: "1",
+            soiltype: "Peat",
           },
           {
             id: 4,
             assigned: false,
             estateblock: "102g",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 5,
             assigned: true,
             estateblock: "102h",
-            soiltype: "3",
+            soiltype: "Inland",
           },
         ],
         createdBy: "acerasadmin",
@@ -1499,31 +2645,31 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
             id: 1,
             assigned: true,
             estateblock: "102d",
-            soiltype: "1",
+            soiltype: "Alluvial",
           },
           {
             id: 2,
             assigned: true,
             estateblock: "102e",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 3,
             assigned: true,
             estateblock: "102f",
-            soiltype: "1",
+            soiltype: "Peat",
           },
           {
             id: 4,
             assigned: true,
             estateblock: "102g",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 5,
             assigned: true,
             estateblock: "102h",
-            soiltype: "3",
+            soiltype: "Inland",
           },
         ],
         createdBy: "acerasadmin",
@@ -1540,31 +2686,31 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
             id: 1,
             assigned: true,
             estateblock: "102d",
-            soiltype: "1",
+            soiltype: "Alluvial",
           },
           {
             id: 2,
             assigned: false,
             estateblock: "102e",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 3,
             assigned: false,
             estateblock: "102f",
-            soiltype: "1",
+            soiltype: "Peat",
           },
           {
             id: 4,
             assigned: false,
             estateblock: "102g",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 5,
             assigned: false,
             estateblock: "102h",
-            soiltype: "3",
+            soiltype: "Inland",
           },
         ],
         createdBy: "acerasadmin",
@@ -1581,31 +2727,31 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
             id: 1,
             assigned: true,
             estateblock: "102d",
-            soiltype: "1",
+            soiltype: "Alluvial",
           },
           {
             id: 2,
             assigned: false,
             estateblock: "102e",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 3,
             assigned: false,
             estateblock: "102f",
-            soiltype: "1",
+            soiltype: "Peat",
           },
           {
             id: 4,
             assigned: false,
             estateblock: "102g",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 5,
             assigned: false,
             estateblock: "102h",
-            soiltype: "3",
+            soiltype: "Inland",
           },
         ],
         createdBy: "acerasadmin",
@@ -1622,31 +2768,31 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
             id: 1,
             assigned: true,
             estateblock: "102d",
-            soiltype: "1",
+            soiltype: "Alluvial",
           },
           {
             id: 2,
             assigned: true,
             estateblock: "102e",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 3,
             assigned: true,
             estateblock: "102f",
-            soiltype: "1",
+            soiltype: "Peat",
           },
           {
             id: 4,
             assigned: true,
             estateblock: "102g",
-            soiltype: "2",
+            soiltype: "Inland",
           },
           {
             id: 5,
             assigned: false,
             estateblock: "102h",
-            soiltype: "3",
+            soiltype: "Inland",
           },
         ],
         createdBy: "acerasadmin",
@@ -1661,13 +2807,23 @@ app.get("/admin/estate/estate-blocks", authenticateToken, function (req, res) {
   res.end(JSON.stringify(result));
 });
 
-app.put(
+app.post(
   "/admin/estate/map-estate-blocks",
   authenticateToken,
   function (req, res) {
-    const { estate, blocks } = req.body;
-    if (!estate || blocks.length === 0)
-      return res.status(500).send("There is something wrong!");
+    const result = {
+      success: true,
+      data: [],
+    };
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(result));
+  }
+);
+
+app.post(
+  "/admin/estate/map-multiple-estate-blocks",
+  authenticateToken,
+  function (req, res) {
     const result = {
       success: true,
       data: [],
@@ -1710,276 +2866,6 @@ app.get("/admin/design", authenticateToken, function (req, res) {
   res.writeHead(200, { "Content-Type": "application/json" });
   res.end(JSON.stringify(result));
 });
-//USER BLOCK
-
-// app.get("/admin/userlist", authenticateToken, function (req, res) {
-//   const result = {
-//     success: true,
-//     data: [
-//       {
-//         userId: "001",
-//         username: "Ali",
-//         position: "Mandore",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "002",
-//         username: "Aqeel",
-//         position: "Mandore",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "003",
-//         username: "Dexter",
-//         position: "Recorder",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "004",
-//         username: "Jack",
-//         position: "Recorder",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "005",
-//         username: "Maxwell",
-//         position: "Recorder",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "006",
-//         username: "Ahmed",
-//         position: "Assistant",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "007",
-//         username: "Amir",
-//         position: "Assistant",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "008",
-//         username: "Joe",
-//         position: "Mandore",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "009",
-//         username: "Smith",
-//         position: "Recorder",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "010",
-//         username: "Tim",
-//         position: "Mandore",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         userId: "011",
-//         username: "Jhon",
-//         position: "Mandore",
-//         status: "active",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//     ],
-//   };
-//   res.writeHead(200, { "Content-Type": "application/json" });
-//   res.end(JSON.stringify(result));
-// });
-
-// app.get(
-//   "/admin/estateAssignment",
-//   //authenticateToken,
-//   function (req, res) {
-//     const result = {
-//       success: true,
-//       data: [
-//         {
-//           estate: "KLS",
-//           estatefullname: "KLS",
-//           noTrialOnHere: 2,
-//           assignedUser: 20,
-//         },
-//         {
-//           estate: "KPM",
-//           estatefullname: "KPM",
-//           noTrialOnHere: 5,
-//           assignedUser: 20,
-//         },
-//         {
-//           estate: "ASG",
-//           estatefullname: "ASG",
-//           noTrialOnHere: 6,
-//           assignedUser: 20,
-//         },
-//       ],
-//     };
-//     res.writeHead(200, { "content-type": "application/json" });
-//     res.end(JSON.stringify(result));
-//   }
-// );
-
-// app.get(
-//   "/admin/userAssignment",
-//   //authenticationToken,
-//   function (req, res) {
-//     const result = {
-//       success: true,
-//       data: [
-//         {
-//           userId: "001",
-//           username: "Ali",
-//           position: "Mandore",
-//           estate: [
-//             {
-//               name: "KLM"
-//             },
-//             {
-//               name: "KLS"
-//             }
-//           ]
-//         },
-//         {
-//           userId: "002",
-//           username: "Aqeel",
-//           position: "Mandore",
-//           estate: [
-//             {
-//               name: "KKK"
-//             }
-//           ]
-//         },
-//         {
-//           userId: "003",
-//           username: "Dexter",
-//           position: "Recorder",
-//           estate: [
-//             {
-//               name: "KBM"
-//             }
-//           ]
-//         },
-//       ],
-//     };
-//     res.writeHead(200, { "Content-Type": "application/json" });
-//     res.end(JSON.stringify(result));
-//   }
-// );
-// app.post("/admin/create-user", authenticateToken, function (req, res) {
-//   const { userId, username, position } = req.body;
-//   const result = {
-//     success: true,
-//     data: { userId, username, position },
-//   };
-//   res.writeHead(200, { "Content-Type": "application/json" });
-//   res.end(JSON.stringify(result));
-// });
-
-// app.put("/admin/update-user", authenticateToken, function (req, res) {
-//   const { userId, username, position, status } = req.body;
-//   const result = {
-//     success: true,
-//     data: { userId, username, position, status },
-//   };
-//   res.writeHead(200, { "Content-Type": "application/json" });
-//   res.end(JSON.stringify(result));
-// });
-
-// app.put("/admin/assign-user-to-estate", authenticateToken, function (req, res) {
-//   const { estate, userId } = req.body;
-//   const result = {
-//     success: true,
-//     data: { estate, userId },
-//   };
-//   res.writeHead(200, { "Content-Type": "application/json" });
-//   res.end(JSON.stringify(result));
-// });
-
-// app.put("/admin/assign-estate-to-user", authenticateToken, function (req, res) {
-//   const { username, estate } = req.body;
-//   const result = {
-//     success: true,
-//     data: { username, estate },
-//   };
-//   res.writeHead(200, { "Content-Type": "application/json" });
-//   res.end(JSON.stringify(result));
-// });
-
-// app.get("/admin/user-position", authenticateToken, function (req, res) {
-//   const result = {
-//     success: true,
-//     data: [
-//       {
-//         position: "Mandore",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         position: "Recorder",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//       {
-//         position: "Assistant",
-//         createdBy: "acerasadmin",
-//         createdDate: "2020-04-28T07:19:30.646Z",
-//         updatedBy: "aceadmin",
-//         updatedDate: "2020-05-11T02:22:39.829Z",
-//       },
-//     ],
-//   };
-//   res.writeHead(200, { "Content-Type": "application/json" });
-//   res.end(JSON.stringify(result));
-// });
 
 //TRIAL
 app.post("/admin/create-trial", authenticateToken, function (req, res) {
@@ -1991,7 +2877,7 @@ app.post("/admin/create-trial", authenticateToken, function (req, res) {
   res.end(JSON.stringify(result));
 });
 
-app.put("/admin/update-trial", authenticateToken, function (req, res) {
+app.post("/admin/update-trial", authenticateToken, function (req, res) {
   const result = {
     success: true,
     data: null,
@@ -2000,7 +2886,7 @@ app.put("/admin/update-trial", authenticateToken, function (req, res) {
   res.end(JSON.stringify(result));
 });
 
-app.put("/admin/trial/replicate", authenticateToken, function (req, res) {
+app.post("/admin/trial/replicate", authenticateToken, function (req, res) {
   const result = {
     success: true,
     data: null,
@@ -2008,50 +2894,6 @@ app.put("/admin/trial/replicate", authenticateToken, function (req, res) {
   res.writeHead(200, { "Content-Type": "application/json" });
   res.end(JSON.stringify(result));
 });
-
-// app.get(
-//   "/admin/trial/replicates",
-//   authenticateToken,
-//   function (req, res) {
-//     const trialId = parseInt(req.query.trialid);
-//     console.log({ trialId });
-//     const trials = getTrials();
-
-//     const trial = trials.find((t) => t.trialId === trialId);
-//     console.log(trial);
-//     const replicates = [];
-//     for (let e = 0; e < trial.estate.length; e++) {
-//       for (let i = 1; i <= trial.estate[e].replicate; i++) {
-//         const rep = {
-//           replicate: i,
-//           replicateId: i,
-//           estate: trial.estate[e].name,
-//           estateblocks:
-//             trial.trialId === 2 && [1, 3].includes(i)
-//               ? [
-//                   { id: "1", name: "102e" },
-//                   { id: "2", name: "102f" },
-//                 ]
-//               : [{ id: "1", name: "102e" }],
-//           density: "123",
-//           design: "Alhpa Design",
-//           soiltype: "1",
-//         };
-//         replicates.push(rep);
-//       }
-//     }
-
-//     trial["replicates"] = replicates;
-
-//     const result = {
-//       success: true,
-//       data: trial,
-//     };
-//     console.log(result)
-//     res.writeHead(200, { "Content-Type": "application/json" });
-//     res.end(JSON.stringify(result));
-//   }
-// );
 
 app.get(
   "/admin/trial",
@@ -2099,6 +2941,7 @@ app.get(
       }
       const plot = {
         replicate: replicatecount,
+        replicateId:replicatecount,
         plotName: `Plot ${i}`,
         plotId: i,
         subblock: subblockCount,
@@ -2111,6 +2954,10 @@ app.get(
             : [{ id: 1, name: "102e" }],
         design: "Alpha Design",
       };
+      if(i < 3){
+        plot['progenyId'] = i
+        plot['nPalm'] = 16
+      }
       trialPlots.push(plot);
     }
     const result = {
@@ -2136,17 +2983,17 @@ app.post(
   }
 );
 
-app.put(
+app.post(
   "/admin/attach-progeny",
   authenticateToken,
   function (req, res) {
     const trialId =  req.query.trialId
     const result = {
       success: true,
-      data: {
-        nofplotAttached: 100,   
+      data: [{
+        nofprogenyAttached: 100,   
         isComplete: true
-      },
+      }],
     };
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
